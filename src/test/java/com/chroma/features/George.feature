@@ -1,6 +1,6 @@
 Feature: George's Scenarios
 
-@RealEstateRegression  @RealEstateProgression @CTSMSRegression @CTSMSProgression @George @DF1
+@CTSMSProgression @George @DF-17
 Scenario: Add and delete sections via the Academics module
 Given a user is on the login page "https://mexil.it/chroma_tech_academy/dev/site/login"
 When user logs in with valid credentials username "general@teacher.com" and password "123456" 
