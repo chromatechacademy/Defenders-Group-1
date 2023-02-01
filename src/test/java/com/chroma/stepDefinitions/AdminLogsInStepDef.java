@@ -20,7 +20,6 @@ public class AdminLogsInStepDef extends PageInitializer {
     @When("an admin user logins with valid credentials username {string} and password {string}")
     public void an_admin_user_logins_with_valid_credentials_username_and_password(String userName, String password)
             throws IOException {
-
         PageInitializer.studentLoginPage.userNameTextBox.sendKeys(userName);
         PageInitializer.studentLoginPage.passwordTextBox.sendKeys(password);
         PageInitializer.studentLoginPage.singInButton.click();
@@ -51,9 +50,10 @@ public class AdminLogsInStepDef extends PageInitializer {
     @Then("all sublinks should be displayed such as {string}, {string},{string}, {string}, {string},{string},{string}, {string},{string}")
     public void all_sublinks_should_be_displayed_such_as(String collectFees, String searchFeesPayment,
             String searchDueFees, String feesMaster, String feesGroup, String feesType, String feesDiscount,
-            String feesCarryForward, String feesReminder) {
-
+            String feesCarryForward, String feesReminder) throws InterruptedException {
         String collectFeesIsDisplayed = studentDashboardPage.subLinkCollectFees.getText();
+        System.out.println("TEXT " + collectFeesIsDisplayed);
         CommonUtils.assertEquals(collectFees, collectFeesIsDisplayed);
+
     }
 }
