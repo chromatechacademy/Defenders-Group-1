@@ -16,7 +16,7 @@ public class StudentDashboardPage {
     public WebElement feesCollectionLink;
 
     // Collect Fees sub link
-    @FindBy(xpath = "//ul[2]//li[2]//ul[1]//li[1]//a[1]")
+    @FindBy(xpath = "//*[contains(text(),' Collect Fees')]")
     public WebElement subLinkCollectFees;
 
     // Search Fees Payment sub link
@@ -68,5 +68,4 @@ public class StudentDashboardPage {
 
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
-
 }

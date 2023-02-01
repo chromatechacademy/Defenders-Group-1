@@ -19,10 +19,10 @@ public class AdminLogsInStepDef extends PageInitializer {
 
     @When("an admin user logins with valid credentials username {string} and password {string}")
     public void an_admin_user_logins_with_valid_credentials_username_and_password(String userName, String password)
-            throws IOException {
-        PageInitializer.studentLoginPage.userNameTextBox.sendKeys(userName);
-        PageInitializer.studentLoginPage.passwordTextBox.sendKeys(password);
-        PageInitializer.studentLoginPage.singInButton.click();
+    {
+       studentLoginPage.userNameTextBox.sendKeys(userName);
+       studentLoginPage.passwordTextBox.sendKeys(password);
+       studentLoginPage.signInButton.click();
     }
 
     @Then("an admin is landed on a home page with URL {string}")
@@ -33,7 +33,7 @@ public class AdminLogsInStepDef extends PageInitializer {
 
     @When("an admin user clicks on Homework")
     public void an_admin_user_clicks_on_Homework() throws InterruptedException {
-        PageInitializer.studentDashboardPage.homeworkLink.click();
+        studentDashboardPage.homeworkLink.click();
     }
 
     @Then("an admin user should see {string} link")
@@ -44,9 +44,9 @@ public class AdminLogsInStepDef extends PageInitializer {
 
     @When("an admin user clicks on Fees Collection module")
     public void an_admin_user_clicks_on_Fees_Collection_module() {
-        PageInitializer.studentDashboardPage.feesCollectionLink.click();
+        studentDashboardPage.feesCollectionLink.click();
     }
-
+  
     @Then("all sublinks should be displayed such as {string},{string},{string},{string},{string},{string},{string},{string},{string}")
     public void all_sublinks_should_be_displayed_such_as(String collectFees,String searchFeesPayment,
             String searchDueFees,String feesMaster,String feesGroup,String feesType,String feesDiscount,
@@ -55,12 +55,12 @@ public class AdminLogsInStepDef extends PageInitializer {
         System.out.println("TEXT1 " + collectFeesIsDisplayed);
         CommonUtils.assertEquals(collectFees, collectFeesIsDisplayed);
 
-        PageInitializer.studentDashboardPage.subLinkSearchFeesPayment.click();
+        
         String searchFeesPaymentISDisplayed = studentDashboardPage.subLinkSearchFeesPayment.getText();
         System.out.println("TEXT2 " + searchFeesPaymentISDisplayed );
         CommonUtils.assertEquals(searchFeesPayment,searchFeesPaymentISDisplayed);
 
-        PageInitializer.studentDashboardPage.subLinkSearchDueFees.click();
+        
         String searchDueFeesIsDisplayed = studentDashboardPage.subLinkSearchDueFees.getText();
         System.out.println("TEXT3 " + searchDueFeesIsDisplayed);
         CommonUtils.assertEquals(searchDueFees, searchDueFeesIsDisplayed);

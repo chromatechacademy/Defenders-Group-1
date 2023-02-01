@@ -19,7 +19,7 @@ public class StudentLoginPage {
 
    // Log in Button*
    @FindBy(xpath = "//button[normalize-space()='Sign In']")
-   public WebElement singInButton;
+   public WebElement signInButton;
 
    public static WebElement sampleDynamicMethod(String text) {
 
