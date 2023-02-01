@@ -12,19 +12,17 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//span[contains(text(),'Homework')]")
     public WebElement homeworkLink;
 
-    @FindBy (xpath = "//a[normalize-space()='Add Homework']")
+    @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement subLinkHomework;
-
-    
 
     public static WebElement dynamicModuleLocator(String moduleText) {
 
         return WebDriverUtils.driver.findElement(By.xpath("//span[contains(text(),'" + moduleText + "')]"));
     }
 
-    public StudentDashboardPage(){
+    public StudentDashboardPage() {
 
-    PageFactory.initElements(WebDriverUtils.driver, this);
-}
+        PageFactory.initElements(WebDriverUtils.driver, this);
+    }
 
 }
