@@ -32,7 +32,7 @@ public class AdminLogsInStepDef extends PageInitializer {
     }
 
     @When("an admin user clicks on Homework")
-    public void an_admin_user_clicks_on_Homework() throws InterruptedException {
+    public void an_admin_user_clicks_on_Homework() {
         studentDashboardPage.homeworkLink.click();
     }
 
