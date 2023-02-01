@@ -12,18 +12,15 @@ public class CommonMethods {
     /*
      * USED FOR COMMON XPATHS
      */
-    
     public static WebElement inspectElement(String webElement) {
-
         return WebDriverUtils.driver.findElement(By.xpath(webElement));
     }
- 
+
     /*
-     * USE THIS METHOD WHEN ASSERTING TO HANDLE ASSERTEQUAL EXCEPTION WITH TRY CATCH BLOCK
+     * USE THIS METHOD WHEN ASSERTING TO HANDLE ASSERTEQUAL EXCEPTION WITH TRY CATCH
+     * BLOCK
      */
-
     public static void handledAssertEqual(String actualValue, String expectedValue) {
-
         try {
             Assert.assertEquals(actualValue, expectedValue);
         } catch (AssertionError e) {
@@ -34,9 +31,7 @@ public class CommonMethods {
     /*
      * USE THIS METHOD TO SELECT A VALUE FROM A DROP DOWN BY VISIBLE TEXT
      */
-
     public static void selectDropDownValue(WebElement element, String visibleText) {
-
         Select select = new Select(element);
         select.selectByVisibleText(visibleText);
     }
@@ -45,18 +40,16 @@ public class CommonMethods {
      * USE THIS METHOD TO SELECT A VALUE FROM A DROP DOWN BY VALUE
      */
     public static void selectDropDownValue(String value, WebElement element) {
-
         Select select = new Select(element);
         select.selectByValue(value);
     }
 
-      /*
+    /*
      * USE THIS METHOD TO SELECT A VALUE FROM A DROP DOWN BY INDEX
      */
     public static void selectDropDownValue(WebElement element, int index) {
-
         Select select = new Select(element);
         select.selectByIndex(index);
     }
-    
+
 }
