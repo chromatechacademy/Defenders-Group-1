@@ -13,7 +13,6 @@ public class PageInitializer extends WebDriverUtils {
     public static StudentLoginPage studentLoginPage;
     public static StudentDashboardPage studentDashboardPage;
 
-
     public void initializeAllPages() {
 
         samplePage = new SamplePage();

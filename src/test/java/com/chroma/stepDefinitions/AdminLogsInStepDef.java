@@ -2,10 +2,10 @@ package com.chroma.stepDefinitions;
 
 import java.io.IOException;
 
-import org.junit.Assert;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentLoginPage;
+import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
 import cucumber.api.java.en.Given;
@@ -35,22 +35,37 @@ public class AdminLogsInStepDef extends PageInitializer {
     @Then("an admin is landed on a home page with URL {string}")
     public void an_admin_is_landed_on_a_home_page_with_URL(String url) {
         String actualHomePageUrl = WebDriverUtils.driver.getCurrentUrl();
-        Assert.assertEquals(url, actualHomePageUrl);
+        CommonUtils.assertEquals(url, actualHomePageUrl);
 
     }
 
     @When("an admin user clicks on Homework")
     public void an_admin_user_clicks_on_Homework() throws InterruptedException {
-       PageInitializer.studentDashboardPage.homeworkLink.click();
-       
+        PageInitializer.studentDashboardPage.homeworkLink.click();
 
     }
 
     @Then("an admin user should see {string} link")
     public void an_admin_user_should_see_link(String subModuleLink) {
         String actualSubLinkText = studentDashboardPage.subLinkHomework.getText();
-        System.out.println("TEXT OF LINK " + actualSubLinkText);
-        Assert.assertEquals(actualSubLinkText, subModuleLink);
+        CommonUtils.assertEquals(subModuleLink, actualSubLinkText);
 
     }
+
+    @When("an admin user clicks on Fees Collection module")
+    public void an_admin_user_clicks_on_Fees_Collection_module() {
+        PageInitializer.studentDashboardPage.feesCollectionLink.click();
+    }
+
+    @Then("all sublinks should be displayed such as {string}, {string},{string}, {string}, {string},{string},{string}, {string},{string}")
+    public void all_sublinks_should_be_displayed_such_as(String collectFees, String searchFeesPayment,
+            String searchDueFees, String feesMaster, String feesGroup, String feesType, String feesDiscount,
+            String feesCarryForward, String feesReminder) {
+
+        String collectFeesIsDisplayed = studentDashboardPage.subLinkCollectFees.getText();
+        CommonUtils.assertEquals(collectFees, collectFeesIsDisplayed);
+
+
+    }
+
 }
