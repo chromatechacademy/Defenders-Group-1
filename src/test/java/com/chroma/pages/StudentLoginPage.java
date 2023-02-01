@@ -21,8 +21,10 @@ public class StudentLoginPage {
    @FindBy(xpath = "//button[normalize-space()='Sign In']")
    public WebElement signInButton;
 
-   /*
+     /**
     * Use this method to locate dynamic elements
+    * @param text
+    * @return
     */
 
    public static WebElement sampleDynamicMethod(String text) {

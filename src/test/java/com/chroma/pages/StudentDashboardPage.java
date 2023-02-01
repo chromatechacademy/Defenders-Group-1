@@ -59,6 +59,12 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement subLinkHomework;
 
+    /**
+     * Use this method to locate dynamic elements
+     * @param moduleText
+     * @return
+     */
+
     public static WebElement dynamicModuleLocator(String moduleText) {
 
         return WebDriverUtils.driver.findElement(By.xpath("//span[contains(text(),'" + moduleText + "')]"));
