@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.chroma.web.WebDriverUtils;
 
-public class StudentSeletionsPage {
+public class StudentSelectionsPage {
 
     /* GEORGE - ADD SECTION TEXT */
     @FindBy(xpath = "//h3[@class='box-title']")
@@ -31,8 +31,7 @@ public class StudentSeletionsPage {
         return WebDriverUtils.driver.findElement(By.xpath("//td[normalize-space()='" + sectionNameText + "']//parent::td//parent::tr//child::td[2]//child::a[2]/i"));
     }
 
-    public StudentSeletionsPage() {
-
+    public StudentSelectionsPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
 
     }

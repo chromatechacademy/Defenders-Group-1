@@ -59,27 +59,30 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement subLinkHomework;
 
-    /*GEORGE - ACACDEMICS DROPDOWN */
+    /* GEORGE - ACACDEMICS MODULE */
     @FindBy(xpath = "//span[normalize-space()='Academics']")
-    public WebElement academicsDropdown;
+    public WebElement academicsModule;
 
-     /*GEORGE - ACACDEMICS DROPDOWN */
-     @FindBy(xpath = "//*[contains(text(),'ections')]")
-     public WebElement academicsSections;
+    /* GEORGE - ACACDEMICS SUBMODULE */
+    @FindBy(xpath = "//*[contains(text(),'ections')]")
+    public WebElement academicsSections;
 
     /**
-     * Use this method to locate dynamic elements
+     * GEORGE - DINAMIX LOCATOR FOR MODULES
+     * 
      * @param moduleText
      * @return
      */
 
     public static WebElement dynamicModuleLocator(String moduleText) {
-
         return WebDriverUtils.driver.findElement(By.xpath("//span[contains(text(),'" + moduleText + "')]"));
     }
 
-    public StudentDashboardPage() {
+    /* GEORGE - STUDENT ADMISSION SUBMODULE */
+    @FindBy(xpath = "//a[normalize-space()='Student Admission']")
+    public WebElement studentAdmissionSubmodule;
 
+    public StudentDashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 }
