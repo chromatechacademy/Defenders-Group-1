@@ -1,5 +1,6 @@
 package com.chroma.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,6 +24,12 @@ public class StudentSeletionsPage {
      /* GEORGE - SECTION - RECORD SAVED SUCCESFULLY TEXT */
     @FindBy(xpath = "//div[@class='alert alert-success text-left']")
     public WebElement sectionSavedSuccesfullyText;
+
+  
+     /* GEORGE - SECTION - DYNAMIC LOCATOR FOR SESSION DELETE BUTTON */
+    public static WebElement sectionDeleteLocator(String sectionNameText) {
+        return WebDriverUtils.driver.findElement(By.xpath("//td[normalize-space()='" + sectionNameText + "']//parent::td//parent::tr//child::td[2]//child::a[2]/i"));
+    }
 
     public StudentSeletionsPage() {
 

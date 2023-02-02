@@ -1,8 +1,10 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.pages.StudentSeletionsPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
+import com.chroma.web.WebDriverUtils;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -42,8 +44,8 @@ public class GeorgeStepDef extends PageInitializer {
     /*
      * ENTERING TEXT IN THESECTION NAME TEXTBOX
      */
-    @When("admin enters a {string}")
-    public void admin_enters_a(String sectionName) {
+    @When("admin enters Session {string}")
+    public void admin_enters_Session(String sectionName) {
         studentSeletionsPage.sectionText.sendKeys(sectionName);
     }
 
@@ -55,17 +57,35 @@ public class GeorgeStepDef extends PageInitializer {
         studentSeletionsPage.sectionSaveButton.click();
     }
 
-     /*
+    /*
      * ASSERTING RECORD SAVED SUCCESFULLY IS DISPLEIED ON SECTIONS PAGE
      */
     @Then("Section is succesfully saved and confirmation message displays {string}")
     public void section_is_succesfully_saved_and_confirmation_message_displays(
-            String expectedSessionSavesSuccessfulyText) throws InterruptedException {
+            String expectedSessionSavesSuccessfulyText) {
         String actualSessionSavesSuccessfulyText = studentSeletionsPage.sectionSavedSuccesfullyText.getText();
         CommonUtils.assertEquals(expectedSessionSavesSuccessfulyText, actualSessionSavesSuccessfulyText);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-        Thread.sleep(3000);
+    }
+
+    /*
+     * CLICKING ON THE SECTION DELETE BUTTON
+     */
+    @Then("admin clicks on the Section {string} Delete button")
+    public void admin_clicks_on_the_Section_Delete_button(String sectionName) {
+        StudentSeletionsPage.sectionDeleteLocator(sectionName).click();
+    }
+
+    /*
+     * ACCEPT SESSION DELETE CONFIRMATION ALERT
+     */
+    @Then("Section is deleted")
+    public void section_is_deleted() throws InterruptedException {
+        WebDriverUtils.driver.switchTo().alert().accept();
+        CucumberLogUtils.logScreenShot();
+        CucumberLogUtils.logExtentScreenshot();
+        Thread.sleep(1000);
     }
 
 }
