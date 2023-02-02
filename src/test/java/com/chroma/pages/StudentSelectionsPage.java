@@ -24,7 +24,6 @@ public class StudentSelectionsPage {
      /* GEORGE - SECTION - RECORD SAVED SUCCESFULLY TEXT */
     @FindBy(xpath = "//div[@class='alert alert-success text-left']")
     public WebElement sectionSavedSuccesfullyText;
-
   
      /* GEORGE - SECTION - DYNAMIC LOCATOR FOR SESSION DELETE BUTTON */
     public static WebElement sectionDeleteLocator(String sectionNameText) {
@@ -33,7 +32,6 @@ public class StudentSelectionsPage {
 
     public StudentSelectionsPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
-
     }
 
 }
