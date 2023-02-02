@@ -1,6 +1,9 @@
 package com.chroma.stepDefinitions;
 
-import org.openqa.selenium.By;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import com.chroma.appsCommon.PageInitializer;
@@ -9,7 +12,6 @@ import com.chroma.pages.StudentDetails;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -23,34 +25,53 @@ public class ClassAndSectionStepDef extends PageInitializer {
         CommonUtils.assertEquals(url, studentDetailsUrl);
     }
 
-@When("SDET is selected")
-public void sdet_is_selected() throws InterruptedException {
-    Thread.sleep(2000);
-    //StudentDetails.classDropdown.click();
-    Select classDropdown = new Select(driver.findElement(By.xpath("//select[@id ='class_id'] ")));
-    classDropdown.selectByVisibleText("SDET");
-    Thread.sleep(3000);
-}
-@When("Section drop down is selected")
-public void section_drop_down_is_selected() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new cucumber.api.PendingException();
-}
-@Then("the following options are shown {string} , {string} , {string} , {string} , {string} , {string}, {string} , {string} , {string} , {string}")
-public void the_following_options_are_shown(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new cucumber.api.PendingException();
-}
+    @When("SDET is selected")
+    public void sdet_is_selected() throws InterruptedException {
+        CommonUtils.selectDropDownValue(studentDetailsPage.classDropdown, 0);
+        Thread.sleep(1000);
 
-@When("Cyber Security is selected")
-public void cyber_Security_is_selected() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new cucumber.api.PendingException();
-}
-@Then("the following options are shown {string} , {string} , {string} , {string}")
-public void the_following_options_are_shown(String string, String string2, String string3, String string4) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new cucumber.api.PendingException();
-}
+    }
 
+    @Then("section is selected the following options are shown {string} , {string} , {string} , {string} , {string} , {string}, {string} , {string} , {string} , {string}")
+    public void section_is_selected_the_following_options_are_shown(String testingFundamentals,
+            String sDLCMethodologies, String seleniumTestAutomation, String cucumberFundamentals, String aPITesting,
+            String gitGithub, String java11ForCoolPeople, String mobileTestAutomation, String accessibilityTesting,
+            String dataBaseTesting) {
+
+    }
+
+    @When("Cyber Security is selected")
+    public void cyber_Security_is_selected() throws InterruptedException {
+
+        CommonUtils.selectDropDownValue("Cyber Security", studentDetailsPage.classDropdown);
+        Thread.sleep(1000);
+    }
+
+    @Then("section is selected the following options are shown {string} , {string} , {string} , {string}")
+    public void section_is_selected_the_following_options_are_shown(String networkingFundamentals,
+            String linuxFundamentals, String cIATriad, String penetrationTestingEtheicalHacking)
+            throws InterruptedException {
+        Select select = new Select(studentDetailsPage.selectDropDown);
+        List<WebElement> elements = select.getOptions();
+        List<String> cyberOptionTexts = new ArrayList<>();
+
+        for (WebElement element : elements) {
+            cyberOptionTexts.add(element.getText());
+        }
+
+        CommonUtils.selectDropDownValue(studentDetailsPage.selectDropDown, 1);
+        CommonUtils.assertEquals(cyberOptionTexts.get(1), networkingFundamentals);
+        Thread.sleep(1000);
+
+        CommonUtils.selectDropDownValue(studentDetailsPage.selectDropDown, 2);
+        CommonUtils.assertEquals(cyberOptionTexts.get(2), linuxFundamentals);
+        Thread.sleep(1000);
+        CommonUtils.selectDropDownValue(studentDetailsPage.selectDropDown, 3);
+        CommonUtils.assertEquals(cyberOptionTexts.get(3), cIATriad);
+        Thread.sleep(1000);
+        CommonUtils.selectDropDownValue(studentDetailsPage.selectDropDown, 4);
+        CommonUtils.assertEquals(cyberOptionTexts.get(4), penetrationTestingEtheicalHacking);
+        Thread.sleep(1000);
+    }
+   
 }

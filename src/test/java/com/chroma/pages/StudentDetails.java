@@ -10,7 +10,7 @@ public class StudentDetails {
 
     // CLASS DROP DOWN
     @FindBy(xpath = "//select[@id ='class_id']")
-    public static WebElement classDropdown;
+    public WebElement classDropdown;
     // SECTION DROP DOWN
     @FindBy(xpath = "//select[@id = 'section_id']")
     public WebElement selectDropDown;
