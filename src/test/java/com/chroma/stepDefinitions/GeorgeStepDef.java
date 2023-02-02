@@ -37,8 +37,7 @@ public class GeorgeStepDef extends PageInitializer {
      * ASSERTING THAT THE ADMIN IS ON SECTIONS PAGE
      */
     @Then("admin is directed to Sections page with the text {string}")
-    public void admin_is_directed_to_Sections_page_with_the_text(String expetedSelectionsPageText)
-            throws InterruptedException {
+    public void admin_is_directed_to_Sections_page_with_the_text(String expetedSelectionsPageText) {
         String actualSelectionsPageText = studentSelectionsPage.addSelectionText.getText();
         CommonUtils.assertEquals(expetedSelectionsPageText, actualSelectionsPageText);
         CucumberLogUtils.logScreenShot();
@@ -229,8 +228,7 @@ public class GeorgeStepDef extends PageInitializer {
      * ASSERTING THAT THE ADMIN IS ON CATEGORY PAGE
      */
     @Then("admin is directed to CATEGORY page with the text {string}")
-    public void admin_is_directed_to_CATEGORY_page_with_the_text(String expetedCategoryPageText)
-            throws InterruptedException {
+    public void admin_is_directed_to_CATEGORY_page_with_the_text(String expetedCategoryPageText) {
         String actualCategoryPageText = studentCategoriesPage.createCategoryText.getText();
         CommonUtils.assertEquals(expetedCategoryPageText, actualCategoryPageText);
         CucumberLogUtils.logScreenShot();
