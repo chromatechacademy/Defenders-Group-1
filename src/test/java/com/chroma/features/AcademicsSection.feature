@@ -17,7 +17,7 @@ Feature: Academics Section
     Examples: 
       | SESSIONNAME |
       | Math        |
-    #   | English     |
-    #   | Chemistry   |
-    #   | Geography   |
-    #   | Arts        |
+      | English     |
+      | Chemistry   |
+      | Geography   |
+      | Arts        |
