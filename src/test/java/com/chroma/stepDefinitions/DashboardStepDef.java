@@ -10,9 +10,9 @@ import cucumber.api.java.en.When;
 
 public class DashboardStepDef extends PageInitializer{
 
-    @Given("a CTSMS user/admin is on the login page {string}")
-    public void a_CTSMS_user_admin_is_on_the_login_page(String url) {
-       WebDriverUtils.driver.get(url);
+    @Given("a CTSMS user\\/admin is on the login page {string}")
+    public void a_CTSMS_user_admin_is_on_the_login_page(String string) {
+        
     }
 
     /* @When("user logs in with valid credentials username {string} and password {string}")
