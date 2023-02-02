@@ -59,6 +59,14 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement subLinkHomework;
 
+    /*GEORGE - ACACDEMICS DROPDOWN */
+    @FindBy(xpath = "//span[normalize-space()='Academics']")
+    public WebElement academicsDropdown;
+
+     /*GEORGE - ACACDEMICS DROPDOWN */
+     @FindBy(xpath = "//*[contains(text(),'ections')]")
+     public WebElement academicsSections;
+
     /**
      * Use this method to locate dynamic elements
      * @param moduleText
