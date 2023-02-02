@@ -78,6 +78,9 @@ public class StudentDashboardPage {
 
     @FindBy(xpath = "//span[contains(text(),'Reports')]")
     public WebElement reportsModule;
+
+    @FindBy(xpath = "(//a[normalize-space()='Student Details'])[2]")
+    public WebElement studentDetailsSubModule;
     // -Gary Add End
     /**
      * Use this method to locate dynamic elements
