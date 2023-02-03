@@ -1,9 +1,6 @@
 
 package com.chroma.stepDefinitions;
 
-
-import java.io.IOException;
-
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
