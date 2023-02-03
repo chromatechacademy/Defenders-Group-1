@@ -59,13 +59,42 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement subLinkHomework;
 
+<<<<<<< HEAD
 
     public static WebElement dynamicModuleLocator(String moduleText) {
         return WebDriverUtils.driver.findElement(By.xpath("//span[contains(text(),'" + moduleText + "')]"));
     }
     
     public StudentDashboardPage() {
+=======
+    /* GEORGE - ACADEMICS MODULE */
+    @FindBy(xpath = "//span[normalize-space()='Academics']")
+    public WebElement academicsModule;
 
+    /* GEORGE - ACADEMICS SUBMODULE */
+    @FindBy(xpath = "//*[contains(text(),'ections')]")
+    public WebElement academicsSections;
+
+    /**
+     * GEORGE - DINAMIC LOCATOR FOR MODULES
+     * 
+     * @param moduleText
+     * @return
+     */
+    public static WebElement dynamicModuleLocator(String moduleText) {
+        return WebDriverUtils.driver.findElement(By.xpath("//span[contains(text(),'" + moduleText + "')]"));
+    }
+
+    /* GEORGE - STUDENT ADMISSION SUBMODULE */
+    @FindBy(xpath = "//a[normalize-space()='Student Admission']")
+    public WebElement studentAdmissionSubmodule;
+>>>>>>> 1c8fd16cbac1fd6e380ad65b98c5a7afa991d1b2
+
+    /* GEORGE - STUDENT CATEGORIES SUBMODULE */
+    @FindBy(xpath = "//*[contains(text(),'Categories')]")
+    public WebElement studentCategories;
+
+    public StudentDashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 }
