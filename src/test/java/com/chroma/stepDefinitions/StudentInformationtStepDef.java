@@ -1,43 +1,46 @@
 package com.chroma.stepDefinitions;
 
+import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentDashboardPage;
-import com.chroma.pages.StudentInformationPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
-
 import cucumber.api.java.en.Then;
 
-public class StudentInformationtStepDef {
+public class StudentInformationtStepDef extends PageInitializer{
 
-    StudentInformationPage studentInformationPage = new StudentInformationPage();
-
+    /*
+     * CLICKING ON STUDENT INFORMATION MODULE
+     */
     @Then("an admin clicks on {string} module")
     public void an_admin_clicks_on_module(String moduleText) {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         StudentDashboardPage.dynamicModuleLocator(moduleText).click();
+        CommonUtils.sleep(2000);
     }
 
+    /*
+     * ASSERTING STUDENT INFORMATION MODULES
+     */
     @Then("the following modules should displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void the_following_modules_should_displayed(String studentDetailsModule, String studentAdmissionModule, String disabledStudentModule, String bulkDeleteModule, String studentCategoriesModule, String studentHouseModule, String disableReasonModule) {
-    
-    String actualStudentDetailsText = studentInformationPage.studentDetailsModule.getText();
-    CommonUtils.assertEquals(actualStudentDetailsText, studentDetailsModule);
+    public void the_following_modules_should_displayed(String expectedStudentDetailsModule,
+            String expextedStudentAdmissionModule, String expectedDisabledStudentModule,
+            String expectedBulkDeleteModule, String expectedStudentCategoriesModule, String expectedStudentHouseModule,
+            String expectedDisableReasonModule) {
+        String actualStudentDetailsText = studentInformationPage.studentDetailsModule.getText();
+        CommonUtils.assertEquals(actualStudentDetailsText, expectedStudentDetailsModule);
+        String actualStudentAdmissionText = studentInformationPage.studentAdmissionModule.getText();
+        CommonUtils.assertEquals(actualStudentAdmissionText, expextedStudentAdmissionModule);
+        String actualDisabledStudentText = studentInformationPage.disabledStudentModule.getText();
+        CommonUtils.assertEquals(actualDisabledStudentText, expectedDisabledStudentModule);
+        String actualBulkDeleteText = studentInformationPage.bulkDeleteModule.getText();
+        CommonUtils.assertEquals(actualBulkDeleteText, expectedBulkDeleteModule);
+        String actualStudentCategoriesText = studentInformationPage.studentCategoriesModule.getText();
+        CommonUtils.assertEquals(actualStudentCategoriesText, expectedStudentCategoriesModule);
+        String actualStudentHouseText = studentInformationPage.studentHouseModule.getText();
+        CommonUtils.assertEquals(actualStudentHouseText, expectedStudentHouseModule);
+        String actualDisableReasonText = studentInformationPage.disableReasonModule.getText();
+        CommonUtils.assertEquals(actualDisableReasonText, expectedDisableReasonModule);
+    }
 
-    String actualStudentAdmissionText = studentInformationPage.studentAdmissionModule.getText();
-    CommonUtils.assertEquals(actualStudentAdmissionText, studentAdmissionModule);
-
-    String actualDisabledStudentText = studentInformationPage.disabledStudentModule.getText();
-    CommonUtils.assertEquals(actualStudentAdmissionText, actualDisabledStudentText);
-
-   
-        
 }
-    
-}
-
-     
-    
-
-
-

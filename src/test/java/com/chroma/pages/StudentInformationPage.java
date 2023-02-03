@@ -2,11 +2,14 @@ package com.chroma.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.chroma.web.WebDriverUtils;
 
 public class StudentInformationPage {
 
     /*Student Details dropdown*/
-    @FindBy(xpath = "//ul[@class='treeview-menu']//a[normalize-space()='Student Details']")
+    @FindBy(xpath = "(//a[normalize-space()='Student Details'])[2]")
     public WebElement studentDetailsModule;
 
     /*Student Admission dropdown */
@@ -33,7 +36,8 @@ public class StudentInformationPage {
     @FindBy(xpath = "//a[normalize-space()='Disable Reason']")
     public WebElement disableReasonModule;
 
-
-
-    
+    public StudentInformationPage() {
+        PageFactory.initElements(WebDriverUtils.driver, this);
+    }
+  
 }
