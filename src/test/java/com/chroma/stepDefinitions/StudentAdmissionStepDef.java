@@ -1,15 +1,13 @@
 package com.chroma.stepDefinitions;
 
-import org.openqa.selenium.JavascriptExecutor;
-
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
-import com.chroma.web.WebDriverUtils;
+import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class StudentAdmissionStepDef extends PageInitializer{
+public class StudentAdmissionStepDef extends PageInitializer {
 
     /*
      * CLICKING ON THE STUDENT ADMISSION SUBMODULE
@@ -42,10 +40,9 @@ public class StudentAdmissionStepDef extends PageInitializer{
      */
     @Then("selects Class {string} and Section {string}")
     public void selects_Class_and_Section(String className, String sectionName) {
-        System.out.println("Class name: " + className);
-        System.out.println("Section: " + sectionName);
-        CommonUtils.selectDropDownValue(className,studentAdmissionPage.classDropDown);
-        CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropDown);;
+        CommonUtils.selectDropDownValue(className, studentAdmissionPage.classDropDown);
+        CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropDown);
+        ;
     }
 
     /*
@@ -70,8 +67,7 @@ public class StudentAdmissionStepDef extends PageInitializer{
      */
     @Then("enters Date of Birth {string}")
     public void enters_Date_of_Birth(String dob) {
-        JavascriptExecutor js = (JavascriptExecutor) WebDriverUtils.driver;
-        js.executeScript("arguments[0].setAttribute('value','" + dob + "');", studentAdmissionPage.dobCalendar);
+        JavascriptUtils.selectDateByJS(studentAdmissionPage.dobCalendar, dob);
     }
 
     /*
@@ -135,5 +131,5 @@ public class StudentAdmissionStepDef extends PageInitializer{
         CommonUtils.assertEquals(expectedAdmissionNumberMustBeUniqueMessage, actualAdmissionNumberMustBeUniqueMessage);
         Thread.sleep(1000);
     }
-    
+
 }
