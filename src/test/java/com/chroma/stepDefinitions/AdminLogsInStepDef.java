@@ -35,6 +35,5 @@ public class AdminLogsInStepDef extends PageInitializer {
         CommonUtils.assertEquals(url, actualHomePageUrl);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
-
     }
 }
