@@ -4,14 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.chroma.web.WebDriverUtils;
 
 public class StudentDashboardPage {
 
-    /* Please store Common xpath for all module links below */
-
-    // Fees Collection Link
+       // Fees Collection Link
     @FindBy(xpath = "//span[contains(text(),'Fees Collection')]")
     public WebElement feesCollectionLink;
 

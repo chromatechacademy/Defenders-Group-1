@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import java.io.IOException;
-
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
