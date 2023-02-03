@@ -6,13 +6,14 @@ import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class FeesCollectionLinksStepDef extends PageInitializer{
+public class FeesCollectionLinksStepDef extends PageInitializer {
 
     // Admin user click on Fees Collection link
     @When("an admin user clicks on Fees Collection module")
     public void an_admin_user_clicks_on_Fees_Collection_module() {
         studentDashboardPage.feesCollectionLink.click();
     }
+
     // All sub links should be displayed
     @Then("all sublinks should be displayed such as {string},{string},{string},{string},{string},{string},{string},{string},{string}")
     public void all_sublinks_should_be_displayed_such_as(String collectFees, String searchFeesPayment,
@@ -39,5 +40,5 @@ public class FeesCollectionLinksStepDef extends PageInitializer{
         CommonUtils.assertEquals(feesReminder, feesReminderIsDisplayed);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
-    }  
+    }
 }
