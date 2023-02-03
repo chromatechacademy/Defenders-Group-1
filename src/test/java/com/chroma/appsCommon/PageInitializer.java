@@ -9,7 +9,6 @@ import com.chroma.pages.RealEstateAdminIndexPage;
 import com.chroma.pages.RealEstateAdminWelcomePage;
 import com.chroma.pages.RealEstateAgentIndexPage;
 import com.chroma.pages.RealEstateAgentWelcomePage;
-import com.chroma.pages.SamplePage;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentDashboardPage;
@@ -17,9 +16,6 @@ import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
 
-    // Sample of instantiating an instance
-
-    public static SamplePage samplePage;
     public static StudentLoginPage studentLoginPage;
     public static StudentDashboardPage studentDashboardPage;
     public static StudentSelectionsPage studentSelectionsPage;
@@ -34,7 +30,6 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAdminInactiveAgentsPage realEstateAdminInactiveAgentsPage;
 
     public void initializeAllPages() {
-        samplePage = new SamplePage();
         studentLoginPage = new StudentLoginPage();
         studentDashboardPage = new StudentDashboardPage();
         studentSelectionsPage = new StudentSelectionsPage();
