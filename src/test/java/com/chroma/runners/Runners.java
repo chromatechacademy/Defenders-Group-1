@@ -1,6 +1,7 @@
 package com.chroma.runners;
 
 import org.junit.runner.RunWith;
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
@@ -11,11 +12,11 @@ import cucumber.api.junit.Cucumber;
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, 
 		features = "src/test/java/com/chroma/features", 
 		glue = "com.chroma.stepDefinitions", 
-		tags = "@CTSMSSmoke", 
+		tags = "@Regression", 
 		dryRun = false, 
 		monochrome = true, 
 		strict = true)
 
-public class CTSMSSmokeRunners {
-    
+public class Runners {
+
 }

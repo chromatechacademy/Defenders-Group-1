@@ -20,8 +20,9 @@ public class StudentLoginPage {
    @FindBy(xpath = "//button[normalize-space()='Sign In']")
    public WebElement signInButton;
 
-     /**
+   /**
     * Use this method to locate dynamic elements
+    * 
     * @param text
     * @return
     */
@@ -32,5 +33,5 @@ public class StudentLoginPage {
    public StudentLoginPage() {
       PageFactory.initElements(WebDriverUtils.driver, this);
    }
-   
+
 }
