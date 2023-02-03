@@ -69,7 +69,7 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
      */
     @Then("admin goes to active members list")
     public void admin_goes_to_active_members_list() {
-        JavascriptUtils.clearByJS(realEstateAdminAgentsPage.activeMemberButton);
+        JavascriptUtils.clickByJS(realEstateAdminAgentsPage.activeMemberButton);
     }
 
     /*

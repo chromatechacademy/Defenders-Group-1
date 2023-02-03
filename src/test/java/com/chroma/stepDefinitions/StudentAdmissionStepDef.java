@@ -40,8 +40,6 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("selects Class {string} and Section {string}")
     public void selects_Class_and_Section(String className, String sectionName) {
-        System.out.println("Class name: " + className);
-        System.out.println("Section: " + sectionName);
         CommonUtils.selectDropDownValue(className, studentAdmissionPage.classDropDown);
         CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropDown);
         ;
