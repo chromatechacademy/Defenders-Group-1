@@ -33,7 +33,7 @@
     Examples: 
       | ADMISSION NUMBER | CLASS | SECTION              | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | GUARDIAN PHONE NUMBER |
       |         17777773 | Cyber Security  | Networking Fundamentals | George     | One       | Female | 02/22/1991 | Jannet One   |            7026875816 |
-      # |         17777774 | SDET  | Testing Fundamentals | John       | Two       | Male   | 11/11/1992 | Jenny Two    |            5427658765 |
-      # |         17777775 | SDET  | Testing Fundamentals | Mary       | Three     | Female | 08/10/1993 | Carmen Three |            7031111111 |
-      # |         17777776 | SDET  | Testing Fundamentals | Mike       | Four      | Male   | 01/08/1994 | Withney Four |            5467895436 |
-      # |         17777777 | SDET  | Testing Fundamentals | Anna       | Five      | Female | 04/23/1995 | Tina Five    |            8796543451 |
+      |         17777774 | SDET  | Testing Fundamentals | John       | Two       | Male   | 11/11/1992 | Jenny Two    |            5427658765 |
+      |         17777775 | SDET  | Testing Fundamentals | Mary       | Three     | Female | 08/10/1993 | Carmen Three |            7031111111 |
+      |         17777776 | SDET  | Testing Fundamentals | Mike       | Four      | Male   | 01/08/1994 | Withney Four |            5467895436 |
+      |         17777777 | SDET  | Testing Fundamentals | Anna       | Five      | Female | 04/23/1995 | Tina Five    |            8796543451 |

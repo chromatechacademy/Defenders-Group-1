@@ -17,7 +17,9 @@ Feature: Chategory Submodule
     Examples: 
       | CATEGORY |
       | CAT A    |
-      # | CAT B    |
-      # | CAT C    |
-      # | CAT D    |
-      # | CAT E    |
+      | CAT B    |
+      | CAT C    |
+      | CAT D    |
+      | CAT E    |
+    
+    
