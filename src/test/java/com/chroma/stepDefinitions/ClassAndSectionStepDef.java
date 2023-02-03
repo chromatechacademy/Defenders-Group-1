@@ -51,9 +51,12 @@ public class ClassAndSectionStepDef extends PageInitializer {
 
     }
 
-    @Then("Cyber Security is displayed with the following sections {string} , {string} , {string} , {string}")
-    public void cyber_Security_is_displayed_with_the_following_sections(String networkingFundamentals,
-            String linuxFundamentals, String cIATriad, String penetrationTestingEtheicalHacking) {
+   
+    @Then("Cyber Security is displayed {string} with the following sections {string} , {string} , {string} , {string}")
+public void cyber_Security_is_displayed_with_the_following_sections(String cyberSecurity, String networkingFundamentals,
+String linuxFundamentals, String cIATriad, String penetrationTestingEtheicalHacking) {
+        String actualCyberSecurityText = studentClassPage.cyberSecurityText.getText();
+        CommonUtils.assertEquals(actualCyberSecurityText, cyberSecurity);
         String actualNetworkFund = studentClassPage.networkingFundamentalsText.getText();
         CommonUtils.assertEquals(actualNetworkFund, networkingFundamentals);
         String actualLinuxFund = studentClassPage.linuxFundamentalsText.getText();
@@ -64,6 +67,6 @@ public class ClassAndSectionStepDef extends PageInitializer {
         CommonUtils.assertEquals(ActualPeneTestEthicHacking, penetrationTestingEtheicalHacking);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
-    }
+}
 
 }
