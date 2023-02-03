@@ -66,18 +66,33 @@ public class StudentDashboardPage {
 
     /**
      * Use this method to locate dynamic elements
+    /* GEORGE - ACADEMICS MODULE */
+    @FindBy(xpath = "//span[normalize-space()='Academics']")
+    public WebElement academicsModule;
+
+    /* GEORGE - ACADEMICS SUBMODULE */
+    @FindBy(xpath = "//*[contains(text(),'ections')]")
+    public WebElement academicsSections;
+
+    /**
+     * GEORGE - DINAMIC LOCATOR FOR MODULES
      * 
      * @param moduleText
      * @return
      */
-
     public static WebElement dynamicModuleLocator(String moduleText) {
-
         return WebDriverUtils.driver.findElement(By.xpath("//span[contains(text(),'" + moduleText + "')]"));
     }
 
-    public StudentDashboardPage() {
+    /* GEORGE - STUDENT ADMISSION SUBMODULE */
+    @FindBy(xpath = "//a[normalize-space()='Student Admission']")
+    public WebElement studentAdmissionSubmodule;
 
+    /* GEORGE - STUDENT CATEGORIES SUBMODULE */
+    @FindBy(xpath = "//*[contains(text(),'Categories')]")
+    public WebElement studentCategories;
+
+    public StudentDashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 }

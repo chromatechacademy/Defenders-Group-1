@@ -27,16 +27,12 @@ public class StudentLoginPage {
     * @param text
     * @return
     */
-
    public static WebElement sampleDynamicMethod(String text) {
-
       return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
    }
 
    public StudentLoginPage() {
-
       PageFactory.initElements(WebDriverUtils.driver, this);
-
    }
 
 }
