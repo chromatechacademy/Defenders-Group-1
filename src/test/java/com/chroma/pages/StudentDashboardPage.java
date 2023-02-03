@@ -75,6 +75,9 @@ public class StudentDashboardPage {
     //STUDENT DETAILS MODULE
     @FindBy(xpath = "(//a[normalize-space()='Student Details'])[2]")
     public WebElement studentDetailsSubModule;
+    //Class SUB MODULE
+    @FindBy(xpath = "//a[normalize-space()='Class']")
+    public WebElement classSubModule;
     // -Gary Add End
     /**
      * Use this method to locate dynamic elements
@@ -89,7 +92,6 @@ public class StudentDashboardPage {
 
     /**
      * GEORGE - DINAMIC LOCATOR FOR MODULES
->>>>>>> 6d0cf40f42810bf2b64a83866d2b67d600078a3a
      * 
      * @param moduleText
      * @return
