@@ -13,7 +13,7 @@ public class RealEstateAgentIndexPage {
 
     /* GEORGE - HELLO VARIABLE TO CONCATENATE THE EXPECTED HELLO AGENT TEXT */
     public static String agentHelloFirstName(String agentFirstName) {
-        return  "Hello, " + agentFirstName;
+        return "Hello, " + agentFirstName;
     }
 
     /* GEORGE - AGENT LOG OUT BUTTON */
@@ -23,8 +23,6 @@ public class RealEstateAgentIndexPage {
     /* GEORGE - AGENT LOG OUT BUTTON */
     @FindBy(xpath = "//span[normalize-space()='account_box']//parent::button//parent::div//child::ul//child::li[3]//child::a")
     public WebElement agentLogOutButton;
-
-    public static String helloGreeting = "Hello, ";
 
     public RealEstateAgentIndexPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);

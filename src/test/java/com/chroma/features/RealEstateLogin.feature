@@ -1,7 +1,7 @@
 Feature: Real Estate Login
 
-  @RealEstateRegression @George @DF-41
-  Scenario: Users should be able to login with valid credentials
+  @RealEstateRegression @George
+  Scenario: DF-41 Users should be able to login with valid credentials
     Given an admin is on the Admin login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
     When the admin logins with valid credentials email "admin@mexil.it" and password "123456"
     Then the admin is landed on a home page with text "Hello, Admin"

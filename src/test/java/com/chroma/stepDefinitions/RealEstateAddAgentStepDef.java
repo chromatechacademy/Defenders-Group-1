@@ -81,7 +81,7 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
             throws InterruptedException {
         String actualAgentEmail = RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail).getText();
         CommonUtils.assertEquals(expectedAgentEmail, actualAgentEmail);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
                 RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail));
         Thread.sleep(500);
         CucumberLogUtils.logScreenShot();

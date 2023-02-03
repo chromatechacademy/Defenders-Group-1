@@ -1,7 +1,7 @@
 Feature: Student Admission
 
-  @CTSMSRegression @George @DF-13
-  Scenario Outline: Verify if a student with the same admision number can't be added
+  @CTSMSRegression @George 
+  Scenario Outline: DF-13 Verify if a student with the same admision number can't be added
     Given an admin user is on the login page "https://mexil.it/chroma_tech_academy/dev/site/login"
     When an admin user logins with valid credentials username "general@teacher.com" and password "123456"
     Then an admin is landed on a home page with URL "https://mexil.it/chroma_tech_academy/dev/admin/admin/dashboard"
