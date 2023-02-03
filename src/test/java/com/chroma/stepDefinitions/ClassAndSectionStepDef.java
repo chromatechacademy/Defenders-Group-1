@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.StudentDashboardPage;
-import com.chroma.pages.StudentDetails;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
@@ -28,7 +26,7 @@ public class ClassAndSectionStepDef extends PageInitializer {
     @When("SDET is selected")
     public void sdet_is_selected() throws InterruptedException {
         CommonUtils.selectDropDownValue(studentDetailsPage.classDropdown, 0);
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);;
 
     }
 
@@ -41,16 +39,16 @@ public class ClassAndSectionStepDef extends PageInitializer {
     }
 
     @When("Cyber Security is selected")
-    public void cyber_Security_is_selected() throws InterruptedException {
+    public void cyber_Security_is_selected()  {
 
         CommonUtils.selectDropDownValue("Cyber Security", studentDetailsPage.classDropdown);
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);;
     }
 
     @Then("section is selected the following options are shown {string} , {string} , {string} , {string}")
     public void section_is_selected_the_following_options_are_shown(String networkingFundamentals,
             String linuxFundamentals, String cIATriad, String penetrationTestingEtheicalHacking)
-            throws InterruptedException {
+             {
         Select select = new Select(studentDetailsPage.selectDropDown);
         List<WebElement> elements = select.getOptions();
         List<String> cyberOptionTexts = new ArrayList<>();
@@ -61,17 +59,18 @@ public class ClassAndSectionStepDef extends PageInitializer {
 
         CommonUtils.selectDropDownValue(studentDetailsPage.selectDropDown, 1);
         CommonUtils.assertEquals(cyberOptionTexts.get(1), networkingFundamentals);
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
 
         CommonUtils.selectDropDownValue(studentDetailsPage.selectDropDown, 2);
         CommonUtils.assertEquals(cyberOptionTexts.get(2), linuxFundamentals);
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
         CommonUtils.selectDropDownValue(studentDetailsPage.selectDropDown, 3);
         CommonUtils.assertEquals(cyberOptionTexts.get(3), cIATriad);
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
+    
         CommonUtils.selectDropDownValue(studentDetailsPage.selectDropDown, 4);
         CommonUtils.assertEquals(cyberOptionTexts.get(4), penetrationTestingEtheicalHacking);
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
    
 }

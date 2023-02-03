@@ -13,7 +13,7 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/java/com/chroma/features", 
 		glue = "com.chroma.stepDefinitions", 
 		dryRun = false, 
-		tags = "@Test", 
+		tags = "@Gary", 
 		monochrome = true, 
 		strict = true
 ) 

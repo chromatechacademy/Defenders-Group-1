@@ -2,7 +2,10 @@
 package com.chroma.stepDefinitions;
 
 
+import java.io.IOException;
+
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
@@ -52,6 +55,10 @@ public void an_admin_user_is_on_the_page(String url) {
 
                 String reportsAText = studentDashboardPage.reportsModule.getText();
                 CommonUtils.assertEquals(reportsAText, reports);
+
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();
+                
 
 
     
