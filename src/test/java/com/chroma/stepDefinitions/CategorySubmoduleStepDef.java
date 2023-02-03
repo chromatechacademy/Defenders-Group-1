@@ -8,8 +8,8 @@ import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class CategorySubmoduleStepDef extends PageInitializer{
-          /*
+public class CategorySubmoduleStepDef extends PageInitializer {
+    /*
      * CLICKING ON THE STUDENT CATEGORIES FROM STUDENT INFORMATION MODULE
      */
     @Then("admin selects Student Categories")
@@ -74,5 +74,5 @@ public class CategorySubmoduleStepDef extends PageInitializer{
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         Thread.sleep(1000);
-    }  
+    }
 }
