@@ -1,17 +1,16 @@
 package com.chroma.stepDefinitions;
 
-import org.openqa.selenium.JavascriptExecutor;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.RealEstateAdminActiveAgentsPage;
 import com.chroma.pages.RealEstateAdminAgentsPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
+import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
 
 public class RealEstateAddAgentStepDef extends PageInitializer {
 
-    JavascriptExecutor js = ((JavascriptExecutor) driver);
-
+    
     /*
      * CLICKING ON THE AGENTS BUTTON
      */
@@ -70,7 +69,7 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
      */
     @Then("admin goes to active members list")
     public void admin_goes_to_active_members_list() {
-        js.executeScript("arguments[0].click()", realEstateAdminAgentsPage.activeMemberButton);
+        JavascriptUtils.clearByJS(realEstateAdminAgentsPage.activeMemberButton);
     }
 
     /*
@@ -81,8 +80,7 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
             throws InterruptedException {
         String actualAgentEmail = RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail).getText();
         CommonUtils.assertEquals(expectedAgentEmail, actualAgentEmail);
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
-                RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail));
+        JavascriptUtils.scrollIntoView(RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail));
         Thread.sleep(500);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();

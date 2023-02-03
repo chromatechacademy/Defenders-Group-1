@@ -1,6 +1,5 @@
 package com.chroma.stepDefinitions;
 
-import org.openqa.selenium.JavascriptExecutor;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.RealEstateAgentIndexPage;
 import com.chroma.utils.CucumberLogUtils;
@@ -12,7 +11,6 @@ import cucumber.api.java.en.When;
 
 public class RealEstateLoginPageStepDef extends PageInitializer {
 
-    JavascriptExecutor js = ((JavascriptExecutor) driver);
 
     /*
      * NAVIGATING TO REAL ESTATE ADMIN URL

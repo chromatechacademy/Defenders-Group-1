@@ -1,10 +1,9 @@
 package com.chroma.stepDefinitions;
 
-import org.openqa.selenium.JavascriptExecutor;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
-import com.chroma.web.WebDriverUtils;
+import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -70,7 +69,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("enters Date of Birth {string}")
     public void enters_Date_of_Birth(String dob) {
-        CommonUtils.selectDateFromTable(studentAdmissionPage.dobCalendar, dob);
+        JavascriptUtils.selectDateByJS(studentAdmissionPage.dobCalendar, dob);
     }
 
     /*

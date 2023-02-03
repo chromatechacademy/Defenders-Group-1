@@ -1,7 +1,7 @@
 Feature: Create new agent
 
-  @George
-  Scenario: DF-45 Users should be able to login with valid credentials
+  @George  @DF-45
+  Scenario: Users should be able to login with valid credentials
     Given an admin is on the Admin login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
     When the admin logins with valid credentials email "admin@mexil.it" and password "123456"
     Then the admin is landed on a home page with text "Hello, Admin"
