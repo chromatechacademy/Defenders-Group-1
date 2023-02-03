@@ -31,5 +31,6 @@ public class AdminLogsInStepDef extends PageInitializer {
     public void an_admin_is_landed_on_a_home_page_with_URL(String url) {
         String actualHomePageUrl = WebDriverUtils.driver.getCurrentUrl();
         CommonUtils.assertEquals(url, actualHomePageUrl);
+
 }
 }
