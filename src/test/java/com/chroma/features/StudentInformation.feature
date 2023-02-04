@@ -1,4 +1,4 @@
-Feature: Alexandra Scenario
+Feature: Student Information Module
 
 @CTSMSProgression @Alex @DF-4
 Scenario: Checking Module Links
