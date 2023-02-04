@@ -46,5 +46,4 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
     }
-
 }
