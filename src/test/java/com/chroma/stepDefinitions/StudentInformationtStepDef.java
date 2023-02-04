@@ -8,9 +8,7 @@ import cucumber.api.java.en.Then;
 
 public class StudentInformationtStepDef extends PageInitializer{
 
-    /*
-     * CLICKING ON STUDENT INFORMATION MODULE
-     */
+     /* CLICKING ON STUDENT INFORMATION MODULE */
     @Then("an admin clicks on {string} module")
     public void an_admin_clicks_on_module(String moduleText) {
         CucumberLogUtils.logScreenShot();
@@ -19,9 +17,7 @@ public class StudentInformationtStepDef extends PageInitializer{
         CommonUtils.sleep(2000);
     }
 
-    /*
-     * ASSERTING STUDENT INFORMATION MODULES
-     */
+    /* ASSERTING STUDENT INFORMATION MODULES*/
     @Then("the following modules should displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_following_modules_should_displayed(String expectedStudentDetailsModule,
             String expextedStudentAdmissionModule, String expectedDisabledStudentModule,
@@ -42,5 +38,4 @@ public class StudentInformationtStepDef extends PageInitializer{
         String actualDisableReasonText = studentInformationPage.disableReasonModule.getText();
         CommonUtils.assertEquals(actualDisableReasonText, expectedDisableReasonModule);
     }
-
 }

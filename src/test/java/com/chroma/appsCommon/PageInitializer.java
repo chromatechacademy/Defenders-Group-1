@@ -22,9 +22,7 @@ public class PageInitializer extends WebDriverUtils {
     public static StudentSelectionsPage studentSelectionsPage;
     public static StudentAdmissionPage studentAdmissionPage;
     public static StudentCategoriesPage studentCategoriesPage;
-<<<<<<< HEAD
     public static StudentInformationPage studentInformationPage;
-=======
     public static RealEstateAdminWelcomePage realEstateAdminWelcomePage;
     public static RealEstateAgentWelcomePage realEstateAgentWelcomePage;
     public static RealEstateAdminIndexPage realEstateAdminIndexPage;
@@ -32,7 +30,6 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAgentIndexPage realEstateAgentIndexPage;
     public static RealEstateAdminActiveAgentsPage realEstateAdminActiveAgentsPage;
     public static RealEstateAdminInactiveAgentsPage realEstateAdminInactiveAgentsPage;
->>>>>>> 6d0cf40f42810bf2b64a83866d2b67d600078a3a
 
     public void initializeAllPages() {
         studentLoginPage = new StudentLoginPage();
@@ -40,9 +37,7 @@ public class PageInitializer extends WebDriverUtils {
         studentSelectionsPage = new StudentSelectionsPage();
         studentAdmissionPage = new StudentAdmissionPage();
         studentCategoriesPage = new StudentCategoriesPage();
-<<<<<<< HEAD
         studentInformationPage = new StudentInformationPage();
-=======
         realEstateAdminWelcomePage = new RealEstateAdminWelcomePage();
         realEstateAgentWelcomePage = new RealEstateAgentWelcomePage();
         realEstateAdminIndexPage = new RealEstateAdminIndexPage();
@@ -50,7 +45,6 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAgentIndexPage = new RealEstateAgentIndexPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
->>>>>>> 6d0cf40f42810bf2b64a83866d2b67d600078a3a
     }
 
 }
