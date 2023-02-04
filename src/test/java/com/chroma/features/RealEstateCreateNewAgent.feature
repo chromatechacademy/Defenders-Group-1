@@ -8,7 +8,7 @@ Feature: Create new agent
     And the admin clicks on the Agent Button
     Then the admin will land on the Agents page with text "All Agents"
     And the admin clicks on the Add Now Button
-    Then admin enters Agent info "George" "Test" "george@test.com" "999-999-9999" "123456"
+    Then admin enters Agent info "George" "Admission" "george@test.com" "999-999-9999" "123456"
     And admin clicks Save
     Then admin goes to active members list
     Then admin checks if agent with email "george@test.com" was succesfully added

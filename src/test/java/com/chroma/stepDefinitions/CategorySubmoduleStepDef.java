@@ -49,12 +49,12 @@ public class CategorySubmoduleStepDef extends PageInitializer {
      */
     @Then("Category is succesfully saved and confirmation message displays {string}")
     public void category_is_succesfully_saved_and_confirmation_message_displays(
-            String expectedCategorySavesSuccessfulyText) throws InterruptedException {
+            String expectedCategorySavesSuccessfulyText) {
         String actualCategorySavesSuccessfulyText = studentCategoriesPage.categorySaveButton.getText();
         CommonUtils.assertEquals(expectedCategorySavesSuccessfulyText, actualCategorySavesSuccessfulyText);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
 
     /*
@@ -69,10 +69,10 @@ public class CategorySubmoduleStepDef extends PageInitializer {
      * ACCEPT CATEGORY DELETE CONFIRMATION ALERT
      */
     @Then("Category is deleted")
-    public void category_is_deleted() throws InterruptedException {
+    public void category_is_deleted() {
         WebDriverUtils.driver.switchTo().alert().accept();
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
 }

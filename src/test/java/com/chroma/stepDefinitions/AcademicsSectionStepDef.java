@@ -79,11 +79,11 @@ public class AcademicsSectionStepDef extends PageInitializer {
      * ACCEPT SESSION DELETE CONFIRMATION ALERT
      */
     @Then("Section is deleted")
-    public void section_is_deleted() throws InterruptedException {
+    public void section_is_deleted() {
         WebDriverUtils.driver.switchTo().alert().accept();
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
     
 }
