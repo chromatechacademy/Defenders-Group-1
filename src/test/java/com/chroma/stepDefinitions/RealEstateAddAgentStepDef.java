@@ -85,26 +85,4 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
         CucumberLogUtils.logExtentScreenshot();
     }
 
-    /*
-     * DELETING AGENT FROM ACTIVE MEMBER LIST
-     */
-    @Then("admin deletes the agent with emeil {string} from the Active Members List")
-    public void admin_deletes_the_agent_with_emeil_from_the_Active_Members_List(String activeAgentEmail) {
-        RealEstateAdminActiveAgentsPage.activeAgentDeleteDropdownLocator(activeAgentEmail).click();
-        CommonUtils
-                .waitForVisibility(RealEstateAdminActiveAgentsPage.activeAgentDeleteDropdownLocator(activeAgentEmail));
-        RealEstateAdminActiveAgentsPage.activeAgentDeleteLocator(activeAgentEmail).click();
-        CommonUtils.sleep(1000);
-    }
-
-    /*
-     * NAVIGATING TO INACTIVE MEMBER LIST
-     */
-    @Then("admin will navigate to Inactive Members List and check for agent with {string}")
-    public void admin_will_navigate_to_Inactive_Members_List_and_check_for_agent_with(String string) {
-        // CommonUtils.waitForVisibility(realEstateAdminInactiveAgentsPage.inactiveMemberButton);
-        realEstateAdminInactiveAgentsPage.inactiveMemberButton.click();
-        CommonUtils.sleep(1000);
-    }
-
 }
