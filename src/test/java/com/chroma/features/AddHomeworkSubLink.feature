@@ -1,6 +1,6 @@
 Feature: Defenders - Project
 
-@CTSMSRegression @DF-10 @Lili
+@CTSMSRegression @DF-10 
   Scenario: Homework module has "Add homework" option
     Given an admin user is on the login page "https://mexil.it/chroma_tech_academy/dev/site/login"
     When an admin user logins with valid credentials username "general@teacher.com" and password "123456"

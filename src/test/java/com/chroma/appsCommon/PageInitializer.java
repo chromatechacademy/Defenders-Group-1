@@ -2,6 +2,8 @@ package com.chroma.appsCommon;
 
 import com.chroma.pages.StudentLoginPage;
 import com.chroma.pages.StudentSelectionsPage;
+import com.chroma.stepDefinitions.RealEstateNewProjectStepDef;
+import com.chroma.stepsImplementation.RealEstateNewProjectSteps;
 import com.chroma.pages.RealEstateAdminActiveAgentsPage;
 import com.chroma.pages.RealEstateAdminAgentsPage;
 import com.chroma.pages.RealEstateAdminInactiveAgentsPage;
@@ -9,6 +11,7 @@ import com.chroma.pages.RealEstateAdminIndexPage;
 import com.chroma.pages.RealEstateAdminWelcomePage;
 import com.chroma.pages.RealEstateAgentIndexPage;
 import com.chroma.pages.RealEstateAgentWelcomePage;
+import com.chroma.pages.RealEstateNewProjectPage;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentDashboardPage;
@@ -28,6 +31,8 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAgentIndexPage realEstateAgentIndexPage;
     public static RealEstateAdminActiveAgentsPage realEstateAdminActiveAgentsPage;
     public static RealEstateAdminInactiveAgentsPage realEstateAdminInactiveAgentsPage;
+    public static RealEstateNewProjectPage realEstateNewProjectPage;
+    public static RealEstateNewProjectSteps realEstateNewProjectSteps;
 
     public void initializeAllPages() {
         studentLoginPage = new StudentLoginPage();
@@ -42,6 +47,8 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAgentIndexPage = new RealEstateAgentIndexPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
+        realEstateNewProjectPage = new RealEstateNewProjectPage();
+        realEstateNewProjectSteps = new RealEstateNewProjectSteps();
     }
 
 }
