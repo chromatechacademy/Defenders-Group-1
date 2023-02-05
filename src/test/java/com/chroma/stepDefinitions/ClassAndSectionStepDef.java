@@ -8,6 +8,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ClassAndSectionStepDef extends PageInitializer {
+    // Going to the Class sub module site
     @When("an admin user navigates to the Class sub module {string}")
     public void an_admin_user_navigates_to_the_Class_sub_module(String url) {
         studentDashboardPage.academicsModule.click();
@@ -19,7 +20,7 @@ public class ClassAndSectionStepDef extends PageInitializer {
         CommonUtils.sleep(1000);
 
     }
-
+    //Asserting that classes and sections are displayed
     @Then("SDET is displayed {string} with the following sections {string} , {string} , {string} , {string} , {string} , {string}, {string} , {string} , {string} , {string}")
     public void sdet_is_displayed_with_the_following_sections(String SDET, String testingFundamentals,
             String sDLCMethodologies, String seleniumTestAutomation, String cucumberFundamentals, String aPITesting,
@@ -51,10 +52,10 @@ public class ClassAndSectionStepDef extends PageInitializer {
 
     }
 
-   
     @Then("Cyber Security is displayed {string} with the following sections {string} , {string} , {string} , {string}")
-public void cyber_Security_is_displayed_with_the_following_sections(String cyberSecurity, String networkingFundamentals,
-String linuxFundamentals, String cIATriad, String penetrationTestingEtheicalHacking) {
+    public void cyber_Security_is_displayed_with_the_following_sections(String cyberSecurity,
+            String networkingFundamentals,
+            String linuxFundamentals, String cIATriad, String penetrationTestingEtheicalHacking) {
         String actualCyberSecurityText = studentClassPage.cyberSecurityText.getText();
         CommonUtils.assertEquals(actualCyberSecurityText, cyberSecurity);
         String actualNetworkFund = studentClassPage.networkingFundamentalsText.getText();
@@ -67,6 +68,6 @@ String linuxFundamentals, String cIATriad, String penetrationTestingEtheicalHack
         CommonUtils.assertEquals(ActualPeneTestEthicHacking, penetrationTestingEtheicalHacking);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
-}
+    }
 
 }

@@ -9,7 +9,7 @@ import com.chroma.web.WebDriverUtils;
 
 public class StudentDashboardPage {
 
-       // Fees Collection Link
+    // Fees Collection Link
     @FindBy(xpath = "//span[contains(text(),'Fees Collection')]")
     public WebElement feesCollectionLink;
 
@@ -64,19 +64,19 @@ public class StudentDashboardPage {
     // INCOME MODULE
     @FindBy(xpath = "//span[contains(text(),'Income')]")
     public WebElement incomeModule;
-    //EXPENSE MODULE
+    // EXPENSE MODULE
     @FindBy(xpath = "//span[contains(text(),'Expenses')]")
     public WebElement expensesModule;
-    //HUMAN RESOURCE MODULE
+    // HUMAN RESOURCE MODULE
     @FindBy(xpath = "//span[contains(text(),'Human Resource')]")
     public WebElement humanResourceModule;
-    //REPORTS MODULE
+    // REPORTS MODULE
     @FindBy(xpath = "//span[contains(text(),'Reports')]")
     public WebElement reportsModule;
-    //STUDENT DETAILS MODULE
+    // STUDENT DETAILS MODULE
     @FindBy(xpath = "(//a[normalize-space()='Student Details'])[2]")
     public WebElement studentDetailsSubModule;
-    //Class SUB MODULE
+    // Class SUB MODULE
     @FindBy(xpath = "//a[normalize-space()='Class']")
     public WebElement classSubModule;
     // -Gary Add End
@@ -84,10 +84,11 @@ public class StudentDashboardPage {
     public List<WebElement> subLinksOfFeesCollection;
     /**
      * Use this method to locate dynamic elements
-
-    /**
+     * 
+     * /**
      * Use this method to locate dynamic elements
-    /* GEORGE - ACADEMICS MODULE */
+     * /* GEORGE - ACADEMICS MODULE
+     */
     @FindBy(xpath = "//span[normalize-space()='Academics']")
     public WebElement academicsModule;
 
