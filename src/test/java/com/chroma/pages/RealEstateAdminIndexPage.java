@@ -22,5 +22,4 @@ public class RealEstateAdminIndexPage {
     public RealEstateAdminIndexPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
-
 }

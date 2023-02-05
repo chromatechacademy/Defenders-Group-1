@@ -16,6 +16,5 @@ import cucumber.api.junit.Cucumber;
 		strict = true
 ) 
 
-public class CTSMSRegressionRunners {
-    
+public class CTSMSRegressionRunners {   
 }

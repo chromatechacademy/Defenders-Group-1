@@ -1,5 +1,6 @@
 package com.chroma.pages;
 
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -79,9 +80,13 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Class']")
     public WebElement classSubModule;
     // -Gary Add End
+    @FindBy(xpath = "/html/body/div[1]/aside/div/section/ul[2]/li[2]/ul/li")
+    public List<WebElement> subLinksOfFeesCollection;
     /**
      * Use this method to locate dynamic elements
 
+    /**
+     * Use this method to locate dynamic elements
     /* GEORGE - ACADEMICS MODULE */
     @FindBy(xpath = "//span[normalize-space()='Academics']")
     public WebElement academicsModule;
