@@ -1,6 +1,5 @@
 package com.chroma.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -20,15 +19,9 @@ public class StudentLoginPage {
    @FindBy(xpath = "//button[normalize-space()='Sign In']")
    public WebElement signInButton;
 
-   /**
-    * Use this method to locate dynamic elements
-    * 
-    * @param text
-    * @return
-    */
-   public static WebElement sampleDynamicMethod(String text) {
-      return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
-   }
+   /*GEORGE - INVALID USER OR PASSWORD MESSAGE */
+   @FindBy(xpath = "//div[@class='alert alert-danger']")
+   public WebElement invalidUserMessage;
 
    public StudentLoginPage() {
       PageFactory.initElements(WebDriverUtils.driver, this);
