@@ -9,7 +9,7 @@ import com.chroma.web.WebDriverUtils;
 
 public class StudentDashboardPage {
 
-       // Fees Collection Link
+    // Fees Collection Link
     @FindBy(xpath = "//span[contains(text(),'Fees Collection')]")
     public WebElement feesCollectionLink;
 
@@ -57,12 +57,45 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement subLinkHomework;
 
+    // -Gary
+    // STUDENT INFORMATION Module
+    @FindBy(xpath = "//span[contains(text(),'Student Information')]")
+    public WebElement studentInformationModule;
+
+    // INCOME MODULE
+    @FindBy(xpath = "//span[contains(text(),'Income')]")
+    public WebElement incomeModule;
+
+    // EXPENSE MODULE
+    @FindBy(xpath = "//span[contains(text(),'Expenses')]")
+    public WebElement expensesModule;
+
+    // HUMAN RESOURCE MODULE
+    @FindBy(xpath = "//span[contains(text(),'Human Resource')]")
+    public WebElement humanResourceModule;
+
+    // REPORTS MODULE
+    @FindBy(xpath = "//span[contains(text(),'Reports')]")
+    public WebElement reportsModule;
+
+    // STUDENT DETAILS MODULE
+    @FindBy(xpath = "(//a[normalize-space()='Student Details'])[2]")
+    public WebElement studentDetailsSubModule;
+
+    // Class SUB MODULE
+    @FindBy(xpath = "//a[normalize-space()='Class']")
+    public WebElement classSubModule;
+    // -Gary Add End
+
     @FindBy(xpath = "/html/body/div[1]/aside/div/section/ul[2]/li[2]/ul/li")
     public List<WebElement> subLinksOfFeesCollection;
-
     /**
      * Use this method to locate dynamic elements
-    /* GEORGE - ACADEMICS MODULE */
+     * 
+     * /**
+     * Use this method to locate dynamic elements
+     * /* GEORGE - ACADEMICS MODULE
+     */
     @FindBy(xpath = "//span[normalize-space()='Academics']")
     public WebElement academicsModule;
 
