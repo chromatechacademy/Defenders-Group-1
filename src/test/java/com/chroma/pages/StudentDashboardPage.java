@@ -66,9 +66,13 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//span[normalize-space()='Academics']")
     public WebElement academicsModule;
 
-    /* GEORGE - ACADEMICS SUBMODULE */
+    /* GEORGE - SECTION SUBMODULE */
     @FindBy(xpath = "//*[contains(text(),'ections')]")
     public WebElement academicsSections;
+
+     /* GEORGE - ACADEMICS SUBMODULE */
+     @FindBy(xpath = "//a[normalize-space()='Class']")
+     public WebElement classSubmodule;
 
     /**
      * GEORGE - DINAMIC LOCATOR FOR MODULES
