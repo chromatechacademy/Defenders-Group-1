@@ -13,7 +13,6 @@ public class RealEstateNewProjectSteps extends PageInitializer {
         CommonUtils.sendKeys(realEstateNewProjectPage.developerTextBox, "Andrew Smith");
         CommonUtils.sendKeys(realEstateNewProjectPage.titleTextBox, "London");
         CommonUtils.sendKeys(realEstateNewProjectPage.levelTextBox, "1");
-        //CommonUtils.selectDateFromTable(realEstateNewProjectPage.dateTextBox, "02/04/2023");
         CommonUtils.scrollIntoView(realEstateNewProjectPage.streetAddressTextBox);
         CommonUtils.sendKeys(realEstateNewProjectPage.streetAddressTextBox, "Sunshine St");
         CommonUtils.scrollIntoView(realEstateNewProjectPage.nextButton);
