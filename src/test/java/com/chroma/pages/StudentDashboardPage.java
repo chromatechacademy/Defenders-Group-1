@@ -60,7 +60,7 @@ public class StudentDashboardPage {
     @FindBy(xpath = "/html/body/div[1]/aside/div/section/ul[2]/li[2]/ul/li")
     public List<WebElement> subLinksOfFeesCollection;
 
-    /**
+    /*
      * Use this method to locate dynamic elements
     /* GEORGE - ACADEMICS MODULE */
     @FindBy(xpath = "//span[normalize-space()='Academics']")
