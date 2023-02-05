@@ -12,7 +12,7 @@ import cucumber.api.java.en.When;
 public class AdminLogsInStepDef extends PageInitializer {
     // Admin user is on the log in page
     @Given("an admin user is on the login page {string}")
-    public void an_admin_user_is_on_the_login_page(String url) throws IOException, InterruptedException {
+    public void an_admin_user_is_on_the_login_page(String url) {
         WebDriverUtils.driver.get(url);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
