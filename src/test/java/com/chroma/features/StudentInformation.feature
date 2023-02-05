@@ -7,9 +7,3 @@ When an admin user logins with valid credentials username "general@teacher.com" 
 Then an admin is landed on a home page with URL "https://mexil.it/chroma_tech_academy/dev/admin/admin/dashboard"
 And an admin clicks on "Student Information" module
 Then the following modules should displayed: "Student Details", "Student Admission", "Disabled Students", "Bulk Delete", "Student Categories", "Student House", "Disable Reason"
-
-
-
-
-
-   

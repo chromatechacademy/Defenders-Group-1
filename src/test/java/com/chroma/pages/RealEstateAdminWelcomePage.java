@@ -25,6 +25,5 @@ public class RealEstateAdminWelcomePage {
   
    public RealEstateAdminWelcomePage() {
     PageFactory.initElements(WebDriverUtils.driver, this);
- }
-    
+ }   
 }

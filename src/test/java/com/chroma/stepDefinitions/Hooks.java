@@ -19,5 +19,4 @@ public class Hooks extends PageInitializer {
     public void end() {
         tearDown();
     }
-
 }
