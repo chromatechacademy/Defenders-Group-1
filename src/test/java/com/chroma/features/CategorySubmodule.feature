@@ -21,5 +21,3 @@ Feature: Chategory Submodule
       | CAT C    |
       | CAT D    |
       | CAT E    |
-    
-    
