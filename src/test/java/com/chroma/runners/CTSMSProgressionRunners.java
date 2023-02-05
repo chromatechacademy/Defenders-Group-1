@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 		"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, 
 		features = "src/test/java/com/chroma/features", 
 		glue = "com.chroma.stepDefinitions", 
-		tags = "@DF-4", 
+		tags = "@CTSMSProgression", 
 		dryRun = false, 
 		monochrome = true, 
 		strict = true
