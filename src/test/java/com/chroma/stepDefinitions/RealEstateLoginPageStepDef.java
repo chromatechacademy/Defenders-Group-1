@@ -11,7 +11,6 @@ import cucumber.api.java.en.When;
 
 public class RealEstateLoginPageStepDef extends PageInitializer {
 
-
     /*
      * NAVIGATING TO REAL ESTATE ADMIN URL
      */
@@ -110,5 +109,4 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
-
 }

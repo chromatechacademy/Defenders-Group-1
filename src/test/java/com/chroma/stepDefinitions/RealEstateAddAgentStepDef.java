@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.RealEstateAdminActiveAgentsPage;
 import com.chroma.pages.RealEstateAdminAgentsPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
@@ -9,7 +8,6 @@ import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
 
 public class RealEstateAddAgentStepDef extends PageInitializer {
-
     
     /*
      * CLICKING ON THE AGENTS BUTTON
@@ -84,5 +82,4 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
-
 }

@@ -129,5 +129,4 @@ public class StudentAdmissionStepDef extends PageInitializer {
         CommonUtils.assertEquals(expectedAdmissionNumberMustBeUniqueMessage, actualAdmissionNumberMustBeUniqueMessage);
         CommonUtils.sleep(1000);
     }
-
 }

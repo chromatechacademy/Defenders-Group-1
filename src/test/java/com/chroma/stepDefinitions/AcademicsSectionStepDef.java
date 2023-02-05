@@ -10,7 +10,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class AcademicsSectionStepDef extends PageInitializer {
-        /*
+    /*
      * CLICKING ON THE ACADEMICS MODULE
      */
     @Then("admin clicks on {string} module")
@@ -85,5 +85,4 @@ public class AcademicsSectionStepDef extends PageInitializer {
         CucumberLogUtils.logExtentScreenshot();
         CommonUtils.sleep(1000);
     }
-    
 }
