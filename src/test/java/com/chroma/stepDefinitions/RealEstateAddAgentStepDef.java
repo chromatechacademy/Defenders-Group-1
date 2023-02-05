@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.RealEstateAdminActiveAgentsPage;
 import com.chroma.pages.RealEstateAdminAgentsPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
@@ -9,7 +8,6 @@ import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
 
 public class RealEstateAddAgentStepDef extends PageInitializer {
-
     
     /*
      * CLICKING ON THE AGENTS BUTTON
@@ -43,12 +41,12 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
      */
     @Then("admin enters Agent info {string} {string} {string} {string} {string}")
     public void admin_enters_Agent_info(String agentFirstName, String agentLastName, String agentEmail,
-            String agentPhone, String agentPassword) throws InterruptedException {
+            String agentPhone, String agentPassword) {
         realEstateAdminAgentsPage.enterAgentFirstName.sendKeys(agentFirstName);
         realEstateAdminAgentsPage.enterAgentLasttName.sendKeys(agentLastName);
         realEstateAdminAgentsPage.enterAgentEmail.sendKeys(agentEmail);
         realEstateAdminAgentsPage.enterAgentPhone.sendKeys(agentPhone);
-        Thread.sleep(500);
+        CommonUtils.sleep(500);
         realEstateAdminAgentsPage.enterAgentPassword.sendKeys(agentPassword);
         realEstateAdminAgentsPage.enterAgentCPassword.sendKeys(agentPassword);
         CucumberLogUtils.logScreenShot();
@@ -59,9 +57,9 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
      * SAVE THE AGENT INFO
      */
     @Then("admin clicks Save")
-    public void admin_clicks_Save() throws InterruptedException {
+    public void admin_clicks_Save() {
         realEstateAdminAgentsPage.saveInfoButton.click();
-        Thread.sleep(500);
+        CommonUtils.sleep(500);
     }
 
     /*
@@ -76,38 +74,12 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
      * ASSERTING IF AGENT IS SUCCESFULLY ADDED
      */
     @Then("admin checks if agent with email {string} was succesfully added")
-    public void admin_checks_if_agent_with_email_was_succesfully_added(String expectedAgentEmail)
-            throws InterruptedException {
+    public void admin_checks_if_agent_with_email_was_succesfully_added(String expectedAgentEmail) {
         String actualAgentEmail = RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail).getText();
         CommonUtils.assertEquals(expectedAgentEmail, actualAgentEmail);
         JavascriptUtils.scrollIntoView(RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail));
-        Thread.sleep(500);
+        CommonUtils.sleep(500);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
-
-    /*
-     * DELETING AGENT FROM ACTIVE MEMBER LIST
-     */
-    @Then("admin deletes the agent with emeil {string} from the Active Members List")
-    public void admin_deletes_the_agent_with_emeil_from_the_Active_Members_List(String activeAgentEmail)
-            throws InterruptedException {
-        RealEstateAdminActiveAgentsPage.activeAgentDeleteDropdownLocator(activeAgentEmail).click();
-        CommonUtils
-                .waitForVisibility(RealEstateAdminActiveAgentsPage.activeAgentDeleteDropdownLocator(activeAgentEmail));
-        RealEstateAdminActiveAgentsPage.activeAgentDeleteLocator(activeAgentEmail).click();
-        Thread.sleep(10000);
-    }
-
-    /*
-     * NAVIGATING TO INACTIVE MEMBER LIST
-     */
-    @Then("admin will navigate to Inactive Members List and check for agent with {string}")
-    public void admin_will_navigate_to_Inactive_Members_List_and_check_for_agent_with(String string)
-            throws InterruptedException {
-        // CommonUtils.waitForVisibility(realEstateAdminInactiveAgentsPage.inactiveMemberButton);
-        realEstateAdminInactiveAgentsPage.inactiveMemberButton.click();
-        Thread.sleep(1000);
-    }
-
 }

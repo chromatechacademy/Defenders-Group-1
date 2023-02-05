@@ -2,8 +2,8 @@ package com.chroma.appsCommon;
 
 import com.chroma.pages.StudentLoginPage;
 import com.chroma.pages.StudentSelectionsPage;
-import com.chroma.stepDefinitions.RealEstateNewProjectStepDef;
 import com.chroma.stepsImplementation.RealEstateNewProjectSteps;
+import com.chroma.pages.StudentClassPage;
 import com.chroma.pages.RealEstateAdminActiveAgentsPage;
 import com.chroma.pages.RealEstateAdminAgentsPage;
 import com.chroma.pages.RealEstateAdminInactiveAgentsPage;
@@ -15,15 +15,20 @@ import com.chroma.pages.RealEstateNewProjectPage;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentDashboardPage;
+import com.chroma.pages.StudentDetails;
+import com.chroma.pages.StudentInformationPage;
 import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
 
     public static StudentLoginPage studentLoginPage;
     public static StudentDashboardPage studentDashboardPage;
+    public static StudentDetails studentDetailsPage;
     public static StudentSelectionsPage studentSelectionsPage;
     public static StudentAdmissionPage studentAdmissionPage;
     public static StudentCategoriesPage studentCategoriesPage;
+    public static StudentClassPage studentClassPage;
+    public static StudentInformationPage studentInformationPage;
     public static RealEstateAdminWelcomePage realEstateAdminWelcomePage;
     public static RealEstateAgentWelcomePage realEstateAgentWelcomePage;
     public static RealEstateAdminIndexPage realEstateAdminIndexPage;
@@ -37,9 +42,12 @@ public class PageInitializer extends WebDriverUtils {
     public void initializeAllPages() {
         studentLoginPage = new StudentLoginPage();
         studentDashboardPage = new StudentDashboardPage();
+        studentDetailsPage = new StudentDetails();
         studentSelectionsPage = new StudentSelectionsPage();
         studentAdmissionPage = new StudentAdmissionPage();
         studentCategoriesPage = new StudentCategoriesPage();
+        studentClassPage = new StudentClassPage();
+        studentInformationPage = new StudentInformationPage();
         realEstateAdminWelcomePage = new RealEstateAdminWelcomePage();
         realEstateAgentWelcomePage = new RealEstateAgentWelcomePage();
         realEstateAdminIndexPage = new RealEstateAdminIndexPage();
@@ -50,5 +58,4 @@ public class PageInitializer extends WebDriverUtils {
         realEstateNewProjectPage = new RealEstateNewProjectPage();
         realEstateNewProjectSteps = new RealEstateNewProjectSteps();
     }
-
 }
