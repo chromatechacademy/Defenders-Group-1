@@ -18,15 +18,14 @@ public class ClassAndSectionStepDef extends PageInitializer {
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
         CommonUtils.sleep(1000);
-
     }
-    //Asserting that classes and sections are displayed
+
+    // Asserting that classes and sections are displayed
     @Then("SDET is displayed {string} with the following sections {string} , {string} , {string} , {string} , {string} , {string}, {string} , {string} , {string} , {string}")
     public void sdet_is_displayed_with_the_following_sections(String SDET, String testingFundamentals,
             String sDLCMethodologies, String seleniumTestAutomation, String cucumberFundamentals, String aPITesting,
             String gitGithub, String java11ForCoolPeople, String mobileTestAutomation, String accessibilityTesting,
             String dataBaseTesting) {
-
         String actualSDETText = studentClassPage.sDETText.getText();
         CommonUtils.assertEquals(actualSDETText, SDET);
         String actualTestingFundamentalString = studentClassPage.testingFundamentalsText.getText();
@@ -49,7 +48,6 @@ public class ClassAndSectionStepDef extends PageInitializer {
         CommonUtils.assertEquals(actualAccessTesting, accessibilityTesting);
         String actualDataBTest = studentClassPage.dataBaseTestingText.getText();
         CommonUtils.assertEquals(actualDataBTest, dataBaseTesting);
-
     }
 
     @Then("Cyber Security is displayed {string} with the following sections {string} , {string} , {string} , {string}")
@@ -69,5 +67,4 @@ public class ClassAndSectionStepDef extends PageInitializer {
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
     }
-
 }
