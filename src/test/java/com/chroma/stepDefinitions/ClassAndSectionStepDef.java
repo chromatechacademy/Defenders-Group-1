@@ -50,6 +50,7 @@ public class ClassAndSectionStepDef extends PageInitializer {
         CommonUtils.assertEquals(actualDataBTest, dataBaseTesting);
     }
 
+    // Asserting that classes and sections are displayed
     @Then("Cyber Security is displayed {string} with the following sections {string} , {string} , {string} , {string}")
     public void cyber_Security_is_displayed_with_the_following_sections(String cyberSecurity,
             String networkingFundamentals,
