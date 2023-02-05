@@ -21,4 +21,4 @@ Feature: Admitt Student
 
         Examples:
             | ADMISSION NUMBER | CLASS          | SECTION                 | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | GUARDIAN PHONE NUMBER |
-            | 779773           | Cyber Security | Networking Fundamentals | George     | One       | Female | 02/22/1991 | Jannet One   | 7026875816            |
+            | 779776           | Cyber Security | Networking Fundamentals | George     | One       | Female | 02/22/1991 | Jannet One   | 7026875816            |
