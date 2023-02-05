@@ -15,6 +15,7 @@ public class StudentInformationtStepDef extends PageInitializer{
         CucumberLogUtils.logExtentScreenshot();
         StudentDashboardPage.dynamicModuleLocator(moduleText).click();
         CommonUtils.sleep(2000);
+  
     }
 
     /* ASSERTING STUDENT INFORMATION MODULES*/
