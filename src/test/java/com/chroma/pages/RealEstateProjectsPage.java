@@ -7,23 +7,23 @@ import com.chroma.web.WebDriverUtils;
 
 public class RealEstateProjectsPage {
 
-    /* PROJECTS PAGE ELEMENT */
+    /* Projects Page Element */
     @FindBy(xpath = "//span[normalize-space()='Projects']")
     public static WebElement projectsTabPageElement;
 
-    /* ADD NEW PROJECT PAGE ELEMENT */
+    /* Add New Project Page Element */
     @FindBy(xpath = "//a[@class='btn btn-primary btn-lg sidebar-cta']")
     public static WebElement addNewProjectElement;
 
-    /* PROJECTS PAGE ELEMENT */
+    /* Projects Page Element */
     @FindBy(xpath = "//button[@class='sidebar-item']")
     public static WebElement projectsPageElement;
 
-    /* ACTIVE RADIAL BUTTON */
+    /* Active Radial Button */
     @FindBy(xpath = "//a[normalize-space()='Active']")
     public static WebElement activeRadialButton;
     
-    /* ARCHIVED RADIAL BUTTON */
+    /* Archived Radial Button */
     @FindBy(xpath = "//a[normalize-space()='Archived']")
     public static WebElement archivedRadialButton;
 
