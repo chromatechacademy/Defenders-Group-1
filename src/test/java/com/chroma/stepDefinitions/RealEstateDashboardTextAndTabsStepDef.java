@@ -28,24 +28,34 @@ public class RealEstateDashboardTextAndTabsStepDef extends PageInitializer {
     public void the_admin_should_see_the_following_elements_and_the_following_tabs(String dashboard, String helloAdmin,
             String overview, String agentsGraph, String propertiesOverview, String properties, String agentsTab, String dashboardTab,
             String projectsTab) {
+        
         String actualDashboardElementText = realEstateAdminDashboardPage.dashboardElementText.getText();
         CommonUtils.assertEquals(dashboard, actualDashboardElementText);
+        
         String actualHelloAdminText = realEstateAdminDashboardPage.helloAdminText.getText();
         CommonUtils.assertEquals(helloAdmin, actualHelloAdminText);
+        
         String actualOverviewElementText = realEstateAdminDashboardPage.overviewText.getText();
         CommonUtils.assertEquals(overview, actualOverviewElementText);
+        
         String actualAgentsGraphText = realEstateAdminDashboardPage.agentsGraphText.getText();
         CommonUtils.assertEquals(agentsGraph, actualAgentsGraphText);
+        
         String actualPropertiesOverviewText = realEstateAdminDashboardPage.propertiesOverviewText.getText();
         CommonUtils.assertEquals(propertiesOverview, actualPropertiesOverviewText);
+        
         String actualPropertiesText = realEstateAdminDashboardPage.propertiesText.getText();
         CommonUtils.assertEquals(properties, actualPropertiesText);
+        
         String actualAgentsTabText = realEstateAdminDashboardPage.agentsTab.getText();
         CommonUtils.assertEquals(agentsTab, actualAgentsTabText);
+        
         String actualDashboardTabText = realEstateAdminDashboardPage.dashboardTab.getText();
         CommonUtils.assertEquals(dashboardTab, actualDashboardTabText);
+        
         String actualProjectsTabText = realEstateAdminDashboardPage.projectsTab.getText();
         CommonUtils.assertEquals(projectsTab, actualProjectsTabText);
+        
         CucumberLogUtils.logExtentScreenshot();
      }
 }
