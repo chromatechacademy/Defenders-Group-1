@@ -11,8 +11,3 @@ Feature: edit student records by searching student detail
     Then the user is on the page "https://mexil.it/chroma_tech_academy/dev/student/edit/719"
     When an admin edits information "Testing" of the user and clicks save
     Then the message Record Update "Record Update Successfully"
-
-    #Examples: 
-     # | LAST NAME |
-     # | Test1     |
-     # | Test2     |
