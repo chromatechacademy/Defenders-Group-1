@@ -13,6 +13,7 @@ public class IncomeModuleStepDefinitions extends PageInitializer{
     public void clicks_on_Income_Module() throws InterruptedException {
         incomeModulePage.incomeModule.click();
         Thread.sleep(2000);
+        
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
@@ -22,10 +23,13 @@ public class IncomeModuleStepDefinitions extends PageInitializer{
 
         String actualAddIncomeText = incomeModulePage.addIncomeSubModule.getText();
         CommonUtils.assertEquals(expectedAddIncomeText, actualAddIncomeText);
+        
         String actualSearchIncomeText = incomeModulePage.searchIncomeSubModule.getText();
         CommonUtils.assertEquals(expectedSearchIncomeText, actualSearchIncomeText);
+        
         String actualIncomeHeadText = incomeModulePage.incomeHeadSubModule.getText();
         CommonUtils.assertEquals(expectedIncomeHeadText, actualIncomeHeadText);
+        
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }

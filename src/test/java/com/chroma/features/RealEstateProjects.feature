@@ -1,6 +1,6 @@
 Feature: Projects Page Dropdown Elements
 
-    @RealEstateProgression @Sarwar @DF-48
+    @RealEstateRegression @Sarwar @DF-48
     Scenario Outline: Verify Elements on Projects Page
         Given an admin is on the Admin login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
         When the admin logins with valid credentials email "admin@mexil.it" and password "123456"

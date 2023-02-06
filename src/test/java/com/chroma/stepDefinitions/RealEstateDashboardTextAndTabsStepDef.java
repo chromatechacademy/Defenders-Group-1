@@ -18,9 +18,11 @@ public class RealEstateDashboardTextAndTabsStepDef extends PageInitializer {
     public void admin_logs_in_with_valid_credentials_email_and_password(String email, String password){
         JavascriptUtils.scrollIntoView(realEstateAdminWelcomePage.logInButton);
         CommonUtils.sleep(3000);
+        
         realEstateAdminWelcomePage.emailTextBox.sendKeys(email);
         realEstateAdminWelcomePage.passwordTextBox.sendKeys(password);
         realEstateAdminWelcomePage.logInButton.click();
+        
         CucumberLogUtils.logExtentScreenshot();
     }
 
