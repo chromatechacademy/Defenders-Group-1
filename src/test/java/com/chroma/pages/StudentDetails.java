@@ -7,23 +7,36 @@ import com.chroma.web.WebDriverUtils;
 
 public class StudentDetails {
 
-    // CLASS DROP DOWN
+    //CLASS DROP DOWN
     @FindBy(xpath = "//select[@id ='class_id']")
     public WebElement classDropdown;
 
-    // SECTION DROP DOWN
+    //SECTION DROP DOWN
     @FindBy(xpath = "//select[@id = 'section_id']")
-    public WebElement selectDropDown;
+    public WebElement sectionDropDown;
 
     //SEARCH BUTTON LOCATOR
     @FindBy(xpath = "//button[@value='search_filter']")
     public WebElement searchButton;
 
-    // Edit button locator
-    @FindBy(xpath = "//tbody/tr[5]/td[11]/a[2]/i[1]")
+    //EDIT BUTTON LOCATOR
+    @FindBy(xpath = "//tr[@class='odd']//i[@class='fa fa-pencil']")
     public WebElement editButton;
+
+    //Last Name Textbox
+    @FindBy(xpath ="//input[@id='lastname']")
+    public WebElement lastNameTextBox;
+
+    //Save button 
+    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
+    public WebElement saveButton;
+
+    //RECORD UPDATE SUCCESS MESSAGE LOCATOR
+    @FindBy(xpath = "//div[@student='alert alert-success text-left']")
+    public WebElement recordUpdateSuccessMessage;
 
     public StudentDetails() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
+
 }

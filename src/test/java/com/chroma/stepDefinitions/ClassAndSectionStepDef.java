@@ -13,8 +13,8 @@ public class ClassAndSectionStepDef extends PageInitializer {
     public void an_admin_user_navigates_to_the_Class_sub_module(String url) {
         studentDashboardPage.academicsModule.click();
         studentDashboardPage.classSubModule.click();
-        String studentDetailsUrl = WebDriverUtils.driver.getCurrentUrl();
-        CommonUtils.assertEquals(url, studentDetailsUrl);
+        String studentClassUrl = WebDriverUtils.driver.getCurrentUrl();
+        CommonUtils.assertEquals(url, studentClassUrl);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
         CommonUtils.sleep(1000);
