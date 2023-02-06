@@ -40,8 +40,6 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAdminInactiveAgentsPage realEstateAdminInactiveAgentsPage;
     public static RealEstateNewProjectPage realEstateNewProjectPage;
     public static RealEstateNewProjectSteps realEstateNewProjectSteps;
-    
-
 
     public void initializeAllPages() {
         studentLoginPage = new StudentLoginPage();
