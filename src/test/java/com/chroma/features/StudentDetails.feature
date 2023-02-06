@@ -1,6 +1,6 @@
 Feature: edit student records by searching student detail
 
-  @CTSMSProgression @DF-14 @Gary
+  @CTSMSRegression @DF-14 @Gary
   Scenario: Edit a student details
     Given an admin user is on the login page "https://mexil.it/chroma_tech_academy/dev/site/login"
     When an admin user logins with valid credentials username "general@teacher.com" and password "123456"

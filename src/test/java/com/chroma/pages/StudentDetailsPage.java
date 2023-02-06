@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.chroma.web.WebDriverUtils;
 
-public class StudentDetails {
+public class StudentDetailsPage {
 
     //CLASS DROP DOWN
     @FindBy(xpath = "//select[@id ='class_id']")
@@ -35,7 +35,7 @@ public class StudentDetails {
     @FindBy(xpath = "//div[@student='alert alert-success text-left']")
     public WebElement recordUpdateSuccessMessage;
 
-    public StudentDetails() {
+    public StudentDetailsPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
