@@ -33,6 +33,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
     public void enters_Student_unique_Admission_Number(String admissionNumber) {
         studentAdmissionPage.studentAdmissionNumberTextBox.sendKeys(admissionNumber);
         CommonUtils.sleep(1000);
+
     }
 
     /*
@@ -42,7 +43,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
     public void selects_Class_and_Section(String className, String sectionName) {
         CommonUtils.selectDropDownValue(className, studentAdmissionPage.classDropDown);
         CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropDown);
-        ;
+
     }
 
     /*

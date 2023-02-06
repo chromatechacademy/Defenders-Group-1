@@ -1,6 +1,6 @@
 Feature: Real Estate
 
-@RealEstateRegression @Lili @DF-49
+@RealEstateProgression @Lili @DF-49
 Scenario: Real Estate - New Project
 Given an admin is on the Admin login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
 When the admin logins with valid credentials email "admin@mexil.it" and password "123456"

@@ -2,6 +2,7 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.RealEstateNewProjectSteps;
+import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,6 +17,8 @@ public class RealEstateNewProjectStepDef extends PageInitializer {
     @When("an admin user clicks on Add New Project button")
     public void an_admin_user_clicks_on_Add_New_Project_button() {
         realEstateNewProjectPage.addNewProjestButton.click();
+        CucumberLogUtils.logExtentScreenshot();
+        CucumberLogUtils.logScreenShot();    
     }
     @Then("an admin user fills out the Project Details information")
     public void an_admin_user_fills_out_the_Project_Details_information() {
@@ -27,5 +30,7 @@ public class RealEstateNewProjectStepDef extends PageInitializer {
         String actualLondonText = realEstateNewProjectPage.projectLondon.getText();
         System.out.println("Print Text " + actualLondonText);
         CommonUtils.assertEquals(actualLondonText, "London");
+        CucumberLogUtils.logExtentScreenshot();
+        CucumberLogUtils.logScreenShot();
     }
 }
