@@ -115,7 +115,7 @@
 				<configuration>
 					<includes>
 						<include>
-						   CTSMSProgressionRunners.java
+							RealEstateProgressionRunners.java
 						</include>
 					</includes>
 					<testFailureIgnore>true</testFailureIgnore> <!-- to get report even when fails -->

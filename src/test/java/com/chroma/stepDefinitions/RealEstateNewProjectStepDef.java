@@ -14,21 +14,24 @@ public class RealEstateNewProjectStepDef extends PageInitializer {
     public void an_admin_user_navigates_to_Project_page() {
         realEstateNewProjectPage.projectsButton.click();
     }
+
     @When("an admin user clicks on Add New Project button")
     public void an_admin_user_clicks_on_Add_New_Project_button() {
         realEstateNewProjectPage.addNewProjestButton.click();
         CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();    
+        CucumberLogUtils.logScreenShot();
     }
-    @Then("an admin user fills out the Project Details information")
-    public void an_admin_user_fills_out_the_Project_Details_information() {
-        RealEstateNewProjectSteps.newProjectStepsImplementation();
+
+    @Then("an admin user fills out the Project Details information such as {string}, {string}, {string}, <{string}> {string}, {string}")
+    public void an_admin_user_fills_out_the_Project_Details_information_such_as(String developer, String title,
+            String level, String date, String street, String currency) {
+        RealEstateNewProjectSteps.fillingOutNewProjectForm(developer, title, level, date, street, currency);
     }
+
     @Then("the new project has been added")
     public void the_new_project_has_been_added() {
         CommonUtils.scrollIntoView(realEstateNewProjectPage.projectLondon);
         String actualLondonText = realEstateNewProjectPage.projectLondon.getText();
-        System.out.println("Print Text " + actualLondonText);
         CommonUtils.assertEquals(actualLondonText, "London");
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
