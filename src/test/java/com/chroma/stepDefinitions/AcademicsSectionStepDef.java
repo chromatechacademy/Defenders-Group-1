@@ -10,7 +10,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class AcademicsSectionStepDef extends PageInitializer {
-        /*
+    /*
      * CLICKING ON THE ACADEMICS MODULE
      */
     @Then("admin clicks on {string} module")
@@ -79,11 +79,10 @@ public class AcademicsSectionStepDef extends PageInitializer {
      * ACCEPT SESSION DELETE CONFIRMATION ALERT
      */
     @Then("Section is deleted")
-    public void section_is_deleted() throws InterruptedException {
+    public void section_is_deleted() {
         WebDriverUtils.driver.switchTo().alert().accept();
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
-    
 }

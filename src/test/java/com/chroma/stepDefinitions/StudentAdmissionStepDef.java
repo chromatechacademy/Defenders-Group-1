@@ -30,9 +30,9 @@ public class StudentAdmissionStepDef extends PageInitializer {
      * ENTERING ADMISSION NUMBER
      */
     @Then("enters Student unique Admission Number {string}")
-    public void enters_Student_unique_Admission_Number(String admissionNumber) throws InterruptedException {
+    public void enters_Student_unique_Admission_Number(String admissionNumber) {
         studentAdmissionPage.studentAdmissionNumberTextBox.sendKeys(admissionNumber);
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
 
     /*
@@ -100,36 +100,33 @@ public class StudentAdmissionStepDef extends PageInitializer {
      * PRESSING SAVE BUTTON
      */
     @Then("clicks on the Save button")
-    public void clicks_on_the_Save_button() throws InterruptedException {
+    public void clicks_on_the_Save_button() {
         studentAdmissionPage.saveButton.click();
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
 
     /*
      * ASSERTING RECORD SAVED SUCCESFULLY IS DISPLEIED ON STUDENT ADMISSION PAGE
      */
     @Then("student is succesfuly saved and confirmation message is displayed {string}")
-    public void student_is_succesfuly_saved_and_confirmation_message_is_displayed(String expectedSuccessMessage)
-            throws InterruptedException {
+    public void student_is_succesfuly_saved_and_confirmation_message_is_displayed(String expectedSuccessMessage) {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         String actualSuccessMessage = studentAdmissionPage.succesfulySavedMessage.getText();
         CommonUtils.assertEquals(expectedSuccessMessage, actualSuccessMessage);
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
 
     /*
      * ASSERTING THE ADMISSION NO FIELD MUST CONTAIN A UNIQUE VALUE IS DISPLAYED
      */
     @Then("the Student is not admitted and {string} is displayed")
-    public void the_Student_is_not_admitted_and_is_displayed(String expectedAdmissionNumberMustBeUniqueMessage)
-            throws InterruptedException {
+    public void the_Student_is_not_admitted_and_is_displayed(String expectedAdmissionNumberMustBeUniqueMessage) {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         String actualAdmissionNumberMustBeUniqueMessage = studentAdmissionPage.admissionNumberMustBeUniqueMessage
                 .getText();
         CommonUtils.assertEquals(expectedAdmissionNumberMustBeUniqueMessage, actualAdmissionNumberMustBeUniqueMessage);
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
-
 }

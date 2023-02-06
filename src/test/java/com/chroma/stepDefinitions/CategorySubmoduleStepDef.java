@@ -1,5 +1,9 @@
 package com.chroma.stepDefinitions;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.utils.CucumberLogUtils;
@@ -49,12 +53,12 @@ public class CategorySubmoduleStepDef extends PageInitializer {
      */
     @Then("Category is succesfully saved and confirmation message displays {string}")
     public void category_is_succesfully_saved_and_confirmation_message_displays(
-            String expectedCategorySavesSuccessfulyText) throws InterruptedException {
+            String expectedCategorySavesSuccessfulyText) {
         String actualCategorySavesSuccessfulyText = studentCategoriesPage.categorySaveButton.getText();
         CommonUtils.assertEquals(expectedCategorySavesSuccessfulyText, actualCategorySavesSuccessfulyText);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
 
     /*
@@ -69,10 +73,36 @@ public class CategorySubmoduleStepDef extends PageInitializer {
      * ACCEPT CATEGORY DELETE CONFIRMATION ALERT
      */
     @Then("Category is deleted")
-    public void category_is_deleted() throws InterruptedException {
+    public void category_is_deleted() {
         WebDriverUtils.driver.switchTo().alert().accept();
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-        Thread.sleep(1000);
+        CommonUtils.sleep(1000);
     }
+    /* GEORGE - CREATE CATEGORY TEXT */
+
+    @FindBy(xpath = "//h3[@class='box-title']")
+    public WebElement createCategoryText;
+
+    /* GEORGE - CATEGORY TEXT BOX */
+    @FindBy(xpath = "//input[@id='category']")
+    public WebElement categoryText;
+
+    /* GEORGE - SAVE BUTTON */
+    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
+    public WebElement categorySaveButton;
+
+    /* GEORGE - CATEGORY - RECORD SAVED SUCCESFULLY TEXT */
+    @FindBy(xpath = "//div[@class='alert alert-success text-left']")
+    public WebElement categorySavedSuccesfullyText;
+
+    /* GEORGE - CCATEGORY - DYNAMIC LOCATOR FOR CATEGORY DELETE BUTTON */
+    public static WebElement categoryDeleteLocator(String categoryNameText) {
+        return WebDriverUtils.driver.findElement(By.xpath("//td[normalize-space()='" + categoryNameText
+                + "']//parent::td/parent::tr//child::td[3]//child::a[2]/i"));
+    }
+
+    public StudentCategoriesPage() {
+    PageFactory.initElements(WebDriverUtils.driver, this);
+}
 }

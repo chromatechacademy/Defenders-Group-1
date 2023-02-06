@@ -129,16 +129,14 @@ public class WebDriverUtils {
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-
             }
+
         } else {
             throw new RuntimeException("Invalid browser name");
         }
-
     }
 
     public static void tearDown() {
         driver.quit();
     }
-
 }
