@@ -15,6 +15,14 @@ public class StudentDetails {
     @FindBy(xpath = "//select[@id = 'section_id']")
     public WebElement selectDropDown;
 
+    //SEARCH BUTTON LOCATOR
+    @FindBy(xpath = "//button[@value='search_filter']")
+    public WebElement searchButton;
+
+    // Edit button locator
+    @FindBy(xpath = "//tbody/tr[5]/td[11]/a[2]/i[1]")
+    public WebElement editButton;
+
     public StudentDetails() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
