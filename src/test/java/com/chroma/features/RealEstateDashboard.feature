@@ -1,6 +1,6 @@
 Feature: Real Estate Dashboard
 
-@RealEstateProgression
+@InProgress @Gary @DF-43
   Scenario: Displaying two graphs
     Given an admin is on the Admin login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
     When the admin logins with valid credentials email "admin@mexil.it" and password "123456"
