@@ -18,6 +18,9 @@ import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentDashboardPage;
 import com.chroma.pages.StudentDetails;
 import com.chroma.pages.StudentInformationPage;
+import com.chroma.pages.IncomeModulePage;
+import com.chroma.pages.RealEstateAdminDashboardPage;
+import com.chroma.pages.RealEstateProjectsPage;
 import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
@@ -38,6 +41,9 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAgentIndexPage realEstateAgentIndexPage;
     public static RealEstateAdminActiveAgentsPage realEstateAdminActiveAgentsPage;
     public static RealEstateAdminInactiveAgentsPage realEstateAdminInactiveAgentsPage;
+    public static IncomeModulePage incomeModulePage;
+    public static RealEstateAdminDashboardPage realEstateAdminDashboardPage;
+    public static RealEstateProjectsPage realEstateProjectsPage;
     public static RealEstateNewProjectPage realEstateNewProjectPage;
     public static RealEstateNewProjectSteps realEstateNewProjectSteps;
 
@@ -50,7 +56,8 @@ public class PageInitializer extends WebDriverUtils {
         studentCategoriesPage = new StudentCategoriesPage();
         studentClassPage = new StudentClassPage();
         bulkDeletePage = new BulkDeletePage();
-        studentInformationPage = new StudentInformationPage();       
+        studentInformationPage = new StudentInformationPage();
+        incomeModulePage = new IncomeModulePage();
         realEstateAdminWelcomePage = new RealEstateAdminWelcomePage();
         realEstateAgentWelcomePage = new RealEstateAgentWelcomePage();
         realEstateAdminIndexPage = new RealEstateAdminIndexPage();
@@ -58,7 +65,10 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAgentIndexPage = new RealEstateAgentIndexPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
-        realEstateNewProjectPage = new RealEstateNewProjectPage();
-        realEstateNewProjectSteps = new RealEstateNewProjectSteps();
+        realEstateAdminDashboardPage = new RealEstateAdminDashboardPage();
+        realEstateProjectsPage = new RealEstateProjectsPage();
+
+
+
     }
 }
