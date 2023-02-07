@@ -10,6 +10,9 @@ import cucumber.api.java.en.When;
 
 public class StudentAddDeleteClass extends PageInitializer {
 
+    /*
+     * SELECTING GLASS MODULE
+     */
     @Then("admin selects Class")
     public void admin_selects_Class() {
         studentDashboardPage.classSubmodule.click();
