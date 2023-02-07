@@ -48,9 +48,13 @@ public class RealEstateAdminAgentsPage {
     @FindBy(xpath = "//a[normalize-space()='Active']")
     public WebElement activeMemberButton;
 
+     /* GEORGE - INACTIVE MEMBER RADIO BUTTON */
+    @FindBy(xpath = "//a[normalize-space()='Inactive']")
+    public WebElement inactiveMemberButton;
+
     /* GEORGE - DYNAMIC LOCATOR FOR EMAIL ADDRESS */
-    public static WebElement agentEmailLocator(String agentEmail) {
-        return WebDriverUtils.driver.findElement(By.xpath("//td[normalize-space()='" + agentEmail + "']"));
+    public static WebElement agentEmailLocator(String actualAgentEmail) {
+        return WebDriverUtils.driver.findElement(By.xpath("//td[normalize-space()='" + actualAgentEmail + "']"));
     }
 
     /* GEORGE - ADMIN LOG OUT BUTTON */

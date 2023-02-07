@@ -1,14 +1,16 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.pages.RealEstateAdminActiveAgentsPage;
 import com.chroma.pages.RealEstateAdminAgentsPage;
+import com.chroma.pages.RealEstateAdminInactiveAgentsPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
 
 public class RealEstateAddAgentStepDef extends PageInitializer {
-    
+
     /*
      * CLICKING ON THE AGENTS BUTTON
      */
@@ -75,10 +77,35 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
      */
     @Then("admin checks if agent with email {string} was succesfully added")
     public void admin_checks_if_agent_with_email_was_succesfully_added(String expectedAgentEmail) {
+        JavascriptUtils.scrollIntoView(RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail));
         String actualAgentEmail = RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail).getText();
         CommonUtils.assertEquals(expectedAgentEmail, actualAgentEmail);
-        JavascriptUtils.scrollIntoView(RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail));
         CommonUtils.sleep(500);
+        CucumberLogUtils.logScreenShot();
+        CucumberLogUtils.logExtentScreenshot();
+    }
+
+    /*
+     * DELETE AGENT FROM THE DATABASE
+     */
+    @Then("delete Agent with email {string} from database")
+    public void delete_Agent_with_email_from_database(String deletinAgentEmail) {
+        JavascriptUtils.clickByJS(realEstateAdminAgentsPage.activeMemberButton);
+        JavascriptUtils.scrollIntoView(RealEstateAdminAgentsPage.agentEmailLocator(deletinAgentEmail));
+        RealEstateAdminActiveAgentsPage.activeAgentDeleteDropdownLocator(deletinAgentEmail).click();
+        CommonUtils
+                .waitForVisibility(RealEstateAdminActiveAgentsPage.activeAgentDeleteDropdownLocator(deletinAgentEmail));
+        RealEstateAdminActiveAgentsPage.activeAgentDeleteLocator(deletinAgentEmail).click();
+        JavascriptUtils.clickByJS(realEstateAdminIndexPage.agentsButton);
+        JavascriptUtils.clickByJS(realEstateAdminAgentsPage.inactiveMemberButton);
+        JavascriptUtils
+                .scrollIntoView(RealEstateAdminInactiveAgentsPage.inactiveAgentEmailLocator(deletinAgentEmail));
+        CommonUtils.sleep(500);
+        RealEstateAdminInactiveAgentsPage.inactiveAgentDeleteDropdownLocator(deletinAgentEmail).click();
+        CommonUtils
+                .waitForVisibility(
+                        RealEstateAdminActiveAgentsPage.activeAgentDeleteDropdownLocator(deletinAgentEmail));
+        RealEstateAdminInactiveAgentsPage.inactiveAgentDeleteLocator(deletinAgentEmail).click();
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
