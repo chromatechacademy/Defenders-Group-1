@@ -22,6 +22,7 @@ public class RealEstateDashboardTextAndTabsStepDef extends PageInitializer {
         realEstateAdminWelcomePage.emailTextBox.sendKeys(email);
         realEstateAdminWelcomePage.passwordTextBox.sendKeys(password);
         realEstateAdminWelcomePage.logInButton.click();
+        CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
 
@@ -47,6 +48,7 @@ public class RealEstateDashboardTextAndTabsStepDef extends PageInitializer {
         CommonUtils.assertEquals(dashboardTab, actualDashboardTabText);
         String actualProjectsTabText = realEstateAdminDashboardPage.projectsTab.getText();
         CommonUtils.assertEquals(projectsTab, actualProjectsTabText);
+        CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
      }
 }

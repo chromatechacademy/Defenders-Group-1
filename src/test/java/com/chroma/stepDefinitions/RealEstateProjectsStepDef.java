@@ -16,7 +16,6 @@ public class RealEstateProjectsStepDef {
     @Then("the following elements should be displayed {string}, {string}, {string}, {string}")
     public void the_following_elements_should_be_displayed(String addNewProject, String projects, String active,
             String archived) {
-
         String actualAddNewProjectText = RealEstateProjectsPage.addNewProjectElement.getText();
         CommonUtils.assertEquals(actualAddNewProjectText, addNewProject);
         String actualProjectsText = RealEstateProjectsPage.projectsPageElement.getText();
