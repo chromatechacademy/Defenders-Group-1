@@ -49,7 +49,7 @@ public class RealEstateAdminAgentsPage {
     public WebElement activeMemberButton;
 
     /*LILI - MEMBER LIST */
-    @FindBy(xpath = "/html/body/main/aside/ul/li/div/button/text()[2]") 
+    @FindBy(xpath = "//button[@class='sidebar-item']") 
     public WebElement memberListButton;
 
     /*LILI - ACTIVE BUTTON */
@@ -79,13 +79,6 @@ public class RealEstateAdminAgentsPage {
     /*LILI - ACTIONS TEXT */
     @FindBy(xpath = "//th[normalize-space()='Actions']") 
     public WebElement actionsText;
-
-
-    
-
-
-
-
 
     /* GEORGE - DYNAMIC LOCATOR FOR EMAIL ADDRESS */
     public static WebElement agentEmailLocator(String agentEmail) {

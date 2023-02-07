@@ -7,11 +7,12 @@ import cucumber.api.java.en.Then;
 
 public class RealEstateAgentsPageStepDef extends PageInitializer {
 
+    // ASSERING TEXT ON AGENTS PAGE
     @Then("the following text is visiable {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_following_text_is_visiable(String memberList, String active, String inactive, String allAgents,
             String addNow, String name, String mail, String contactNumber, String actions) {
-        //String memeberListIsDisplayed = realEstateAdminAgentsPage.memberListButton.getText();
-        //CommonUtils.assertEquals(memberList, memeberListIsDisplayed);
+        String memberListIsDisplayed = realEstateAdminAgentsPage.memberListButton.getText();
+        CommonUtils.assertTrue(memberListIsDisplayed.contains(memberList));
         String activeTextIsDisplayed = realEstateAdminAgentsPage.activeButton.getText();
         CommonUtils.assertEquals(active, activeTextIsDisplayed);
         String inactiveTextIsDisplayed = realEstateAdminAgentsPage.inactiveButton.getText();

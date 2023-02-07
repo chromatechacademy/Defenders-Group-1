@@ -45,7 +45,6 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAdminDashboardPage realEstateAdminDashboardPage;
     public static RealEstateProjectsPage realEstateProjectsPage;
     public static RealEstateNewProjectPage realEstateNewProjectPage;
-    public static RealEstateNewProjectSteps realEstateNewProjectSteps;
 
     public void initializeAllPages() {
         studentLoginPage = new StudentLoginPage();
@@ -67,8 +66,6 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateAdminDashboardPage = new RealEstateAdminDashboardPage();
         realEstateProjectsPage = new RealEstateProjectsPage();
-
-
-
+        realEstateNewProjectPage = new RealEstateNewProjectPage();
     }
 }
