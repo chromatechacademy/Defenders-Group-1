@@ -2,7 +2,6 @@ package com.chroma.appsCommon;
 
 import com.chroma.pages.StudentLoginPage;
 import com.chroma.pages.StudentSelectionsPage;
-import com.chroma.stepsImplementation.RealEstateNewProjectSteps;
 import com.chroma.pages.StudentClassPage;
 import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.RealEstateAdminActiveAgentsPage;
@@ -47,7 +46,6 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAdminDashboardPage realEstateAdminDashboardPage;
     public static RealEstateProjectsPage realEstateProjectsPage;
     public static RealEstateNewProjectPage realEstateNewProjectPage;
-    public static RealEstateNewProjectSteps realEstateNewProjectSteps;
 
     public void initializeAllPages() {
         studentLoginPage = new StudentLoginPage();
@@ -69,8 +67,8 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateDashboardPage = new RealEstateDashboardPage();
         realEstateNewProjectPage = new RealEstateNewProjectPage();
-        realEstateNewProjectSteps = new RealEstateNewProjectSteps();
         realEstateAdminDashboardPage = new RealEstateAdminDashboardPage();
         realEstateProjectsPage = new RealEstateProjectsPage();
+        realEstateNewProjectPage = new RealEstateNewProjectPage();
     }
 }
