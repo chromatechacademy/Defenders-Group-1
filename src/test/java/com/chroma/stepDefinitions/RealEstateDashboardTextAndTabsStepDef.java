@@ -1,4 +1,5 @@
 package com.chroma.stepDefinitions;
+
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
@@ -33,31 +34,22 @@ public class RealEstateDashboardTextAndTabsStepDef extends PageInitializer {
         
         String actualDashboardElementText = realEstateAdminDashboardPage.dashboardElementText.getText();
         CommonUtils.assertEquals(dashboard, actualDashboardElementText);
-        
         String actualHelloAdminText = realEstateAdminDashboardPage.helloAdminText.getText();
         CommonUtils.assertEquals(helloAdmin, actualHelloAdminText);
-        
         String actualOverviewElementText = realEstateAdminDashboardPage.overviewText.getText();
         CommonUtils.assertEquals(overview, actualOverviewElementText);
-        
         String actualAgentsGraphText = realEstateAdminDashboardPage.agentsGraphText.getText();
         CommonUtils.assertEquals(agentsGraph, actualAgentsGraphText);
-        
         String actualPropertiesOverviewText = realEstateAdminDashboardPage.propertiesOverviewText.getText();
         CommonUtils.assertEquals(propertiesOverview, actualPropertiesOverviewText);
-        
         String actualPropertiesText = realEstateAdminDashboardPage.propertiesText.getText();
         CommonUtils.assertEquals(properties, actualPropertiesText);
-        
         String actualAgentsTabText = realEstateAdminDashboardPage.agentsTab.getText();
         CommonUtils.assertEquals(agentsTab, actualAgentsTabText);
-        
         String actualDashboardTabText = realEstateAdminDashboardPage.dashboardTab.getText();
         CommonUtils.assertEquals(dashboardTab, actualDashboardTabText);
-        
         String actualProjectsTabText = realEstateAdminDashboardPage.projectsTab.getText();
         CommonUtils.assertEquals(projectsTab, actualProjectsTabText);
-        
         CucumberLogUtils.logExtentScreenshot();
      }
 }
