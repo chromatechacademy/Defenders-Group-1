@@ -37,7 +37,7 @@ public class CommonUtils extends WebDriverUtils {
 	 * WebDriver.
 	 * 
 	 * @param element Pass the element to which the text needs to be entered.
-	 * @param value   Pass the desired text/value in the second parameter.
+	 * @param string   Pass the desired text/value in the second parameter.
 	 */
 	public static void sendKeys(WebElement element, String value) {
 		element.clear();

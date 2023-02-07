@@ -2,7 +2,9 @@ package com.chroma.appsCommon;
 
 import com.chroma.pages.StudentLoginPage;
 import com.chroma.pages.StudentSelectionsPage;
+import com.chroma.stepsImplementation.RealEstateNewProjectSteps;
 import com.chroma.pages.StudentClassPage;
+import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.RealEstateAdminActiveAgentsPage;
 import com.chroma.pages.RealEstateAdminAgentsPage;
 import com.chroma.pages.RealEstateAdminInactiveAgentsPage;
@@ -11,6 +13,7 @@ import com.chroma.pages.RealEstateAdminWelcomePage;
 import com.chroma.pages.RealEstateAgentIndexPage;
 import com.chroma.pages.RealEstateAgentWelcomePage;
 import com.chroma.pages.StudentAcademicsClassPage;
+import com.chroma.pages.RealEstateNewProjectPage;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentDashboardPage;
@@ -28,6 +31,7 @@ public class PageInitializer extends WebDriverUtils {
     public static StudentCategoriesPage studentCategoriesPage;
     public static StudentClassPage studentClassPage;
     public static StudentInformationPage studentInformationPage;
+    public static BulkDeletePage bulkDeletePage;
     public static RealEstateAdminWelcomePage realEstateAdminWelcomePage;
     public static RealEstateAgentWelcomePage realEstateAgentWelcomePage;
     public static RealEstateAdminIndexPage realEstateAdminIndexPage;
@@ -36,6 +40,8 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAdminActiveAgentsPage realEstateAdminActiveAgentsPage;
     public static RealEstateAdminInactiveAgentsPage realEstateAdminInactiveAgentsPage;
     public static StudentAcademicsClassPage studentAcademicsClassPage;
+    public static RealEstateNewProjectPage realEstateNewProjectPage;
+    public static RealEstateNewProjectSteps realEstateNewProjectSteps;
 
     public void initializeAllPages() {
         studentLoginPage = new StudentLoginPage();
@@ -45,7 +51,8 @@ public class PageInitializer extends WebDriverUtils {
         studentAdmissionPage = new StudentAdmissionPage();
         studentCategoriesPage = new StudentCategoriesPage();
         studentClassPage = new StudentClassPage();
-        studentInformationPage = new StudentInformationPage();
+        bulkDeletePage = new BulkDeletePage();
+        studentInformationPage = new StudentInformationPage();       
         realEstateAdminWelcomePage = new RealEstateAdminWelcomePage();
         realEstateAgentWelcomePage = new RealEstateAgentWelcomePage();
         realEstateAdminIndexPage = new RealEstateAdminIndexPage();
@@ -54,5 +61,7 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         studentAcademicsClassPage = new StudentAcademicsClassPage();
+        realEstateNewProjectPage = new RealEstateNewProjectPage();
+        realEstateNewProjectSteps = new RealEstateNewProjectSteps();
     }
 }
