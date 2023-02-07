@@ -58,6 +58,22 @@ public class RealEstateNewProjectPage {
     @FindBy(xpath = "//a[@href='./projects.php']")
     public WebElement backButton;
 
+    //All Project Text
+    @FindBy(xpath = "//h1[normalize-space()='All Projects']")
+    public WebElement allProjectText;
+
+    //New Project Text
+    @FindBy(xpath = "//h1[normalize-space()='New Project']")
+    public WebElement newProjectText;
+
+    // GaryTest project
+    @FindBy(xpath = "//*[contains(text(),'GaryTest')]")
+    public WebElement garyTestproject;
+
+    //Header Project Text
+    @FindBy(xpath = "(//h1[normalize-space()='Projects'])")
+    public WebElement headerProjectText;
+
     public RealEstateNewProjectPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
