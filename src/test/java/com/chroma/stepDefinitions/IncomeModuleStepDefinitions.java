@@ -18,7 +18,6 @@ public class IncomeModuleStepDefinitions extends PageInitializer{
 
     @Then("Sub Modules {string}, {string}, and {string} display")
     public void sub_Modules_and_display(String expectedAddIncomeText, String expectedSearchIncomeText, String expectedIncomeHeadText){
-
         String actualAddIncomeText = incomeModulePage.addIncomeSubModule.getText();
         CommonUtils.assertEquals(expectedAddIncomeText, actualAddIncomeText);
         String actualSearchIncomeText = incomeModulePage.searchIncomeSubModule.getText();
