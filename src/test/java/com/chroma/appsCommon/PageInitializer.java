@@ -56,7 +56,8 @@ public class PageInitializer extends WebDriverUtils {
         studentCategoriesPage = new StudentCategoriesPage();
         studentClassPage = new StudentClassPage();
         bulkDeletePage = new BulkDeletePage();
-        studentInformationPage = new StudentInformationPage();       
+        studentInformationPage = new StudentInformationPage();
+        incomeModulePage = new IncomeModulePage();
         realEstateAdminWelcomePage = new RealEstateAdminWelcomePage();
         realEstateAgentWelcomePage = new RealEstateAgentWelcomePage();
         realEstateAdminIndexPage = new RealEstateAdminIndexPage();
@@ -64,5 +65,10 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAgentIndexPage = new RealEstateAgentIndexPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
+        realEstateAdminDashboardPage = new RealEstateAdminDashboardPage();
+        realEstateProjectsPage = new RealEstateProjectsPage();
+
+
+
     }
 }
