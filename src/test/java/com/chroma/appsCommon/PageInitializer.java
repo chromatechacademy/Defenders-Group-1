@@ -12,11 +12,12 @@ import com.chroma.pages.RealEstateAdminIndexPage;
 import com.chroma.pages.RealEstateAdminWelcomePage;
 import com.chroma.pages.RealEstateAgentIndexPage;
 import com.chroma.pages.RealEstateAgentWelcomePage;
+import com.chroma.pages.RealEstateDashboardPage;
 import com.chroma.pages.RealEstateNewProjectPage;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentDashboardPage;
-import com.chroma.pages.StudentDetails;
+import com.chroma.pages.StudentDetailsPage;
 import com.chroma.pages.StudentInformationPage;
 import com.chroma.pages.IncomeModulePage;
 import com.chroma.pages.RealEstateAdminDashboardPage;
@@ -27,7 +28,7 @@ public class PageInitializer extends WebDriverUtils {
 
     public static StudentLoginPage studentLoginPage;
     public static StudentDashboardPage studentDashboardPage;
-    public static StudentDetails studentDetailsPage;
+    public static StudentDetailsPage studentDetailsPage;
     public static StudentSelectionsPage studentSelectionsPage;
     public static StudentAdmissionPage studentAdmissionPage;
     public static StudentCategoriesPage studentCategoriesPage;
@@ -41,6 +42,7 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAgentIndexPage realEstateAgentIndexPage;
     public static RealEstateAdminActiveAgentsPage realEstateAdminActiveAgentsPage;
     public static RealEstateAdminInactiveAgentsPage realEstateAdminInactiveAgentsPage;
+    public static RealEstateDashboardPage realEstateDashboardPage;
     public static IncomeModulePage incomeModulePage;
     public static RealEstateAdminDashboardPage realEstateAdminDashboardPage;
     public static RealEstateProjectsPage realEstateProjectsPage;
@@ -50,7 +52,7 @@ public class PageInitializer extends WebDriverUtils {
     public void initializeAllPages() {
         studentLoginPage = new StudentLoginPage();
         studentDashboardPage = new StudentDashboardPage();
-        studentDetailsPage = new StudentDetails();
+        studentDetailsPage = new StudentDetailsPage();
         studentSelectionsPage = new StudentSelectionsPage();
         studentAdmissionPage = new StudentAdmissionPage();
         studentCategoriesPage = new StudentCategoriesPage();
@@ -65,10 +67,10 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAgentIndexPage = new RealEstateAgentIndexPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
+        realEstateDashboardPage = new RealEstateDashboardPage();
+        realEstateNewProjectPage = new RealEstateNewProjectPage();
+        realEstateNewProjectSteps = new RealEstateNewProjectSteps();
         realEstateAdminDashboardPage = new RealEstateAdminDashboardPage();
         realEstateProjectsPage = new RealEstateProjectsPage();
-
-
-
     }
 }
