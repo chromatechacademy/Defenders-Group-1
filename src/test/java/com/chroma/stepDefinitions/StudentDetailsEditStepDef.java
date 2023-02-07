@@ -21,7 +21,7 @@ public class StudentDetailsEditStepDef extends PageInitializer {
     // Selecting options in dropdown menus
     @When("selects section {string} and Section {string}")
     public void selects_section_and_Section(String cyberSecurity, String networkingFundamentals) {
-        CommonUtils.selectDropDownValue("Cyber Security",studentDetailsPage.classDropdown);
+        CommonUtils.selectDropDownValue("Cyber Security", studentDetailsPage.classDropdown);
         CommonUtils.selectDropDownValue("Networking Fundamentals", studentDetailsPage.sectionDropDown);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();

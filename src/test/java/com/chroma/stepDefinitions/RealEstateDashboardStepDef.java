@@ -29,8 +29,6 @@ public class RealEstateDashboardStepDef extends PageInitializer {
     @Then("the graph {string} is shown")
     public void the_graph_is_shown(String propertiesOverview) {
         String actualpropertiesOverviewText = realEstateDashboardPage.propertiesOverviewText.getText();;
-        CommonUtils.assertEquals(propertiesOverview, actualpropertiesOverviewText);
-
-        
+        CommonUtils.assertEquals(propertiesOverview, actualpropertiesOverviewText);        
     }
 }
