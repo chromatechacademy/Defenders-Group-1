@@ -48,7 +48,7 @@ public class RealEstateAdminAgentsPage {
     @FindBy(xpath = "//a[normalize-space()='Active']")
     public WebElement activeMemberButton;
 
-     /* GEORGE - INACTIVE MEMBER RADIO BUTTON */
+    /* GEORGE - INACTIVE MEMBER RADIO BUTTON */
     @FindBy(xpath = "//a[normalize-space()='Inactive']")
     public WebElement inactiveMemberButton;
 

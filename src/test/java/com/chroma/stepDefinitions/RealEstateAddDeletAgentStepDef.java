@@ -8,9 +8,9 @@ import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
 
-public class RealEstateAddDeletAgentStepDef extends PageInitializer{
+public class RealEstateAddDeletAgentStepDef extends PageInitializer {
 
-     /*
+    /*
      * DELETING AGENT FROM ACTIVE MEMBER LIST
      */
     @Then("admin deletes the agent with emeil {string} from the Active Members List")
@@ -47,5 +47,5 @@ public class RealEstateAddDeletAgentStepDef extends PageInitializer{
         RealEstateAdminInactiveAgentsPage.inactiveAgentDeleteLocator(inactiveDeletedAgentEmail).click();
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-    }   
+    }
 }

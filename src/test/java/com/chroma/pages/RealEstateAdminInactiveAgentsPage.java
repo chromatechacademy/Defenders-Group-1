@@ -8,10 +8,6 @@ import com.chroma.web.WebDriverUtils;
 
 public class RealEstateAdminInactiveAgentsPage {
 
-    // /* GEORGE - INACTIVE MEMBER RADIO BUTTON */
-    // @FindBy(xpath = "//a[normalize-space()='Active']")
-    // public WebElement inactiveMemberButton;
-
     /* GEORGE - DYNAMIC LOCATOR FOR INACTIVE EMAIL ADDRESS */
     public static WebElement inactiveAgentEmailLocator(String agentEmail) {
         return WebDriverUtils.driver.findElement(By.xpath("//td[normalize-space()='" + agentEmail + "']"));
@@ -29,10 +25,10 @@ public class RealEstateAdminInactiveAgentsPage {
                 + "']//parent::td//parent::tr//child::td[4]//child::div//child::button//child::span"));
     }
 
-    // /* GEORGE - DELETE CONFIRMATION BUTTON */
+    /* GEORGE - DELETE CONFIRMATION BUTTON */
     @FindBy(xpath = "//button[normalize-space()='OK']")
     public WebElement deleteConfirmationButton;
-    
+
     public RealEstateAdminInactiveAgentsPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
