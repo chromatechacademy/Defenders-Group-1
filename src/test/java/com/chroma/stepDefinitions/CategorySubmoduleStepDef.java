@@ -102,7 +102,7 @@ public class CategorySubmoduleStepDef extends PageInitializer {
                 + "']//parent::td/parent::tr//child::td[3]//child::a[2]/i"));
     }
 
-    public StudentCategoriesPage() {
+    public CategorySubmoduleStepDef() {
     PageFactory.initElements(WebDriverUtils.driver, this);
 }
 }

@@ -15,7 +15,6 @@ public class StudentInformationtStepDef extends PageInitializer{
         CucumberLogUtils.logExtentScreenshot();
         StudentDashboardPage.dynamicModuleLocator(moduleText).click();
         CommonUtils.sleep(2000);
-  
     }
 
     /* ASSERTING STUDENT INFORMATION MODULES*/
@@ -38,5 +37,7 @@ public class StudentInformationtStepDef extends PageInitializer{
         CommonUtils.assertEquals(actualStudentHouseText, expectedStudentHouseModule);
         String actualDisableReasonText = studentInformationPage.disableReasonModule.getText();
         CommonUtils.assertEquals(actualDisableReasonText, expectedDisableReasonModule);
+        CucumberLogUtils.logScreenShot();
+        CucumberLogUtils.logExtentScreenshot();
     }
 }
