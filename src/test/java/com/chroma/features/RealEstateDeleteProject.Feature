@@ -11,4 +11,7 @@ Feature: Deleting a Project
     When an admin logs out of the admin site
     Then admin should be logged out and "Welcome" message should be displayed
     Given an admin is on the Agent login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/login.php"
+    When the admin logins with valid Agent credentials email "<EMAIL>" and password "<PASSWORD>"
+    Then the admin is landed on a Agent home page with text "<FIRSTNAME>"
+    
 
