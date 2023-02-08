@@ -15,6 +15,10 @@ public class RealEstateAdminIndexPage {
     @FindBy(xpath = "//span[normalize-space()='Agents']")
     public WebElement agentsButton;
 
+    /* GEORGE - AGENTS BUTTON */
+    @FindBy(xpath = "//span[normalize-space()='Dashboard']")
+    public WebElement dashboardButton;
+
     /* GEORGE - ALL AGENTS TEXT*/
     @FindBy(xpath = "//h1[@class='mainUserText']")
     public WebElement allAgentsText;

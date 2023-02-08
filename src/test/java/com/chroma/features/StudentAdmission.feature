@@ -28,12 +28,12 @@ Feature: Student Admission
     And for If Gurdian Is clicks on Mother radio button
     And enters Guardian Phone Number "<PHONE NUMBER>"
     And clicks on the Save button
-    Then the Student is not admitted and "The Admission No field must contain a unique value" is displayed
+    Then the Student is not admitted and "The Admission No field must contain a unique value." is displayed
+    Then an admin navigates to Bulk Delete Submodule
+    Then an admin selects Class "<CLASS>" and Section "<SECTION>"
+    And clicks on Search button
+    Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
 
     Examples: 
       | ADMISSION NUMBER | CLASS          | SECTION                 | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | GUARDIAN PHONE NUMBER |
-      |         51777773 | Cyber Security | Networking Fundamentals | George     | One       | Female | 02/22/1991 | Jannet One   |            7026875816 |
-      |         51777774 | SDET           | Testing Fundamentals    | John       | Two       | Male   | 11/11/1992 | Jenny Two    |            5427658765 |
-      |         51777775 | SDET           | Testing Fundamentals    | Mary       | Three     | Female | 08/10/1993 | Carmen Three |            7031111111 |
-      |         51777776 | SDET           | Testing Fundamentals    | Mike       | Four      | Male   | 01/08/1994 | Withney Four |            5467895436 |
-      |         51777777 | SDET           | Testing Fundamentals    | Anna       | Five      | Female | 04/23/1995 | Tina Five    |            8796543451 |
+      |        734777773 | Cyber Security | Networking Fundamentals | George     | One       | Female | 02/22/1991 | Jannet One   |            7026875816 |
