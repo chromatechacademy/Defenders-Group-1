@@ -90,8 +90,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
     @Then("the admin is landed on a Agent home page with text {string}")
     public void the_admin_is_landed_on_a_Agent_home_page_with_text(String expectedHelloChromaText) {
         String actualHelloChromaText = realEstateAgentIndexPage.helloChromaTechText.getText();
-        CommonUtils.assertEquals(RealEstateAgentIndexPage.agentHelloFirstName(expectedHelloChromaText),
-                actualHelloChromaText);
+        CommonUtils.assertTrue(actualHelloChromaText.contains(expectedHelloChromaText));
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }

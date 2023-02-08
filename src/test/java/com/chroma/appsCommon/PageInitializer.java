@@ -14,6 +14,7 @@ import com.chroma.pages.RealEstateAdminIndexPage;
 import com.chroma.pages.RealEstateAdminWelcomePage;
 import com.chroma.pages.RealEstateAgentIndexPage;
 import com.chroma.pages.RealEstateAgentWelcomePage;
+import com.chroma.pages.RealEstateSoldByMePage;
 import com.chroma.pages.StudentAcademicsClassPage;
 import com.chroma.pages.RealEstateDashboardPage;
 import com.chroma.pages.RealEstateNewProjectPage;
@@ -45,6 +46,7 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAgentIndexPage realEstateAgentIndexPage;
     public static RealEstateAdminActiveAgentsPage realEstateAdminActiveAgentsPage;
     public static RealEstateAdminInactiveAgentsPage realEstateAdminInactiveAgentsPage;
+    public static RealEstateSoldByMePage realEstateSoldByMePage;
     public static RealEstateDashboardPage realEstateDashboardPage;
     public static IncomeModulePage incomeModulePage;
     public static RealEstateAdminDashboardPage realEstateAdminDashboardPage;
@@ -73,6 +75,7 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAgentIndexPage = new RealEstateAgentIndexPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
+        realEstateSoldByMePage = new RealEstateSoldByMePage();
         realEstateDashboardPage = new RealEstateDashboardPage();
         realEstateNewProjectPage = new RealEstateNewProjectPage();
         realEstateAdminDashboardPage = new RealEstateAdminDashboardPage();
