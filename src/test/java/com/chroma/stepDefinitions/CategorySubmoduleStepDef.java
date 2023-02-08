@@ -13,7 +13,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CategorySubmoduleStepDef extends PageInitializer {
-   
+
     /*
      * CLICKING ON THE STUDENT CATEGORIES FROM STUDENT INFORMATION MODULE
      */
@@ -80,8 +80,8 @@ public class CategorySubmoduleStepDef extends PageInitializer {
         CucumberLogUtils.logExtentScreenshot();
         CommonUtils.sleep(1000);
     }
-    /* GEORGE - CREATE CATEGORY TEXT */
 
+    /* GEORGE - CREATE CATEGORY TEXT */
     @FindBy(xpath = "//h3[@class='box-title']")
     public WebElement createCategoryText;
 
