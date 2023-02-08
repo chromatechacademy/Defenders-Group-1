@@ -4,7 +4,6 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.BulkDeletePage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
-import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Then;
 
 public class CTSMSMultipleStudentAdmissionStepDef extends PageInitializer {
