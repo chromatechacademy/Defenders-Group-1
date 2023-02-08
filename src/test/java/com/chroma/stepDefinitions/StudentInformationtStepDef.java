@@ -37,5 +37,7 @@ public class StudentInformationtStepDef extends PageInitializer{
         CommonUtils.assertEquals(actualStudentHouseText, expectedStudentHouseModule);
         String actualDisableReasonText = studentInformationPage.disableReasonModule.getText();
         CommonUtils.assertEquals(actualDisableReasonText, expectedDisableReasonModule);
+        CucumberLogUtils.logScreenShot();
+        CucumberLogUtils.logExtentScreenshot();
     }
 }
