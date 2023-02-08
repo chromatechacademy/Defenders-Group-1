@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, 
 		features = "src/test/java/com/chroma/features", 
 		glue = "com.chroma.stepDefinitions", 
-		tags = "@DF-43", 
+		tags = "@RealEstateProgression", 
 		dryRun = false, 
 		monochrome = true, 
 		strict = true)
