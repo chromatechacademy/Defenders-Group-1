@@ -75,11 +75,11 @@ public class PageInitializer extends WebDriverUtils {
         realEstateAdminActiveAgentsPage = new RealEstateAdminActiveAgentsPage();
         realEstateDashboardPage = new RealEstateDashboardPage();
         realEstateNewProjectPage = new RealEstateNewProjectPage();
-        realEstateNewProjectSteps = new RealEstateNewProjectSteps();
         realEstateAdminDashboardPage = new RealEstateAdminDashboardPage();
         realEstateProjectsPage = new RealEstateProjectsPage();
         studentAcademicsClassPage = new StudentAcademicsClassPage();
         studentSelectCriteriaPage = new StudentSelectCriteriaPage();
         studentRecordsPage = new StudentRecordsPage();
+        realEstateNewProjectPage = new RealEstateNewProjectPage();
     }
 }

@@ -51,6 +51,37 @@ public class RealEstateAdminAgentsPage {
     /* GEORGE - INACTIVE MEMBER RADIO BUTTON */
     @FindBy(xpath = "//a[normalize-space()='Inactive']")
     public WebElement inactiveMemberButton;
+    /*LILI - MEMBER LIST */
+    @FindBy(xpath = "//button[@class='sidebar-item']") 
+    public WebElement memberListButton;
+
+    /*LILI - ACTIVE BUTTON */
+    @FindBy(xpath = "//a[normalize-space()='Active']") 
+    public WebElement activeButton;
+
+    /*LILI - INACTIVE BUTTON */
+    @FindBy(xpath = "//a[normalize-space()='Inactive']") 
+    public WebElement inactiveButton;
+
+    /*LILI - ALL AGENTS BUTTON */
+    @FindBy(xpath = "//a[normalize-space()='All Agents']") 
+    public WebElement allAgentsButton;
+
+    /*LILI - NAME TEXT */
+    @FindBy(xpath = "//th[normalize-space()='Name']") 
+    public WebElement nameText;
+
+    /* LILI - MAIL TEXT */
+    @FindBy(xpath = "//th[normalize-space()='Mail']") 
+    public WebElement mailText;
+
+    /*LILI - CONTACT NUMBER TEXT */
+    @FindBy(xpath = "//th[normalize-space()='Contact Number']") 
+    public WebElement contactNumberText;
+
+    /*LILI - ACTIONS TEXT */
+    @FindBy(xpath = "//th[normalize-space()='Actions']") 
+    public WebElement actionsText;
 
     /* GEORGE - DYNAMIC LOCATOR FOR EMAIL ADDRESS */
     public static WebElement agentEmailLocator(String actualAgentEmail) {

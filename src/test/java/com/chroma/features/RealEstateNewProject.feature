@@ -7,8 +7,8 @@ Feature: Real Estate
     Then an admin user navigates to Project page
     When an admin user clicks on Add New Project button
     Then an admin user fills out the Project Details information such as "<DEVELOPER>", "<TITLE>", "<LEVEL>", <"DATE"> "<ADRESS>", "<CURRENCY>"
-    Then the new project has been added
+    Then the new project "<PROJECT>" has been added
 
     Examples: 
-      | DEVELOPER  | TITLE | LEVEL | ADRESS      | CURRENCY | DATE       |
-      | Anna Smith | Spain |     3 | Sunshine St | AUD      | 02/06/2023 |
+      | DEVELOPER  | TITLE | LEVEL | ADRESS      | CURRENCY | DATE       | PROJECT |
+      | Anna Smith | Spain |     3 | Sunshine St | AUD      | 02/06/2023 | London  |
