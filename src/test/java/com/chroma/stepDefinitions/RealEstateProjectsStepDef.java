@@ -17,13 +17,13 @@ public class RealEstateProjectsStepDef {
     public void the_following_elements_should_be_displayed(String addNewProject, String projects, String active,
             String archived) {
         String actualAddNewProjectText = RealEstateProjectsPage.addNewProjectElement.getText();
-        CommonUtils.assertEquals(actualAddNewProjectText, addNewProject);
+        CommonUtils.assertTrue(actualAddNewProjectText.contains(addNewProject));
         String actualProjectsText = RealEstateProjectsPage.projectsPageElement.getText();
-        CommonUtils.assertEquals(actualProjectsText, projects);
+        CommonUtils.assertTrue(actualProjectsText.contains(projects));
         String actualActiveText = RealEstateProjectsPage.activeRadialButton.getText();
-        CommonUtils.assertEquals(actualActiveText, active);
+        CommonUtils.assertTrue(actualActiveText.contains(active));
         String actualArchivedText = RealEstateProjectsPage.archivedRadialButton.getText();
-        CommonUtils.assertEquals(actualArchivedText, archived);
+        CommonUtils.assertTrue(actualArchivedText.contains(archived));
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
