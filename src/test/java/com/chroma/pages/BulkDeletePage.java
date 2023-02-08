@@ -33,6 +33,11 @@ public class BulkDeletePage {
         return WebDriverUtils.driver.findElement(By.xpath("//a[contains(text(),'" + studentRecord + "')]//parent::td//parent::tr/td/input"));
      }
 
+     //GEORGE - STUDENT ADMITTED LOCATED BYY ADMISSION NUMBER
+    public static WebElement studentDeleteRecordLocator(String studentNumberRecord){
+        return WebDriverUtils.driver.findElement(By.xpath("//td[normalize-space()='" + studentNumberRecord + "']//parent::tr//child::input"));
+     }
+
     public BulkDeletePage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

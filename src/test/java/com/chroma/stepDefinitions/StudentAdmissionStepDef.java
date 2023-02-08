@@ -16,6 +16,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
     public void navigates_to_Student_Admission_Submodule() {
         studentDashboardPage.studentAdmissionSubmodule.click();
     }
+
     /*
      * ASSERTING THAT THE USER IS ON THE STUDENT ADMISSION PAGE
      */
@@ -24,6 +25,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         String actualHeaderText = studentAdmissionPage.studentAdmissionHeader.getText();
         CommonUtils.assertEquals(actualHeaderText, expectedHeaderText);
     }
+
     /*
      * ENTERING ADMISSION NUMBER
      */
@@ -32,6 +34,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         studentAdmissionPage.studentAdmissionNumberTextBox.sendKeys(admissionNumber);
         CommonUtils.sleep(1000);
     }
+
     /*
      * SELECTS CLASS NAME AND SECTION NAME FROM DROPDOWNS
      */
@@ -40,6 +43,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         CommonUtils.selectDropDownValue(className, studentAdmissionPage.classDropDown);
         CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropDown);
     }
+
     /*
      * ENTERING STUDENT FIRST NAME AND LAST NAME
      */
@@ -48,6 +52,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         studentAdmissionPage.firstNameTextBox.sendKeys(firstName);
         studentAdmissionPage.lastNameTextBox.sendKeys(lastName);
     }
+
     /*
      * SELECTS GENDER FROM DROPDOWN
      */
@@ -55,6 +60,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
     public void selects_gender(String gender) {
         CommonUtils.selectDropDownValue(gender, studentAdmissionPage.genderDropDown);
     }
+
     /*
      * ENTERING DAYE OF BIRTH
      */
@@ -62,6 +68,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
     public void enters_Date_of_Birth(String dob) {
         JavascriptUtils.selectDateByJS(studentAdmissionPage.dobCalendar, dob);
     }
+
     /*
      * ENTERING MOTHER'S NAME
      */
@@ -69,6 +76,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
     public void enters_Parent_Guardian_Details_enters_mothers_name(String mothersName) {
         studentAdmissionPage.mothersNameTextBox.sendKeys(mothersName);
     }
+
     /*
      * CLICK ON THE IF GURADIAN IS RADIO BUTTON
      */
@@ -76,6 +84,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
     public void for_If_Gurdian_Is_clicks_on_Mother_radio_button() {
         studentAdmissionPage.motherRadioButton.click();
     }
+
     /*
      * ENTERING GUARDIAN PHONE NUMBER
      */
@@ -85,6 +94,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
+
     /*
      * PRESSING SAVE BUTTON
      */
@@ -93,6 +103,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         studentAdmissionPage.saveButton.click();
         CommonUtils.sleep(1000);
     }
+
     /*
      * ASSERTING RECORD SAVED SUCCESFULLY IS DISPLEIED ON STUDENT ADMISSION PAGE
      */
@@ -104,6 +115,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         CommonUtils.assertEquals(expectedSuccessMessage, actualSuccessMessage);
         CommonUtils.sleep(1000);
     }
+
     /*
      * ASSERTING THE ADMISSION NO FIELD MUST CONTAIN A UNIQUE VALUE IS DISPLAYED
      */

@@ -10,6 +10,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class AcademicsSectionStepDef extends PageInitializer {
+    
     /*
      * CLICKING ON THE ACADEMICS MODULE
      */
@@ -18,6 +19,7 @@ public class AcademicsSectionStepDef extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         StudentDashboardPage.dynamicModuleLocator(moduleText).click();
+        CommonUtils.sleep(500);
     }
 
     /*
