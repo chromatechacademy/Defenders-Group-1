@@ -16,5 +16,5 @@ import cucumber.api.junit.Cucumber;
 		strict = true
 ) 
 
-public class RealEstateProgressionRunners {  
+  public class RealEstateProgressionRunners {  
 }
