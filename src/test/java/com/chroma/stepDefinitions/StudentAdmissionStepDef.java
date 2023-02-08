@@ -42,7 +42,6 @@ public class StudentAdmissionStepDef extends PageInitializer {
     public void selects_Class_and_Section(String className, String sectionName) {
         CommonUtils.selectDropDownValue(className, studentAdmissionPage.classDropDown);
         CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropDown);
-        ;
     }
 
     /*
