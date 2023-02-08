@@ -1,4 +1,4 @@
-Feature: Chategory Submodule
+ Feature: Chategory Submodule
 
   @CTSMSRegression @George @DF-20
   Scenario Outline: Add and delete Category via the Student Category Submodule

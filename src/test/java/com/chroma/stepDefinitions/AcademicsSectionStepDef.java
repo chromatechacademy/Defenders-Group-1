@@ -21,7 +21,7 @@ public class AcademicsSectionStepDef extends PageInitializer {
         StudentDashboardPage.dynamicModuleLocator(moduleText).click();
         CommonUtils.sleep(500);
     }
-
+    
     /*
      * CLICKING ON THE SECTIONS FROM ACADEMICS MODULE
      */
