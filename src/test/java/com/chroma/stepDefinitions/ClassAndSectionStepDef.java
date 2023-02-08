@@ -8,6 +8,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ClassAndSectionStepDef extends PageInitializer {
+    
     // Going to the Class sub module site
     @When("an admin user navigates to the Class sub module {string}")
     public void an_admin_user_navigates_to_the_Class_sub_module(String url) {

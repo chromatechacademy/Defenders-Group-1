@@ -7,6 +7,3 @@ Feature: Income Module dropdown verification
     Then an admin is landed on a home page with URL "https://mexil.it/chroma_tech_academy/dev/admin/admin/dashboard"
     And clicks on Income Module
     Then Sub Modules "Add Income", "Search Income", and "Income Head" display
-
-
-

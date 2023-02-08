@@ -1,5 +1,7 @@
 package com.chroma.stepDefinitions;
 
+import org.openqa.selenium.JavascriptExecutor;
+
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.RealEstateNewProjectPage;
 import com.chroma.utils.CucumberLogUtils;
@@ -78,19 +80,20 @@ public class RealEstateDeleteProject extends PageInitializer {
     //
     @When("the user archives the project {string}")
     public void the_user_archives_the_project(String settingPropertyButton) {
-        CommonUtils.scrollIntoView(RealEstateNewProjectPage.settingsButtonProperty(settingPropertyButton));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         RealEstateNewProjectPage.settingsButtonProperty(settingPropertyButton).click();
         CommonUtils.sleep(3000);
     }
 
-    //
-    // @Then("the project is no longer in the active section")
-    // public void the_project_is_no_longer_in_the_active_section() {
-    // realEstateNewProjectPage.activeProject.click();
-    // JavascriptExecutor js = (JavascriptExecutor) driver;
-    // js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
-    // CommonUtils.sleep(2000);
-    // CucumberLogUtils.logExtentScreenshot();
-    // CucumberLogUtils.logScreenShot();
-    // }
+    
+    @Then("the project is no longer in the active section")
+    public void the_project_is_no_longer_in_the_active_section() {
+    realEstateNewProjectPage.activeProject.click();
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+    CommonUtils.sleep(2000);
+    CucumberLogUtils.logExtentScreenshot();
+    CucumberLogUtils.logScreenShot();
+    }
 }

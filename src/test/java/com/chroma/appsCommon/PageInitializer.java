@@ -1,7 +1,10 @@
 package com.chroma.appsCommon;
 
 import com.chroma.pages.StudentLoginPage;
+import com.chroma.pages.StudentRecordsPage;
+import com.chroma.pages.StudentSelectCriteriaPage;
 import com.chroma.pages.StudentSelectionsPage;
+import com.chroma.stepsImplementation.RealEstateNewProjectSteps;
 import com.chroma.pages.StudentClassPage;
 import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.RealEstateAdminActiveAgentsPage;
@@ -11,6 +14,7 @@ import com.chroma.pages.RealEstateAdminIndexPage;
 import com.chroma.pages.RealEstateAdminWelcomePage;
 import com.chroma.pages.RealEstateAgentIndexPage;
 import com.chroma.pages.RealEstateAgentWelcomePage;
+import com.chroma.pages.StudentAcademicsClassPage;
 import com.chroma.pages.RealEstateDashboardPage;
 import com.chroma.pages.RealEstateNewProjectPage;
 import com.chroma.pages.StudentCategoriesPage;
@@ -46,6 +50,10 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAdminDashboardPage realEstateAdminDashboardPage;
     public static RealEstateProjectsPage realEstateProjectsPage;
     public static RealEstateNewProjectPage realEstateNewProjectPage;
+    public static RealEstateNewProjectSteps realEstateNewProjectSteps;
+    public static StudentAcademicsClassPage studentAcademicsClassPage;
+    public static StudentSelectCriteriaPage studentSelectCriteriaPage;
+    public static StudentRecordsPage studentRecordsPage;
 
     public void initializeAllPages() {
         studentLoginPage = new StudentLoginPage();
@@ -69,6 +77,9 @@ public class PageInitializer extends WebDriverUtils {
         realEstateNewProjectPage = new RealEstateNewProjectPage();
         realEstateAdminDashboardPage = new RealEstateAdminDashboardPage();
         realEstateProjectsPage = new RealEstateProjectsPage();
+        studentAcademicsClassPage = new StudentAcademicsClassPage();
+        studentSelectCriteriaPage = new StudentSelectCriteriaPage();
+        studentRecordsPage = new StudentRecordsPage();
         realEstateNewProjectPage = new RealEstateNewProjectPage();
     }
 }
