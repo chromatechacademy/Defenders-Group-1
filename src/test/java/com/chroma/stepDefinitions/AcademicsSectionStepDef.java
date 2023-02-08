@@ -19,6 +19,7 @@ public class AcademicsSectionStepDef extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         StudentDashboardPage.dynamicModuleLocator(moduleText).click();
+        CommonUtils.sleep(500);
     }
 
     /*

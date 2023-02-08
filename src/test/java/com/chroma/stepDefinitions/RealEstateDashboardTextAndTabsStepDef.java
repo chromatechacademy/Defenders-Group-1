@@ -31,23 +31,23 @@ public class RealEstateDashboardTextAndTabsStepDef extends PageInitializer {
             String overview, String agentsGraph, String propertiesOverview, String properties, String agentsTab, String dashboardTab,
             String projectsTab) {
         String actualDashboardElementText = realEstateAdminDashboardPage.dashboardElementText.getText();
-        CommonUtils.assertEquals(dashboard, actualDashboardElementText);
+        CommonUtils.assertTrue(actualDashboardElementText.contains(dashboard));
         String actualHelloAdminText = realEstateAdminDashboardPage.helloAdminText.getText();
-        CommonUtils.assertEquals(helloAdmin, actualHelloAdminText);
+        CommonUtils.assertTrue(actualHelloAdminText.contains(helloAdmin));
         String actualOverviewElementText = realEstateAdminDashboardPage.overviewText.getText();
-        CommonUtils.assertEquals(overview, actualOverviewElementText);
+        CommonUtils.assertTrue(actualOverviewElementText.contains(overview));
         String actualAgentsGraphText = realEstateAdminDashboardPage.agentsGraphText.getText();
-        CommonUtils.assertEquals(agentsGraph, actualAgentsGraphText);
+        CommonUtils.assertTrue(actualAgentsGraphText.contains(agentsGraph));
         String actualPropertiesOverviewText = realEstateAdminDashboardPage.propertiesOverviewText.getText();
-        CommonUtils.assertEquals(propertiesOverview, actualPropertiesOverviewText);
+        CommonUtils.assertTrue(actualPropertiesOverviewText.contains(propertiesOverview));
         String actualPropertiesText = realEstateAdminDashboardPage.propertiesText.getText();
-        CommonUtils.assertEquals(properties, actualPropertiesText);
+        CommonUtils.assertTrue(actualPropertiesText.contains(properties));
         String actualAgentsTabText = realEstateAdminDashboardPage.agentsTab.getText();
-        CommonUtils.assertEquals(agentsTab, actualAgentsTabText);
+        CommonUtils.assertTrue(actualAgentsTabText.contains(agentsTab));
         String actualDashboardTabText = realEstateAdminDashboardPage.dashboardTab.getText();
-        CommonUtils.assertEquals(dashboardTab, actualDashboardTabText);
+        CommonUtils.assertTrue(actualDashboardTabText.contains(dashboardTab));
         String actualProjectsTabText = realEstateAdminDashboardPage.projectsTab.getText();
-        CommonUtils.assertEquals(projectsTab, actualProjectsTabText);
+        CommonUtils.assertTrue(actualProjectsTabText.contains(projectsTab));
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
      }

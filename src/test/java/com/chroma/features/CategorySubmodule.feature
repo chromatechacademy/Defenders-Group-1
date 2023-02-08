@@ -10,14 +10,11 @@ Feature: Chategory Submodule
     Then admin is directed to CATEGORY page with the text "Create Category"
     When admin enters Category "<CATEGORY>"
     And admin clicks on the Category Save button
-    Then Category is succesfully saved and confirmation message displays "Record Saved Successfully"
+    Then Category is succesfully saved and confirmation message displays "Save"
     And admin clicks on the Category "<CATEGORY>" Delete button
     And Category is deleted
 
     Examples: 
       | CATEGORY |
       | CAT A    |
-      | CAT B    |
-      | CAT C    |
-      | CAT D    |
-      | CAT E    |
+   

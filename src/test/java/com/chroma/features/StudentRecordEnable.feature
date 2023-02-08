@@ -1,6 +1,6 @@
 Feature: Enable and disable student recods
 
-  @CTSMSProgression @George @DF-16
+  @CTSMSRegression @George @DF-16
   Scenario Outline: Ability to enable student records after disabling
     Given an admin user is on the login page "https://mexil.it/chroma_tech_academy/dev/site/login"
     When an admin user logins with valid credentials username "general@teacher.com" and password "123456"
@@ -27,7 +27,11 @@ Feature: Enable and disable student recods
     Then the admin should se the student First Name and Last Name "<FIRST NAME>" "<LAST NAME>"
     And the admin disable student records for "" as reason
     And the admin enable student records
+    Then an admin navigates to Bulk Delete Submodule
+    Then an admin selects Class "<CLASS>" and Section "<SECTION>"
+    And clicks on Search button
+    Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
 
     Examples: 
       | ADMISSION NUMBER | CLASS          | SECTION                 | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | GUARDIAN PHONE NUMBER |
-      |       1111178883 | Cyber Security | Networking Fundamentals | George     | Disable   | Female | 02/22/1991 | Jannet One   |            7026875816 |
+      |            78883 | Cyber Security | Networking Fundamentals | George     | Disable   | Female | 02/22/1991 | Jannet One   |            7026875816 |

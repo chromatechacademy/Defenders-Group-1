@@ -21,7 +21,7 @@ Feature: Student Admission
     Then an admin navigates to Bulk Delete Submodule
     Then an admin selects Class "<CLASS>" and Section "<SECTION>"
     And clicks on Search button
-    Then admitted student with first name "<FIRST NAME>" and last name "<LAST NAME>" is deleted
+     Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
 
     Examples: 
       | URL                                                 | USERNAME            | PASSWORD | ADMISSION NUMBER | CLASS          | SECTION                 | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | PHONE NUMBER |
