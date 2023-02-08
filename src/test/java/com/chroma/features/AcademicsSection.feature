@@ -17,4 +17,3 @@ Feature: Academics Section
     Examples: 
       | SESSIONNAME |
       | Math        |
-    

@@ -1,6 +1,6 @@
 Feature: Student Admission
 
-  @CTSMSRegression @Lili @DF-19 
+  @CTSMSRegression @Lili @DF-19
   Scenario Outline: Admitting muiliple Students
     Given an admin user is on the login page "<URL>"
     When an admin user logins with valid credentials username "<USERNAME>" and password "<PASSWORD>"
@@ -21,7 +21,7 @@ Feature: Student Admission
     Then an admin navigates to Bulk Delete Submodule
     Then an admin selects Class "<CLASS>" and Section "<SECTION>"
     And clicks on Search button
-     Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
+    Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
 
     Examples: 
       | URL                                                 | USERNAME            | PASSWORD | ADMISSION NUMBER | CLASS          | SECTION                 | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | PHONE NUMBER |

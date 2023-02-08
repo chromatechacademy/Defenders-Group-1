@@ -38,7 +38,6 @@ public class BulkDeletePage {
         return WebDriverUtils.driver.findElement(By.xpath("//td[normalize-space()='" + studentNumberRecord + "']//parent::tr//child::input"));
      }
 
-
     public BulkDeletePage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

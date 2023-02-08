@@ -1,6 +1,6 @@
 Feature: Create new agent
 
-  @RealEstateRegression @George @DF-47
+  @RealEstateRegression @George @DF-47 @RealEstateSmoke
   Scenario Outline: Adding a user with a unique name
     Given an admin is on the Admin login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
     When the admin logins with valid credentials email "admin@mexil.it" and password "123456"
@@ -19,4 +19,3 @@ Feature: Create new agent
     Examples: 
       | FIRSTNAME | LASTNAME | EMAIL              | CONTACTNUMBER | PASSWORD |
       | George    | Test2    | george@test100.com | 000-000-00000 |   123456 |
-

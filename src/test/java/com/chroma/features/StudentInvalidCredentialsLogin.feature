@@ -1,4 +1,4 @@
-Feature: Security mechanism to prevent login 
+Feature: Security mechanism to prevent login
 
   @CTSMSRegression @George @DF-2
   Scenario: Admin logins with valid credentials
