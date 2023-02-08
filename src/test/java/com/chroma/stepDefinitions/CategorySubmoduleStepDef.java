@@ -1,9 +1,9 @@
 package com.chroma.stepDefinitions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.utils.CucumberLogUtils;
@@ -103,6 +103,6 @@ public class CategorySubmoduleStepDef extends PageInitializer {
     }
 
     public CategorySubmoduleStepDef() {
-    PageFactory.initElements(WebDriverUtils.driver, this);
-}
+        PageFactory.initElements(WebDriverUtils.driver, this);
+    }
 }
