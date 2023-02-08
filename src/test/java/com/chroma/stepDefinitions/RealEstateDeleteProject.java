@@ -1,6 +1,7 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.pages.RealEstateNewProjectPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 
@@ -16,10 +17,10 @@ public class RealEstateDeleteProject extends PageInitializer {
     }
 
     // Determines if admin is on the project page
-    @Then("admin is on the Project page")
-    public void admin_is_on_the_Project_page(String allProject) {
+    @Then("admin is on the Project page {string}")
+    public void admin_is_on_the_Project_page(String allProjects) {
         String actualAllProjectText = realEstateNewProjectPage.allProjectText.getText();
-        CommonUtils.assertEquals(allProject, actualAllProjectText);
+        CommonUtils.assertEquals(allProjects, actualAllProjectText);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
@@ -31,7 +32,7 @@ public class RealEstateDeleteProject extends PageInitializer {
     }
 
     // Determines if user is on the new project page
-    @Then("admin is on the new project page")
+    @Then("admin is on the new project page {string}")
     public void admin_is_on_the_new_project_page(String newProject) {
         String actualNewProjectText = realEstateNewProjectPage.newProjectText.getText();
         CommonUtils.assertEquals(newProject, actualNewProjectText);
@@ -47,44 +48,49 @@ public class RealEstateDeleteProject extends PageInitializer {
         realEstateAdminAgentsPage.adminLogOutButton.click();
     }
 
-    // Navigates to the Agents project page
-    @When("an admin navigates to the project page")
-    public void an_admin_navigates_to_the_project_page() {
+    // Lines 13-17 from feature file
+    // Navigates to the Agent project page
+    @When("an admin navigates to the Agent project page")
+    public void an_admin_navigates_to_the_Agent_project_page() {
+        CommonUtils.sleep(2000);
         realEstateAgentIndexPage.agentProjectLink.click();
+        CommonUtils.sleep(2000);
     }
 
-    // Determines if user is on the agents project page
-    @Then("admin is on the agent project page")
-    public void admin_is_on_the_agent_project_page(String headerProject) {
-        String actualHeaderProjectText = realEstateNewProjectPage.headerProjectText.getText();
-        CommonUtils.assertEquals(headerProject, actualHeaderProjectText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
-    }
-
-    // Displays the created project
-    @Then("the created project is shown on the agent project page")
+    //
+    @Then("the created project is shown on the agent project page {string}")
     public void the_created_project_is_shown_on_the_agent_project_page(String garyTest) {
-        CommonUtils.scrollIntoView(realEstateNewProjectPage.garyTestproject);
-        String actualGaryTestText = realEstateNewProjectPage.garyTestproject.getText();
+        CommonUtils.scrollIntoView(RealEstateNewProjectPage.garyTestProjectMethod(garyTest));
+        String actualGaryTestText = RealEstateNewProjectPage.garyTestProjectMethod(garyTest).getText();
         CommonUtils.assertEquals(garyTest, actualGaryTestText);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
 
-    // Displays the project on the Admin project page
-    @Then("the created project is shown on the project page")
-    public void the_created_project_is_shown_on_the_project_page(String garyTest) {
-        CommonUtils.scrollIntoView(realEstateNewProjectPage.garyTestproject);
-        String actualGaryTestText = realEstateNewProjectPage.garyTestproject.getText();
-        CommonUtils.waitForVisibility(realEstateNewProjectPage.garyTestproject);
-        CommonUtils.assertEquals(garyTest, actualGaryTestText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
-    }
-
-    @When("the user archives the project")
-    public void the_user_archives_the_project() {
+    @When("an admin navigates to the Admin project page")
+    public void an_admin_navigates_to_the_Admin_project_page() {
+        CommonUtils.sleep(1000);
+        realEstateAgentIndexPage.adminProjectLink.click();
+        CommonUtils.sleep(1000);
         
     }
+
+    //
+    @When("the user archives the project {string}")
+    public void the_user_archives_the_project(String settingPropertyButton) {
+        CommonUtils.scrollIntoView(RealEstateNewProjectPage.settingsButtonProperty(settingPropertyButton));
+        RealEstateNewProjectPage.settingsButtonProperty(settingPropertyButton).click();
+        CommonUtils.sleep(3000);
+    }
+
+    //
+    // @Then("the project is no longer in the active section")
+    // public void the_project_is_no_longer_in_the_active_section() {
+    // realEstateNewProjectPage.activeProject.click();
+    // JavascriptExecutor js = (JavascriptExecutor) driver;
+    // js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+    // CommonUtils.sleep(2000);
+    // CucumberLogUtils.logExtentScreenshot();
+    // CucumberLogUtils.logScreenShot();
+    // }
 }

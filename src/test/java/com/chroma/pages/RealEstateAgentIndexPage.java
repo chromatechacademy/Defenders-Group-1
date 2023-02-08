@@ -24,9 +24,13 @@ public class RealEstateAgentIndexPage {
     @FindBy(xpath = "//span[normalize-space()='account_box']//parent::button//parent::div//child::ul//child::li[3]//child::a")
     public WebElement agentLogOutButton;
 
-    /* Gary - Project Locator */
+    /* Gary - Project Agent Locator */
     @FindBy(xpath = "(//*[@class='navbar-label'])[2]")
     public WebElement agentProjectLink;
+    
+    /* Gary - Project Admin Locator */
+    @FindBy(xpath = "//span[normalize-space()='Projects']")
+    public WebElement adminProjectLink;
 
     public RealEstateAgentIndexPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);

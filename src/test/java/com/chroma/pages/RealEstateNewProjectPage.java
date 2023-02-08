@@ -3,6 +3,8 @@ package com.chroma.pages;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.chroma.web.WebDriverUtils;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class RealEstateNewProjectPage {
@@ -67,12 +69,33 @@ public class RealEstateNewProjectPage {
     public WebElement newProjectText;
 
     // GaryTest project
-    @FindBy(xpath = "//*[contains(text(),'GaryTest')]")
-    public WebElement garyTestproject;
+    /* GEORGE - DYNAMIC LOCATOR FOR DELETE DROPDOWN */
+    public static WebElement garyTestProjectMethod(String garyTestProject) {
+        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + garyTestProject
+                + "')]"));
+    }
 
     //Header Project Text
-    @FindBy(xpath = "(//h1[normalize-space()='Projects'])")
+    @FindBy(xpath = "(//*[@class='mainUserText']")
     public WebElement headerProjectText;
+
+    //Settings Locator
+    @FindBy(xpath ="(//button[@id='dropdownMenuButton1'])[77]")
+    public WebElement settingsButtons;
+
+    //Archive Locator
+    @FindBy(xpath = "(//button[@class='dropdown-item'][normalize-space()='Archive'])[76]")
+    public WebElement archiveMenu;
+
+    //Active locator
+    @FindBy(xpath = "//a[normalize-space()='Active']")
+    public WebElement activeProject;
+
+    /* GEORGE - DYNAMIC LOCATOR FOR DELETE DROPDOWN */
+    public static WebElement settingsButtonProperty(String settingsPropertyButton) {
+        return WebDriverUtils.driver.findElement(By.xpath("(//b[contains(text(),'" + settingsPropertyButton
+                + "')])[4]//parent::h1//parent::a//parent::div//child::div[2]//child::button"));
+    }
 
     public RealEstateNewProjectPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
