@@ -1,6 +1,6 @@
 Feature: Student Admission
 
-  @CTSMSRegressionRunners @Lili @DF-19 
+  @CTSMSRegression @Lili @DF-19 
   Scenario Outline: Admitting muiliple Students
     Given an admin user is on the login page "<URL>"
     When an admin user logins with valid credentials username "<USERNAME>" and password "<PASSWORD>"
