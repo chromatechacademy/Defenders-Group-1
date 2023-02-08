@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/java/com/chroma/features", 
 		glue = "com.chroma.stepDefinitions", 
 		tags = "@RealEstateProgression", 
-		dryRun = true, 
+		dryRun = false, 
 		monochrome = true, 
 		strict = true)
 
