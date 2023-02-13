@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
@@ -44,7 +43,6 @@ public class DashboardStepDef extends PageInitializer {
         CommonUtils.assertEquals(homeworkAText, homework);
         String reportsAText = studentDashboardPage.reportsModule.getText();
         CommonUtils.assertEquals(reportsAText, reports);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 }

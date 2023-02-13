@@ -2,7 +2,6 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentDashboardPage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 
@@ -11,8 +10,7 @@ public class StudentInformationtStepDef extends PageInitializer{
      /* CLICKING ON STUDENT INFORMATION MODULE */
     @Then("an admin clicks on {string} module")
     public void an_admin_clicks_on_module(String moduleText) {
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
         StudentDashboardPage.dynamicModuleLocator(moduleText).click();
         CommonUtils.sleep(2000);
     }

@@ -2,9 +2,7 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.BulkDeletePage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
-import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Then;
 
 public class CTSMSMultipleStudentAdmissionStepDef extends PageInitializer {
@@ -18,8 +16,7 @@ public class CTSMSMultipleStudentAdmissionStepDef extends PageInitializer {
     public void an_admin_selects_Class_and_Section(String className, String sectionName) {
         CommonUtils.selectDropDownValue(className, bulkDeletePage.classNameDropdown);
         CommonUtils.selectDropDownValue(sectionName, bulkDeletePage.sectionNameDropdown);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     @Then("clicks on Search button")

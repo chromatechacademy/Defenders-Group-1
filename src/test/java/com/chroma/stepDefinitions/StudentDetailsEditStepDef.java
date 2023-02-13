@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Then;
@@ -23,8 +22,7 @@ public class StudentDetailsEditStepDef extends PageInitializer {
     public void selects_section_and_Section(String cyberSecurity, String networkingFundamentals) {
         CommonUtils.selectDropDownValue("Cyber Security", studentDetailsPage.classDropdown);
         CommonUtils.selectDropDownValue("Networking Fundamentals", studentDetailsPage.sectionDropDown);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         CommonUtils.sleep(1000);
     }
 
@@ -45,8 +43,7 @@ public class StudentDetailsEditStepDef extends PageInitializer {
     public void the_user_is_on_the_page(String url) {
         String studentDetailsUrl = WebDriverUtils.driver.getCurrentUrl();
         CommonUtils.assertEquals(url, studentDetailsUrl);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         CommonUtils.sleep(1000);
     }
 
@@ -63,8 +60,7 @@ public class StudentDetailsEditStepDef extends PageInitializer {
     public void the_message_Record_Update(String recordUpdateSuccessMessage) {
         String actualsuccessText = studentDetailsPage.recordUpdateSuccessMessage.getText();
         CommonUtils.assertEquals(recordUpdateSuccessMessage, actualsuccessText);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         CommonUtils.sleep(1000);
     }
 }

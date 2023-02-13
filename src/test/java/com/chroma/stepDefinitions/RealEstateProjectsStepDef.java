@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.pages.RealEstateProjectsPage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 
@@ -24,7 +23,6 @@ public class RealEstateProjectsStepDef {
         CommonUtils.assertTrue(actualActiveText.contains(active));
         String actualArchivedText = RealEstateProjectsPage.archivedRadialButton.getText();
         CommonUtils.assertTrue(actualArchivedText.contains(archived));
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 }
