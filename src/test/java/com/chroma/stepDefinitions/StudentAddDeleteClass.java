@@ -2,7 +2,6 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentAcademicsClassPage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Then;
@@ -25,8 +24,7 @@ public class StudentAddDeleteClass extends PageInitializer {
     public void admin_is_directed_to_Classes_page_with_the_text(String expetedSelectionsPageText) {
         String actualSelectionsPageText = studentSelectionsPage.addSelectionText.getText();
         CommonUtils.assertEquals(expetedSelectionsPageText, actualSelectionsPageText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -43,8 +41,7 @@ public class StudentAddDeleteClass extends PageInitializer {
     @When("selects a Section {string}")
     public void selects_a_Section(String setionCBox) {
         StudentAcademicsClassPage.dynamicCheckboxModuleLocator(setionCBox).click();
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -54,8 +51,7 @@ public class StudentAddDeleteClass extends PageInitializer {
     public void class_is_succesfully_saved_and_confirmation_message_displays(String expectedSuccessMessage) {
         String actualSuccessMessage = studentAcademicsClassPage.classSavedSuccesfullyText.getText();
         CommonUtils.assertEquals(expectedSuccessMessage, actualSuccessMessage);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -72,7 +68,6 @@ public class StudentAddDeleteClass extends PageInitializer {
     @Then("Class is deleted")
     public void class_is_deleted() {
         WebDriverUtils.driver.switchTo().alert().accept();
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 }

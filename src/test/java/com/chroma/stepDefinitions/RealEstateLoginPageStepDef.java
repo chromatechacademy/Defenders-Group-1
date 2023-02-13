@@ -2,7 +2,6 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.RealEstateAgentIndexPage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
@@ -26,8 +25,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
     public void the_admin_logins_with_valid_credentials_email_and_password(String email, String password) {
         realEstateAdminWelcomePage.emailTextBox.sendKeys(email);
         realEstateAdminWelcomePage.passwordTextBox.sendKeys(password);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
         realEstateAdminWelcomePage.logInButton.click();
     }
 
@@ -38,8 +36,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
     public void the_admin_is_landed_on_a_home_page_with_text(String expectedAgentsText) {
         String actualAgetntsText = realEstateAdminIndexPage.helloAdminText.getText();
         CommonUtils.assertEquals(expectedAgentsText, actualAgetntsText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -59,8 +56,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
     public void admin_should_be_logged_out_and_message_should_be_displayed(String expectedAdminWelcomeText) {
         String actualAdminWelcomeText = realEstateAdminWelcomePage.adminWelcomeText.getText();
         CommonUtils.assertEquals(expectedAdminWelcomeText, actualAdminWelcomeText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -79,8 +75,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
             String agentPassword) {
         realEstateAdminWelcomePage.emailTextBox.sendKeys(agentEmail);
         realEstateAdminWelcomePage.passwordTextBox.sendKeys(agentPassword);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
         realEstateAdminWelcomePage.logInButton.click();
     }
 
@@ -90,9 +85,9 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
     @Then("the admin is landed on a Agent home page with text {string}")
     public void the_admin_is_landed_on_a_Agent_home_page_with_text(String expectedHelloChromaText) {
         String actualHelloChromaText = realEstateAgentIndexPage.helloChromaTechText.getText();
-        CommonUtils.assertTrue(actualHelloChromaText.contains(expectedHelloChromaText));
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.assertEquals(RealEstateAgentIndexPage.agentHelloFirstName(expectedHelloChromaText),
+                actualHelloChromaText);
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -105,7 +100,6 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
         realEstateAgentIndexPage.agentLogOutButton.click();
         String actualAgentWelcomeText = realEstateAgentWelcomePage.agentWelcomeText.getText();
         CommonUtils.assertEquals(expectedAgentWelcomeText, actualAgentWelcomeText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 }

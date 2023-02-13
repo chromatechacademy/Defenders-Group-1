@@ -102,8 +102,8 @@ public class WebDriverUtils {
                 caps.setCapability("appium:automationName", "XCUITest");
                 MutableCapabilities sauceOptions = new MutableCapabilities();
                 sauceOptions.setCapability("appiumVersion", "2.0.0");
-                sauceOptions.setCapability("build", "<your build id>");
-                sauceOptions.setCapability("name", "<your test name>");
+                sauceOptions.setCapability("build", "1.0");
+                sauceOptions.setCapability("name", "DF-1");
                 caps.setCapability("sauce:options", sauceOptions);
                 try {
                     driver = new IOSDriver(new URL(ConfigReader.getPropertyValue("sauceUrl")), caps);

@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,15 +13,13 @@ public class StudentInvalidCredentialsLogin extends PageInitializer {
         studentLoginPage.userNameTextBox.sendKeys(invalidUserName);
         studentLoginPage.passwordTextBox.sendKeys(invalidPassword);
         studentLoginPage.signInButton.click();
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     @Then("the the admin will not be able to log in and the the {string} should be displayed")
     public void the_the_admin_will_not_be_able_to_log_in_and_the_the_should_be_displayed(String expectedErrorMessage) {
         String actualErrorMessage = studentLoginPage.invalidUserMessage.getText();
         CommonUtils.assertEquals(expectedErrorMessage, actualErrorMessage);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 }
