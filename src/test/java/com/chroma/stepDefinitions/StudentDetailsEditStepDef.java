@@ -7,6 +7,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class StudentDetailsEditStepDef extends PageInitializer {
+    
     // Navigating to the student details page
     @When("an admin user navigates to the student details page {string}")
     public void an_admin_user_navigates_to_the_student_details_page(String url) {

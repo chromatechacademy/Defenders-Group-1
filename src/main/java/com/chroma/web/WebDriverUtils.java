@@ -1,7 +1,6 @@
 package com.chroma.web;
 
 import java.time.Duration;
-
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -129,16 +128,14 @@ public class WebDriverUtils {
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-
             }
+
         } else {
             throw new RuntimeException("Invalid browser name");
         }
-
     }
 
     public static void tearDown() {
         driver.quit();
     }
-
 }

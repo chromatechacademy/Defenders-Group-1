@@ -23,7 +23,7 @@ public class CTSMSMultipleStudentAdmissionStepDef extends PageInitializer {
     public void clicks_on_Search_button() {
         bulkDeletePage.searchButton.click();
     }
-
+    
     @Then("admitted student with first name {string} and last name {string} is deleted")
     public void admitted_student_with_first_name_and_last_name_is_deleted(String firstName, String lastName) {
         BulkDeletePage.studentRecordLocator(firstName + " " + lastName).click();
