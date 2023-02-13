@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -38,7 +37,6 @@ public class FeesCollectionLinksStepDef extends PageInitializer {
         CommonUtils.assertEquals(feesCarryForward, feesCarryForwardIsDisplayed);
         String feesReminderIsDisplayed = studentDashboardPage.subLinkFeesReminder.getText();
         CommonUtils.assertEquals(feesReminder, feesReminderIsDisplayed);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 }
