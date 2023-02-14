@@ -1,6 +1,6 @@
 Feature: Admitt Student
 
-  @CTSMSRegression @Alex @DF-12 @CTSMSSmoke
+  @CTSMSRegression @Alex @DF-12 @CTSMSSmoke @CTSMSProgression
   Scenario Outline: Verify if a student is successfully admitted
     Given an admin user is on the login page "https://mexil.it/chroma_tech_academy/dev/site/login"
     When an admin user logins with valid credentials username "general@teacher.com" and password "123456"
@@ -18,11 +18,11 @@ Feature: Admitt Student
     And enters Guardian Phone Number "<GUARDIAN PHONE NUMBER>"
     And clicks on the Save button
     Then student is succesfuly saved and confirmation message is displayed "Record Saved Successfully"
-    # Then an admin navigates to Bulk Delete Submodule
-    # Then an admin selects Class "<CLASS>" and Section "<SECTION>"
-    # And clicks on Search button
-    # Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
+    Then an admin navigates to Bulk Delete Submodule
+    Then an admin selects Class "<CLASS>" and Section "<SECTION>"
+    And clicks on Search button
+    Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
 
     Examples: 
       | ADMISSION NUMBER | CLASS          | SECTION                 | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | GUARDIAN PHONE NUMBER |
-      |           099712 | Cyber Security | Networking Fundamentals | George     | One       | Female | 02/22/1991 | Jannet One   |            7026875816 |
+      |           699112 | Cyber Security | Networking Fundamentals | George     | One       | Female | 02/22/1991 | Jannet One   |            7026875816 |

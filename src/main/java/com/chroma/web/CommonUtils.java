@@ -527,4 +527,14 @@ public class CommonUtils extends WebDriverUtils {
 			CucumberLogUtils.logExtentScreenshot();
 		}
 	}
+
+
+	/**
+	 * USE THIS METHOD TO ACCEPT ALLERTS
+	 */
+	public static void nonMobileAutoAcceptAlert() {
+		if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
+			CommonUtils.acceptAlert();
+		}
+	}
 }

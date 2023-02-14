@@ -43,7 +43,7 @@ public class CTSMSMultipleStudentAdmissionStepDef extends PageInitializer {
         CommonUtils.sleep(500);
         bulkDeletePage.deleteButton.click();
         CommonUtils.acceptAlert();
-        CommonUtils.sleep(2000);
+        CommonUtils.sleep(500);
     }
 
     @Then("admitted student with student admission number {string} is deleted")
@@ -57,7 +57,7 @@ public class CTSMSMultipleStudentAdmissionStepDef extends PageInitializer {
 		}
         CommonUtils.sleep(500);
         bulkDeletePage.deleteButton.click();
-        CommonUtils.acceptAlert();
-        CommonUtils.sleep(2000);
+        CommonUtils.nonMobileAutoAcceptAlert();
+        CommonUtils.sleep(500);
     }
 }
