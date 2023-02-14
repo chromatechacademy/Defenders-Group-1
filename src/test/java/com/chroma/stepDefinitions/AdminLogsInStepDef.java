@@ -1,6 +1,8 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.pages.StudentDashboardPage;
+import com.chroma.utils.ConfigReader;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
@@ -30,6 +32,9 @@ public class AdminLogsInStepDef extends PageInitializer {
     public void an_admin_is_landed_on_a_home_page_with_URL(String url) {
         String actualHomePageUrl = WebDriverUtils.driver.getCurrentUrl();
         CommonUtils.assertEquals(url, actualHomePageUrl);
+        if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
+			StudentDashboardPage.dashboardHamburger().click();
+		}
         CommonUtils.nonMobileScreenshots();
     }
 }

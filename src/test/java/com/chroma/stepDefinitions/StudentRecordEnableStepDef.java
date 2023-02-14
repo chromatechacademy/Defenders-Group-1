@@ -2,7 +2,6 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentSelectCriteriaPage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 
@@ -16,8 +15,7 @@ public class StudentRecordEnableStepDef extends PageInitializer {
 
         String actualSelectCriteriaText = studentSelectCriteriaPage.selectCriteriaText.getText();
         CommonUtils.assertEquals(expectedSelectCriteriaText, actualSelectCriteriaText);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -36,8 +34,7 @@ public class StudentRecordEnableStepDef extends PageInitializer {
             String recordLastName) {
         String actualRecirdStudentName = studentRecordsPage.studentRecordName.getText();
         CommonUtils.assertEquals((recordFirstName + " " + recordLastName), actualRecirdStudentName);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -49,8 +46,7 @@ public class StudentRecordEnableStepDef extends PageInitializer {
         CommonUtils.acceptAlert();
         CommonUtils.sleep(500);
         studentRecordsPage.reasonDropdown.click();
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         studentRecordsPage.saveReasonButton.click();
     }
 
@@ -61,8 +57,7 @@ public class StudentRecordEnableStepDef extends PageInitializer {
     public void the_admin_enable_student_records() {
         studentRecordsPage.studentRecordEnableButton.click();
         CommonUtils.acceptAlert();
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         CommonUtils.sleep(2000);
     }
 }
