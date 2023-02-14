@@ -3,7 +3,6 @@ package com.chroma.stepDefinitions;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.RealEstateAdminActiveAgentsPage;
 import com.chroma.pages.RealEstateAdminInactiveAgentsPage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
@@ -31,8 +30,7 @@ public class RealEstateAddDeletAgentStepDef extends PageInitializer {
         JavascriptUtils
                 .scrollIntoView(RealEstateAdminInactiveAgentsPage.inactiveAgentEmailLocator(activeDeletedAgentEmail));
         CommonUtils.sleep(500);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -45,7 +43,6 @@ public class RealEstateAddDeletAgentStepDef extends PageInitializer {
                 .waitForVisibility(
                         RealEstateAdminActiveAgentsPage.activeAgentDeleteDropdownLocator(inactiveDeletedAgentEmail));
         RealEstateAdminInactiveAgentsPage.inactiveAgentDeleteLocator(inactiveDeletedAgentEmail).click();
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 }

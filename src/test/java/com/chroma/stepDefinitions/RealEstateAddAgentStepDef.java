@@ -4,7 +4,6 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.RealEstateAdminActiveAgentsPage;
 import com.chroma.pages.RealEstateAdminAgentsPage;
 import com.chroma.pages.RealEstateAdminInactiveAgentsPage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
@@ -26,8 +25,7 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
     public void the_admin_will_land_on_the_Agents_page_with_text(String expectedAllAgentsText) {
         String actualAllAgentsText = realEstateAdminIndexPage.allAgentsText.getText();
         CommonUtils.assertEquals(expectedAllAgentsText, actualAllAgentsText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -51,8 +49,7 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
         CommonUtils.sleep(500);
         realEstateAdminAgentsPage.enterAgentPassword.sendKeys(agentPassword);
         realEstateAdminAgentsPage.enterAgentCPassword.sendKeys(agentPassword);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -81,8 +78,7 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
         String actualAgentEmail = RealEstateAdminAgentsPage.agentEmailLocator(expectedAgentEmail).getText();
         CommonUtils.assertEquals(expectedAgentEmail, actualAgentEmail);
         CommonUtils.sleep(500);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -106,7 +102,6 @@ public class RealEstateAddAgentStepDef extends PageInitializer {
                 .waitForVisibility(
                         RealEstateAdminActiveAgentsPage.activeAgentDeleteDropdownLocator(deletinAgentEmail));
         RealEstateAdminInactiveAgentsPage.inactiveAgentDeleteLocator(deletinAgentEmail).click();
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 }

@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 
@@ -29,7 +28,6 @@ public class RealEstateAgentsPageStepDef extends PageInitializer {
         CommonUtils.assertEquals(contactNumber, contactNumberTextIsDisplayed);
         String actionsTextIsDisplayed = realEstateAdminAgentsPage.actionsText.getText();
         CommonUtils.assertEquals(actions, actionsTextIsDisplayed);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 }

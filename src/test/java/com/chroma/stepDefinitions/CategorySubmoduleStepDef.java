@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentCategoriesPage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Then;
@@ -29,8 +28,7 @@ public class CategorySubmoduleStepDef extends PageInitializer {
     public void admin_is_directed_to_CATEGORY_page_with_the_text(String expetedCategoryPageText) {
         String actualCategoryPageText = studentCategoriesPage.createCategoryText.getText();
         CommonUtils.assertEquals(expetedCategoryPageText, actualCategoryPageText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -57,8 +55,7 @@ public class CategorySubmoduleStepDef extends PageInitializer {
             String expectedCategorySavesSuccessfulyText) {
         String actualCategorySavesSuccessfulyText = studentCategoriesPage.categorySaveButton.getText();
         CommonUtils.assertEquals(expectedCategorySavesSuccessfulyText, actualCategorySavesSuccessfulyText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
         CommonUtils.sleep(1000);
     }
 
@@ -76,8 +73,7 @@ public class CategorySubmoduleStepDef extends PageInitializer {
     @Then("Category is deleted")
     public void category_is_deleted() {
         WebDriverUtils.driver.switchTo().alert().accept();
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
         CommonUtils.sleep(1000);
     }
 

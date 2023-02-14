@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,8 +19,7 @@ public class RealEstateDashboardStepDef extends PageInitializer {
         CommonUtils.waitForVisibility(realEstateDashboardPage.reservedByAgentsText);
         String actualreservedByAgentText = realEstateDashboardPage.reservedByAgentsText.getText();
         CommonUtils.assertEquals(reservedByAgent, actualreservedByAgentText);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     // NAVIGATES TO THE OVERVIEW GRAPH
@@ -36,7 +34,6 @@ public class RealEstateDashboardStepDef extends PageInitializer {
         CommonUtils.waitForVisibility(realEstateDashboardPage.overviewLink);
         String actualpropertiesOverviewText = realEstateDashboardPage.propertiesOverviewText.getText();
         CommonUtils.assertEquals(propertiesOverview, actualpropertiesOverviewText);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 }

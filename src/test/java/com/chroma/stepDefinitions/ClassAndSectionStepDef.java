@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Then;
@@ -16,8 +15,7 @@ public class ClassAndSectionStepDef extends PageInitializer {
         studentDashboardPage.classSubModule.click();
         String studentClassUrl = WebDriverUtils.driver.getCurrentUrl();
         CommonUtils.assertEquals(url, studentClassUrl);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         CommonUtils.sleep(1000);
     }
 
@@ -29,48 +27,37 @@ public class ClassAndSectionStepDef extends PageInitializer {
             String dataBaseTesting) {
         String actualSDETText = studentClassPage.sDETText.getText();
         CommonUtils.assertEquals(actualSDETText, SDET);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualTestingFundamentalString = studentClassPage.testingFundamentalsText.getText();
         CommonUtils.assertEquals(actualTestingFundamentalString, testingFundamentals);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualsDLCMethodText = studentClassPage.sDLCMethodologiesText.getText();
         CommonUtils.assertEquals(actualsDLCMethodText, sDLCMethodologies);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualSelTestAuto = studentClassPage.seleniumTestAutomationTest.getText();
         CommonUtils.assertEquals(actualSelTestAuto, seleniumTestAutomation);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualcucumberFund = studentClassPage.cucumberFundamentalsText.getText();
         CommonUtils.assertEquals(actualcucumberFund, cucumberFundamentals);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualAPITest = studentClassPage.aPITestingText.getText();
         CommonUtils.assertEquals(actualAPITest, aPITesting);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualGitGitHub = studentClassPage.git_GitHubText.getText();
         CommonUtils.assertEquals(actualGitGitHub, gitGithub);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualJava11ForCoolPPL = studentClassPage.java11ForCoolPeopleText.getText();
         CommonUtils.assertEquals(actualJava11ForCoolPPL, java11ForCoolPeople);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualMobileTestAuto = studentClassPage.mobileTestAutomationText.getText();
         CommonUtils.assertEquals(actualMobileTestAuto, mobileTestAutomation);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualAccessTesting = studentClassPage.accessibilityTestingText.getText();
         CommonUtils.assertEquals(actualAccessTesting, accessibilityTesting);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualDataBTest = studentClassPage.dataBaseTestingText.getText();
         CommonUtils.assertEquals(actualDataBTest, dataBaseTesting);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     // Asserting that classes and sections are displayed
@@ -80,23 +67,18 @@ public class ClassAndSectionStepDef extends PageInitializer {
             String linuxFundamentals, String cIATriad, String penetrationTestingEtheicalHacking) {
         String actualCyberSecurityText = studentClassPage.cyberSecurityText.getText();
         CommonUtils.assertEquals(actualCyberSecurityText, cyberSecurity);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualNetworkFund = studentClassPage.networkingFundamentalsText.getText();
         CommonUtils.assertEquals(actualNetworkFund, networkingFundamentals);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualLinuxFund = studentClassPage.linuxFundamentalsText.getText();
         CommonUtils.assertEquals(actualLinuxFund, linuxFundamentals);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String actualCIATriad = studentClassPage.cIATriadText.getText();
         CommonUtils.assertEquals(actualCIATriad, cIATriad);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
         String ActualPeneTestEthicHacking = studentClassPage.penetrationTestingEthicalHackingText.getText();
         CommonUtils.assertEquals(ActualPeneTestEthicHacking, penetrationTestingEtheicalHacking);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 }

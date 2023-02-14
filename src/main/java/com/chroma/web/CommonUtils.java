@@ -40,7 +40,7 @@ public class CommonUtils extends WebDriverUtils {
 	 * WebDriver.
 	 * 
 	 * @param element Pass the element to which the text needs to be entered.
-	 * @param string   Pass the desired text/value in the second parameter.
+	 * @param string  Pass the desired text/value in the second parameter.
 	 */
 	public static void sendKeys(WebElement element, String value) {
 		element.clear();
@@ -508,6 +508,7 @@ public class CommonUtils extends WebDriverUtils {
 
 	/**
 	 * Use this method to assert a boolean condition
+	 * 
 	 * @param flag
 	 */
 	public static void assertTrue(boolean flag) {
@@ -517,14 +518,14 @@ public class CommonUtils extends WebDriverUtils {
 			e.printStackTrace();
 		}
 	}
-	/*
-	 * Use this method to take screenshots -  this method will allow sauce labs to 
-	 * take screenshots
+
+	/**
+	 * USE THIS METHOD TO TAKE SCREENSHOTSFOR NON MOBILE TESTING
 	 */
 	public static void nonMobileScreenshots() {
-		if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")){
-			CucumberLogUtils.logExtentScreenshot();
+		if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
 			CucumberLogUtils.logScreenShot();
+			CucumberLogUtils.logExtentScreenshot();
 		}
 	}
 }

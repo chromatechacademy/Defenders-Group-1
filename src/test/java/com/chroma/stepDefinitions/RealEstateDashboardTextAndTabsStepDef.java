@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
 import com.chroma.web.WebDriverUtils;
@@ -22,8 +21,7 @@ public class RealEstateDashboardTextAndTabsStepDef extends PageInitializer {
         realEstateAdminWelcomePage.emailTextBox.sendKeys(email);
         realEstateAdminWelcomePage.passwordTextBox.sendKeys(password);
         realEstateAdminWelcomePage.logInButton.click();
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     @Then("the admin should see the following elements {string}, {string}, {string}, {string}, {string}, {string} and the following tabs {string}, {string}, {string}")
@@ -48,7 +46,6 @@ public class RealEstateDashboardTextAndTabsStepDef extends PageInitializer {
         CommonUtils.assertTrue(actualDashboardTabText.contains(dashboardTab));
         String actualProjectsTabText = realEstateAdminDashboardPage.projectsTab.getText();
         CommonUtils.assertTrue(actualProjectsTabText.contains(projectsTab));
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
      }
 }
