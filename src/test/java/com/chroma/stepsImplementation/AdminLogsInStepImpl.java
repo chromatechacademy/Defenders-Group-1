@@ -28,7 +28,7 @@ public class AdminLogsInStepImpl extends PageInitializer {
         CommonUtils.assertEquals(url, actualHomePageUrl);
         if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
             StudentDashboardPage.dashboardHamburger().click();
+            CommonUtils.nonMobileScreenshots();
         }
-        CommonUtils.nonMobileScreenshots();
     }
 }
