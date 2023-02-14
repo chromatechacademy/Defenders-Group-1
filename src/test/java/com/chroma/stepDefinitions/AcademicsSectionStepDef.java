@@ -15,9 +15,16 @@ public class AcademicsSectionStepDef extends PageInitializer {
      */
     @Then("admin clicks on {string} module")
     public void admin_clicks_on_module(String moduleText) {
-        CommonUtils.nonMobileScreenshots();
-        StudentDashboardPage.dynamicModuleLocator(moduleText).click();
-        CommonUtils.sleep(500);
+        if(CommonUtils.isElementDisplayed(studentDashboardPage.studentInformationModule)){
+            CommonUtils.nonMobileScreenshots();
+            StudentDashboardPage.dynamicModuleLocator(moduleText).click();
+            CommonUtils.sleep(500);
+        }else{
+            studentDashboardPage.sidemenuButton.click();
+            CommonUtils.nonMobileScreenshots();
+            StudentDashboardPage.dynamicModuleLocator(moduleText).click();
+            CommonUtils.sleep(500);
+        }
     }
     
     /*
