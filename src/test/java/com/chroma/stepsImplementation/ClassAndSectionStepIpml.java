@@ -76,5 +76,4 @@ public class ClassAndSectionStepIpml extends PageInitializer {
          CommonUtils.assertEquals(ActualPeneTestEthicHacking, penetrationTestingEtheicalHacking);
          CommonUtils.nonMobileScreenshots();
      }
-    
 }

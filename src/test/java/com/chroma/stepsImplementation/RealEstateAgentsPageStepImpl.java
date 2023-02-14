@@ -28,5 +28,4 @@ public class RealEstateAgentsPageStepImpl extends PageInitializer{
         CommonUtils.assertEquals(actions, actionsTextIsDisplayed);
         CommonUtils.nonMobileScreenshots();
     }
-    
 }
