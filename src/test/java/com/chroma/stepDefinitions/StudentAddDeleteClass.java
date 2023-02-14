@@ -2,8 +2,7 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentAcademicsClassPage;
-import com.chroma.web.CommonUtils;
-import com.chroma.web.WebDriverUtils;
+import com.chroma.stepsImplementation.StudentAddDeleteClassStepImpl;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -22,9 +21,7 @@ public class StudentAddDeleteClass extends PageInitializer {
      */
     @Then("admin is directed to Classes page with the text {string}")
     public void admin_is_directed_to_Classes_page_with_the_text(String expetedSelectionsPageText) {
-        String actualSelectionsPageText = studentSelectionsPage.addSelectionText.getText();
-        CommonUtils.assertEquals(expetedSelectionsPageText, actualSelectionsPageText);
-        CommonUtils.nonMobileScreenshots();
+        StudentAddDeleteClassStepImpl.sectionPageAssertion(expetedSelectionsPageText);
     }
 
     /*
@@ -40,8 +37,7 @@ public class StudentAddDeleteClass extends PageInitializer {
      */
     @When("selects a Section {string}")
     public void selects_a_Section(String setionCBox) {
-        StudentAcademicsClassPage.dynamicCheckboxModuleLocator(setionCBox).click();
-        CommonUtils.nonMobileScreenshots();
+        StudentAddDeleteClassStepImpl.sectionCheckbox(setionCBox);
     }
 
     /*
@@ -49,9 +45,7 @@ public class StudentAddDeleteClass extends PageInitializer {
      */
     @Then("Class is succesfully saved and confirmation message displays {string}")
     public void class_is_succesfully_saved_and_confirmation_message_displays(String expectedSuccessMessage) {
-        String actualSuccessMessage = studentAcademicsClassPage.classSavedSuccesfullyText.getText();
-        CommonUtils.assertEquals(expectedSuccessMessage, actualSuccessMessage);
-        CommonUtils.nonMobileScreenshots();
+        StudentAddDeleteClassStepImpl.recordSavedAssertion(expectedSuccessMessage);
     }
 
     /*
@@ -67,7 +61,6 @@ public class StudentAddDeleteClass extends PageInitializer {
      */
     @Then("Class is deleted")
     public void class_is_deleted() {
-        WebDriverUtils.driver.switchTo().alert().accept();
-        CommonUtils.nonMobileScreenshots();
+        StudentAddDeleteClassStepImpl.deleteClass();
     }
 }

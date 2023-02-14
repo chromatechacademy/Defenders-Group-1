@@ -1,6 +1,8 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.pages.StudentDashboardPage;
+import com.chroma.utils.ConfigReader;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
@@ -27,6 +29,10 @@ public class DashboardStepDef extends PageInitializer {
     @Then("module {string} , {string}, {string} , {string} , {string} , {string} , {string} , {string} are displayed")
     public void modules_and_should_be_displayed(String studentInformation, String feesCollection, String income,
             String expenses, String academics, String humanResource, String homework, String reports) {
+        if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
+            StudentDashboardPage.dashboardHamburger().click();
+        }
+        CommonUtils.sleep(1000);
         String studentInformationAText = studentDashboardPage.studentInformationModule.getText();
         CommonUtils.assertEquals(studentInformationAText, studentInformation);
         String feesCollectionAText = studentDashboardPage.feesCollectionLink.getText();

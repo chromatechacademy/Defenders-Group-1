@@ -1,25 +1,21 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.StudentDashboardPage;
 import com.chroma.pages.StudentSelectionsPage;
-import com.chroma.web.CommonUtils;
-import com.chroma.web.WebDriverUtils;
+import com.chroma.stepsImplementation.AcademicsSectionStepImpl;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class AcademicsSectionStepDef extends PageInitializer {
-    
+
     /*
      * CLICKING ON THE ACADEMICS MODULE
      */
     @Then("admin clicks on {string} module")
     public void admin_clicks_on_module(String moduleText) {
-        CommonUtils.nonMobileScreenshots();
-        StudentDashboardPage.dynamicModuleLocator(moduleText).click();
-        CommonUtils.sleep(500);
+        AcademicsSectionStepImpl.clickingOnAcademicsModule(moduleText);
     }
-    
+
     /*
      * CLICKING ON THE SECTIONS FROM ACADEMICS MODULE
      */
@@ -33,9 +29,7 @@ public class AcademicsSectionStepDef extends PageInitializer {
      */
     @Then("admin is directed to Sections page with the text {string}")
     public void admin_is_directed_to_Sections_page_with_the_text(String expetedSelectionsPageText) {
-        String actualSelectionsPageText = studentSelectionsPage.addSelectionText.getText();
-        CommonUtils.assertEquals(expetedSelectionsPageText, actualSelectionsPageText);
-        CommonUtils.nonMobileScreenshots();
+        AcademicsSectionStepImpl.adminOnSectionPageAssertion(expetedSelectionsPageText);
     }
 
     /*
@@ -60,9 +54,7 @@ public class AcademicsSectionStepDef extends PageInitializer {
     @Then("Section is succesfully saved and confirmation message displays {string}")
     public void section_is_succesfully_saved_and_confirmation_message_displays(
             String expectedSessionSavesSuccessfulyText) {
-        String actualSessionSavesSuccessfulyText = studentSelectionsPage.sectionSavedSuccesfullyText.getText();
-        CommonUtils.assertEquals(expectedSessionSavesSuccessfulyText, actualSessionSavesSuccessfulyText);
-        CommonUtils.nonMobileScreenshots();
+        AcademicsSectionStepImpl.recordSavedAssertion(expectedSessionSavesSuccessfulyText);
     }
 
     /*
@@ -78,8 +70,6 @@ public class AcademicsSectionStepDef extends PageInitializer {
      */
     @Then("Section is deleted")
     public void section_is_deleted() {
-        WebDriverUtils.driver.switchTo().alert().accept();
-        CommonUtils.nonMobileScreenshots();
-        CommonUtils.sleep(1000);
+        AcademicsSectionStepImpl.deleteConfirmationAlert();
     }
 }
