@@ -1,24 +1,24 @@
-package com.chroma.stepDefinitions;
+package com.chroma.stepsImplementation;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.stepsImplementation.StudentInformationStepImpl;
-import cucumber.api.java.en.Then;
+import com.chroma.pages.StudentDashboardPage;
+import com.chroma.utils.CucumberLogUtils;
+import com.chroma.web.CommonUtils;
 
-public class StudentInformationtStepDef extends PageInitializer{
+public class StudentInformationStepImpl extends PageInitializer {
 
-     /* CLICKING ON STUDENT INFORMATION MODULE */
-    @Then("an admin clicks on {string} module")
-    public void an_admin_clicks_on_module(String moduleText) {
-        StudentInformationStepImpl.studentInformation(moduleText);
+    /* CLICKING ON STUDENT INFORMATION MODULE */
+    public static void studentInformation(String moduleText) {
+        CommonUtils.nonMobileScreenshots();
+        StudentDashboardPage.dynamicModuleLocator(moduleText).click();
+        CommonUtils.sleep(2000);
     }
 
-    /* ASSERTING STUDENT INFORMATION MODULES*/
-    @Then("the following modules should displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void the_following_modules_should_displayed(String expectedStudentDetailsModule,
+    /* ASSERTING STUDENT INFORMATION MODULES */
+    public static void studentInfoAssertion(String expectedStudentDetailsModule,
             String expextedStudentAdmissionModule, String expectedDisabledStudentModule,
             String expectedBulkDeleteModule, String expectedStudentCategoriesModule, String expectedStudentHouseModule,
             String expectedDisableReasonModule) {
-<<<<<<< HEAD
         String actualStudentDetailsText = studentInformationPage.studentDetailsModule.getText();
         CommonUtils.assertEquals(actualStudentDetailsText, expectedStudentDetailsModule);
         String actualStudentAdmissionText = studentInformationPage.studentAdmissionModule.getText();
@@ -33,9 +33,7 @@ public class StudentInformationtStepDef extends PageInitializer{
         CommonUtils.assertEquals(actualStudentHouseText, expectedStudentHouseModule);
         String actualDisableReasonText = studentInformationPage.disableReasonModule.getText();
         CommonUtils.assertEquals(actualDisableReasonText, expectedDisableReasonModule);
-        CommonUtils.nonMobileScreenshots();
-=======
-       StudentInformationStepImpl.studentInfoAssertion(expectedStudentDetailsModule, expextedStudentAdmissionModule, expectedDisabledStudentModule, expectedBulkDeleteModule, expectedStudentCategoriesModule, expectedStudentHouseModule, expectedDisableReasonModule);
->>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
+        CucumberLogUtils.logScreenShot();
+        CucumberLogUtils.logExtentScreenshot();
     }
 }

@@ -1,8 +1,12 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
+<<<<<<< HEAD
 import com.chroma.utils.ConfigReader;
 import com.chroma.web.CommonUtils;
+=======
+import com.chroma.stepsImplementation.StudentAdmissionStepImpl;
+>>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
 import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -22,8 +26,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("user is directed to Student Admission Page with the text {string}")
     public void user_is_directed_to_Student_Admission_Page_with_the_text(String expectedHeaderText) {
-        String actualHeaderText = studentAdmissionPage.studentAdmissionHeader.getText();
-        CommonUtils.assertEquals(actualHeaderText, expectedHeaderText);
+        StudentAdmissionStepImpl.studentAdmission(expectedHeaderText);
     }
 
     /*
@@ -31,8 +34,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("enters Student unique Admission Number {string}")
     public void enters_Student_unique_Admission_Number(String admissionNumber) {
-        studentAdmissionPage.studentAdmissionNumberTextBox.sendKeys(admissionNumber);
-        CommonUtils.sleep(1000);
+        StudentAdmissionStepImpl.uniqueAdmissionNumber(admissionNumber);
     }
 
     /*
@@ -40,8 +42,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("selects Class {string} and Section {string}")
     public void selects_Class_and_Section(String className, String sectionName) {
-        CommonUtils.selectDropDownValue(className, studentAdmissionPage.classDropDown);
-        CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropDown);
+        StudentAdmissionStepImpl.classAndSectionSelection(className, sectionName);
     }
 
     /*
@@ -49,8 +50,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("enters Students first {string} and last name {string}")
     public void enters_Students_first_and_last_name(String firstName, String lastName) {
-        studentAdmissionPage.firstNameTextBox.sendKeys(firstName);
-        studentAdmissionPage.lastNameTextBox.sendKeys(lastName);
+        StudentAdmissionStepImpl.studentFirstandLastName(firstName, lastName);
     }
 
     /*
@@ -58,10 +58,14 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("selects gender {string}")
     public void selects_gender(String gender) {
+<<<<<<< HEAD
         if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
             JavascriptUtils.scrollIntoView(studentAdmissionPage.dobCalendar);
         }
         CommonUtils.selectDropDownValue(gender, studentAdmissionPage.genderDropDown);
+=======
+        StudentAdmissionStepImpl.gender(gender);
+>>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
     }
 
     /*
@@ -77,11 +81,15 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("enters Parent Guardian Details enters mothers name {string}")
     public void enters_Parent_Guardian_Details_enters_mothers_name(String mothersName) {
+<<<<<<< HEAD
         if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
             JavascriptUtils.scrollIntoView(studentAdmissionPage.mothersNameTextBox);
         }
         CommonUtils.sleep(500);
         studentAdmissionPage.mothersNameTextBox.sendKeys(mothersName);
+=======
+        StudentAdmissionStepImpl.mothersName(mothersName);
+>>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
     }
 
     /*
@@ -89,11 +97,15 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("for If Gurdian Is clicks on Mother radio button")
     public void for_If_Gurdian_Is_clicks_on_Mother_radio_button() {
+<<<<<<< HEAD
         if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
             JavascriptUtils.scrollIntoView(studentAdmissionPage.guardianPhoneNumberTextBox);
         }
         CommonUtils.sleep(500);
         studentAdmissionPage.motherRadioButton.click();
+=======
+        StudentAdmissionStepImpl.guardianRadioButton();
+>>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
     }
 
     /*
@@ -101,8 +113,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("enters Guardian Phone Number {string}")
     public void enters_Guardian_Phone_Number(String phoneNumber) {
-        studentAdmissionPage.guardianPhoneNumberTextBox.sendKeys(phoneNumber);
-        CommonUtils.nonMobileScreenshots();
+        StudentAdmissionStepImpl.guardianPhoneNumber(phoneNumber);
     }
 
     /*
@@ -110,11 +121,15 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("clicks on the Save button")
     public void clicks_on_the_Save_button() {
+<<<<<<< HEAD
         if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
             JavascriptUtils.scrollIntoView(studentAdmissionPage.saveButton);
         }
         studentAdmissionPage.saveButton.click();
         CommonUtils.sleep(500);
+=======
+        StudentAdmissionStepImpl.saveButton();
+>>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
     }
 
     /*
@@ -122,6 +137,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("student is succesfuly saved and confirmation message is displayed {string}")
     public void student_is_succesfuly_saved_and_confirmation_message_is_displayed(String expectedSuccessMessage) {
+<<<<<<< HEAD
         CommonUtils.nonMobileScreenshots();
         if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
             JavascriptUtils.scrollIntoView(studentAdmissionPage.succesfulySavedMessage);
@@ -129,6 +145,9 @@ public class StudentAdmissionStepDef extends PageInitializer {
         String actualSuccessMessage = studentAdmissionPage.succesfulySavedMessage.getText();
         CommonUtils.assertEquals(expectedSuccessMessage, actualSuccessMessage);
         CommonUtils.sleep(1000);
+=======
+        StudentAdmissionStepImpl.recordSaved(expectedSuccessMessage);
+>>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
     }
 
     /*
@@ -136,10 +155,6 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("the Student is not admitted and {string} is displayed")
     public void the_Student_is_not_admitted_and_is_displayed(String expectedAdmissionNumberMustBeUniqueMessage) {
-        CommonUtils.nonMobileScreenshots();
-        String actualAdmissionNumberMustBeUniqueMessage = studentAdmissionPage.admissionNumberMustBeUniqueMessage
-                .getText();
-        CommonUtils.assertEquals(expectedAdmissionNumberMustBeUniqueMessage, actualAdmissionNumberMustBeUniqueMessage);
-        CommonUtils.sleep(1000);
+        StudentAdmissionStepImpl.uniqueNumberAssertion(expectedAdmissionNumberMustBeUniqueMessage);
     }
 }

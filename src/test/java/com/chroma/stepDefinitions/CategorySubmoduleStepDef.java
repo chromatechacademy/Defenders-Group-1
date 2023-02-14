@@ -2,8 +2,12 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentCategoriesPage;
+<<<<<<< HEAD
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
+=======
+import com.chroma.stepsImplementation.CategorySubmoduleStepImpl;
+>>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -22,9 +26,7 @@ public class CategorySubmoduleStepDef extends PageInitializer {
      */
     @Then("admin is directed to CATEGORY page with the text {string}")
     public void admin_is_directed_to_CATEGORY_page_with_the_text(String expetedCategoryPageText) {
-        String actualCategoryPageText = studentCategoriesPage.createCategoryText.getText();
-        CommonUtils.assertEquals(expetedCategoryPageText, actualCategoryPageText);
-        CommonUtils.nonMobileScreenshots();
+        CategorySubmoduleStepImpl.adminOnCategoryPageAssertion(expetedCategoryPageText);
     }
 
     /*
@@ -49,10 +51,7 @@ public class CategorySubmoduleStepDef extends PageInitializer {
     @Then("Category is succesfully saved and confirmation message displays {string}")
     public void category_is_succesfully_saved_and_confirmation_message_displays(
             String expectedCategorySavesSuccessfulyText) {
-        String actualCategorySavesSuccessfulyText = studentCategoriesPage.categorySaveButton.getText();
-        CommonUtils.assertEquals(expectedCategorySavesSuccessfulyText, actualCategorySavesSuccessfulyText);
-        CommonUtils.nonMobileScreenshots();
-        CommonUtils.sleep(1000);
+        CategorySubmoduleStepImpl.recordSavedAssertion(expectedCategorySavesSuccessfulyText);
     }
 
     /*
@@ -68,8 +67,10 @@ public class CategorySubmoduleStepDef extends PageInitializer {
      */
     @Then("Category is deleted")
     public void category_is_deleted() {
-        WebDriverUtils.driver.switchTo().alert().accept();
-        CommonUtils.nonMobileScreenshots();
-        CommonUtils.sleep(1000);
+        CategorySubmoduleStepImpl.acceptDeletingCategory();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa

@@ -1,28 +1,20 @@
 package com.chroma.stepDefinitions;
 
-import com.chroma.pages.RealEstateProjectsPage;
-import com.chroma.web.CommonUtils;
+import com.chroma.stepsImplementation.RealEstateProjectsStepImpl;
 import cucumber.api.java.en.Then;
 
 public class RealEstateProjectsStepDef {
 
+    /* Admin click on the projects dropdown on dashboard page */
     @Then("admin clicks the projects dropdown on dashboard page")
     public void admin_clicks_the_projects_dropdown_on_dashboard_page() {
-        RealEstateProjectsPage.projectsTabPageElement.click();
-        CommonUtils.sleep(2000);
+        RealEstateProjectsStepImpl.dashboardDropDown();
     }
 
+    /* Elements to be displayed */
     @Then("the following elements should be displayed {string}, {string}, {string}, {string}")
     public void the_following_elements_should_be_displayed(String addNewProject, String projects, String active,
             String archived) {
-        String actualAddNewProjectText = RealEstateProjectsPage.addNewProjectElement.getText();
-        CommonUtils.assertTrue(actualAddNewProjectText.contains(addNewProject));
-        String actualProjectsText = RealEstateProjectsPage.projectsPageElement.getText();
-        CommonUtils.assertTrue(actualProjectsText.contains(projects));
-        String actualActiveText = RealEstateProjectsPage.activeRadialButton.getText();
-        CommonUtils.assertTrue(actualActiveText.contains(active));
-        String actualArchivedText = RealEstateProjectsPage.archivedRadialButton.getText();
-        CommonUtils.assertTrue(actualArchivedText.contains(archived));
-        CommonUtils.nonMobileScreenshots();
+        RealEstateProjectsStepImpl.elementsDisplayed(addNewProject, projects, active, archived);
     }
 }
