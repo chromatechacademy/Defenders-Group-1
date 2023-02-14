@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
@@ -14,8 +13,7 @@ public class AdminLogsInStepDef extends PageInitializer {
     @Given("an admin user is on the login page {string}")
     public void an_admin_user_is_on_the_login_page(String url) {
         WebDriverUtils.driver.get(url);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     // Admin user logs in with valis credentials
@@ -24,8 +22,7 @@ public class AdminLogsInStepDef extends PageInitializer {
         studentLoginPage.userNameTextBox.sendKeys(userName);
         studentLoginPage.passwordTextBox.sendKeys(password);
         studentLoginPage.signInButton.click();
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     // Admin user is on the home page
@@ -33,7 +30,7 @@ public class AdminLogsInStepDef extends PageInitializer {
     public void an_admin_is_landed_on_a_home_page_with_URL(String url) {
         String actualHomePageUrl = WebDriverUtils.driver.getCurrentUrl();
         CommonUtils.assertEquals(url, actualHomePageUrl);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
+
 }

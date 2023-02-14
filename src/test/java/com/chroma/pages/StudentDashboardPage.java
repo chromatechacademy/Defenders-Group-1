@@ -85,7 +85,10 @@ public class StudentDashboardPage {
     // Class SUB MODULE
     @FindBy(xpath = "//a[normalize-space()='Class']")
     public WebElement classSubModule;
-    // -Gary Add End
+
+    @FindBy(xpath = "//a[@class = 'sidebar-toggle']")
+    public WebElement sidemenuButton;
+    // -Gary Add End //a[@class = 'sidebar-toggle']
 
     @FindBy(xpath = "/html/body/div[1]/aside/div/section/ul[2]/li[2]/ul/li")
     public List<WebElement> subLinksOfFeesCollection;

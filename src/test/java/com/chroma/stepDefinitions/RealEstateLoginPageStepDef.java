@@ -1,7 +1,6 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.RealEstateAgentIndexPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
