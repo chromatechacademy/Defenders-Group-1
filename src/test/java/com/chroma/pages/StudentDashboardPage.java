@@ -122,6 +122,11 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//*[contains(text(),'Categories')]")
     public WebElement studentCategories;
 
+    /* GEORGE - DASHBOARD HAMBURGER MENU */
+    public static WebElement dashboardHamburger() {
+        return WebDriverUtils.driver.findElement(By.xpath("//a[@role='button']"));
+    }
+
     public StudentDashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

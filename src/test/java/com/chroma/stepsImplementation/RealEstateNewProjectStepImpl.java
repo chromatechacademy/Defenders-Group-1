@@ -4,13 +4,17 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
 
-public class RealEstateNewProjectSteps extends PageInitializer {
-    /**
-     * Use this method to create a new Real Estate Project 
-     * 
-     */
+public class RealEstateNewProjectStepImpl extends PageInitializer {
+
+    // CLICKING ON ADD NEW BUTTON
+    public static void newButton() {
+        realEstateNewProjectPage.addNewProjestButton.click();
+        CommonUtils.nonMobileScreenshots();
+    }
+
+    // FILLING OUT PROJECT DETAILS INFORMATION
     public static void fillingOutNewProjectForm(String developerTextBox, String titleTextBox,
-    String levelTextBox, String date, String streetTextBox, String currencyTextBox) {
+            String levelTextBox, String date, String streetTextBox, String currencyTextBox) {
         CommonUtils.sendKeys(realEstateNewProjectPage.developerTextBox, developerTextBox);
         CommonUtils.sendKeys(realEstateNewProjectPage.titleTextBox, titleTextBox);
         CommonUtils.sendKeys(realEstateNewProjectPage.levelTextBox, levelTextBox);
@@ -24,6 +28,14 @@ public class RealEstateNewProjectSteps extends PageInitializer {
         CommonUtils.click(realEstateNewProjectPage.saveButton);
         CommonUtils.click(realEstateNewProjectPage.okButton);
         CommonUtils.click(realEstateNewProjectPage.backButton);
-        CommonUtils.sleep(2000);   
+        CommonUtils.sleep(2000);
+    }
+
+    // VERIFYING NEW PROJECT HAS BEEN ADDE
+    public static void addNewProject(String project) {
+        CommonUtils.scrollIntoView(realEstateNewProjectPage.projectLondon);
+        String actualProjectText = realEstateNewProjectPage.projectLondon.getText();
+        CommonUtils.assertEquals(actualProjectText, project);
+        CommonUtils.nonMobileScreenshots();
     }
 }

@@ -1,7 +1,7 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.web.CommonUtils;
+import com.chroma.stepsImplementation.RealEstateDashboardStepImpl;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -16,10 +16,7 @@ public class RealEstateDashboardStepDef extends PageInitializer {
     // DETERMINES IF HEADER IS DISPLAYED WITH GRAPH
     @Then("the graph {string} is displayed")
     public void the_graph_is_displayed(String reservedByAgent) {
-        CommonUtils.waitForVisibility(realEstateDashboardPage.reservedByAgentsText);
-        String actualreservedByAgentText = realEstateDashboardPage.reservedByAgentsText.getText();
-        CommonUtils.assertEquals(reservedByAgent, actualreservedByAgentText);
-        CommonUtils.nonMobileScreenshots();
+        RealEstateDashboardStepImpl.graphIsDisplayed(reservedByAgent);
     }
 
     // NAVIGATES TO THE OVERVIEW GRAPH
@@ -31,9 +28,6 @@ public class RealEstateDashboardStepDef extends PageInitializer {
     // DETERMINES IF HEADER IS DISPLAYED WITH GRAPH
     @Then("the graph {string} is shown")
     public void the_graph_is_shown(String propertiesOverview) {
-        CommonUtils.waitForVisibility(realEstateDashboardPage.overviewLink);
-        String actualpropertiesOverviewText = realEstateDashboardPage.propertiesOverviewText.getText();
-        CommonUtils.assertEquals(propertiesOverview, actualpropertiesOverviewText);
-        CommonUtils.nonMobileScreenshots();
+        RealEstateDashboardStepImpl.headerAssertion(propertiesOverview);
     }
 }

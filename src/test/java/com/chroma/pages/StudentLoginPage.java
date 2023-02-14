@@ -19,9 +19,13 @@ public class StudentLoginPage {
    @FindBy(xpath = "//button[normalize-space()='Sign In']")
    public WebElement signInButton;
 
-   /*GEORGE - INVALID USER OR PASSWORD MESSAGE */
+   /* GEORGE - INVALID USER OR PASSWORD MESSAGE */
    @FindBy(xpath = "//div[@class='alert alert-danger']")
    public WebElement invalidUserMessage;
+
+   /* Hamburger menu for mobile testing */
+   @FindBy(xpath = "//a[@role='button']")
+   public WebElement humburgerMenu;
 
    public StudentLoginPage() {
       PageFactory.initElements(WebDriverUtils.driver, this);
