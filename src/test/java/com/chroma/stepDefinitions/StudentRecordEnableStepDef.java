@@ -2,8 +2,7 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentSelectCriteriaPage;
-import com.chroma.utils.CucumberLogUtils;
-import com.chroma.web.CommonUtils;
+import com.chroma.stepsImplementation.StudentRecordsEnableStepImpl;
 import cucumber.api.java.en.Then;
 
 public class StudentRecordEnableStepDef extends PageInitializer {
@@ -13,11 +12,7 @@ public class StudentRecordEnableStepDef extends PageInitializer {
      */
     @Then("the admin should be on {string} page")
     public void the_admin_should_be_on_page(String expectedSelectCriteriaText) {
-
-        String actualSelectCriteriaText = studentSelectCriteriaPage.selectCriteriaText.getText();
-        CommonUtils.assertEquals(expectedSelectCriteriaText, actualSelectCriteriaText);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        StudentRecordsEnableStepImpl.adminOnPage(expectedSelectCriteriaText);
     }
 
     /*
@@ -34,10 +29,7 @@ public class StudentRecordEnableStepDef extends PageInitializer {
     @Then("the admin should se the student First Name and Last Name {string} {string}")
     public void the_admin_should_se_the_student_First_Name_and_Last_Name(String recordFirstName,
             String recordLastName) {
-        String actualRecirdStudentName = studentRecordsPage.studentRecordName.getText();
-        CommonUtils.assertEquals((recordFirstName + " " + recordLastName), actualRecirdStudentName);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        StudentRecordsEnableStepImpl.studentRecordPage(recordFirstName, recordLastName);
     }
 
     /*
@@ -45,13 +37,7 @@ public class StudentRecordEnableStepDef extends PageInitializer {
      */
     @Then("the admin disable student records for {string} as reason")
     public void the_admin_disable_student_records_for_as_reason(String disableReason) {
-        studentRecordsPage.studentRecordDisableButton.click();
-        CommonUtils.acceptAlert();
-        CommonUtils.sleep(500);
-        studentRecordsPage.reasonDropdown.click();
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
-        studentRecordsPage.saveReasonButton.click();
+        StudentRecordsEnableStepImpl.disableStudent(disableReason);
     }
 
     /*
@@ -59,10 +45,6 @@ public class StudentRecordEnableStepDef extends PageInitializer {
      */
     @Then("the admin enable student records")
     public void the_admin_enable_student_records() {
-        studentRecordsPage.studentRecordEnableButton.click();
-        CommonUtils.acceptAlert();
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
-        CommonUtils.sleep(2000);
+        StudentRecordsEnableStepImpl.enableStudentRecord();
     }
 }

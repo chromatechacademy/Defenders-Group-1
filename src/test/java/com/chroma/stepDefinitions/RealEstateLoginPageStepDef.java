@@ -1,8 +1,7 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.RealEstateAgentIndexPage;
-import com.chroma.web.CommonUtils;
+import com.chroma.stepsImplementation.RealEstateLoginPageStepImpl;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -23,10 +22,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
      */
     @When("the admin logins with valid credentials email {string} and password {string}")
     public void the_admin_logins_with_valid_credentials_email_and_password(String email, String password) {
-        realEstateAdminWelcomePage.emailTextBox.sendKeys(email);
-        realEstateAdminWelcomePage.passwordTextBox.sendKeys(password);
-        CommonUtils.nonMobileScreenshots();
-        realEstateAdminWelcomePage.logInButton.click();
+        RealEstateLoginPageStepImpl.adminLogsIn(email, password);
     }
 
     /*
@@ -34,9 +30,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
      */
     @Then("the admin is landed on a home page with text {string}")
     public void the_admin_is_landed_on_a_home_page_with_text(String expectedAgentsText) {
-        String actualAgetntsText = realEstateAdminIndexPage.helloAdminText.getText();
-        CommonUtils.assertEquals(expectedAgentsText, actualAgetntsText);
-        CommonUtils.nonMobileScreenshots();
+        RealEstateLoginPageStepImpl.homePageAssertion(expectedAgentsText);
     }
 
     /*
@@ -44,9 +38,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
      */
     @Then("admin logs out the admin site")
     public void admin_logs_out_the_admin_site() {
-        realEstateAdminAgentsPage.adminLogOutBox.click();
-        CommonUtils.waitForVisibility(realEstateAdminAgentsPage.adminLogOutButton);
-        realEstateAdminAgentsPage.adminLogOutButton.click();
+        RealEstateLoginPageStepImpl.logingOutOfAdminPortal();
     }
 
     /*
@@ -54,9 +46,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
      */
     @Then("admin should be logged out and {string} message should be displayed")
     public void admin_should_be_logged_out_and_message_should_be_displayed(String expectedAdminWelcomeText) {
-        String actualAdminWelcomeText = realEstateAdminWelcomePage.adminWelcomeText.getText();
-        CommonUtils.assertEquals(expectedAdminWelcomeText, actualAdminWelcomeText);
-        CommonUtils.nonMobileScreenshots();
+        RealEstateLoginPageStepImpl.loggedOutAssertion(expectedAdminWelcomeText);
     }
 
     /*
@@ -73,10 +63,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
     @When("the admin logins with valid Agent credentials email {string} and password {string}")
     public void the_admin_logins_with_valid_Agent_credentials_email_and_password(String agentEmail,
             String agentPassword) {
-        realEstateAdminWelcomePage.emailTextBox.sendKeys(agentEmail);
-        realEstateAdminWelcomePage.passwordTextBox.sendKeys(agentPassword);
-        CommonUtils.nonMobileScreenshots();
-        realEstateAdminWelcomePage.logInButton.click();
+        RealEstateLoginPageStepImpl.agentCredentials(agentEmail, agentPassword);
     }
 
     /*
@@ -84,10 +71,7 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
      */
     @Then("the admin is landed on a Agent home page with text {string}")
     public void the_admin_is_landed_on_a_Agent_home_page_with_text(String expectedHelloChromaText) {
-        String actualHelloChromaText = realEstateAgentIndexPage.helloChromaTechText.getText();
-        CommonUtils.assertEquals(RealEstateAgentIndexPage.agentHelloFirstName(expectedHelloChromaText),
-                actualHelloChromaText);
-        CommonUtils.nonMobileScreenshots();
+        RealEstateLoginPageStepImpl.agentHomePageAssertion(expectedHelloChromaText);
     }
 
     /*
@@ -95,11 +79,6 @@ public class RealEstateLoginPageStepDef extends PageInitializer {
      */
     @Then("admin logs out the Agent site and {string} message should be displayed")
     public void admin_logs_out_the_Agent_site_and_message_should_be_displayed(String expectedAgentWelcomeText) {
-        realEstateAgentIndexPage.agentLogOutBox.click();
-        CommonUtils.waitForVisibility(realEstateAdminAgentsPage.adminLogOutButton);
-        realEstateAgentIndexPage.agentLogOutButton.click();
-        String actualAgentWelcomeText = realEstateAgentWelcomePage.agentWelcomeText.getText();
-        CommonUtils.assertEquals(expectedAgentWelcomeText, actualAgentWelcomeText);
-        CommonUtils.nonMobileScreenshots();
+        RealEstateLoginPageStepImpl.welcomePageAssertion(expectedAgentWelcomeText);
     }
 }

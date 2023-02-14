@@ -52,7 +52,6 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateAdminDashboardPage realEstateAdminDashboardPage;
     public static RealEstateProjectsPage realEstateProjectsPage;
     public static RealEstateNewProjectPage realEstateNewProjectPage;
-    public static RealEstateNewProjectSteps realEstateNewProjectSteps;
     public static StudentAcademicsClassPage studentAcademicsClassPage;
     public static StudentSelectCriteriaPage studentSelectCriteriaPage;
     public static StudentRecordsPage studentRecordsPage;
