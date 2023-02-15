@@ -18,24 +18,6 @@ public class StudentInformationtStepDef extends PageInitializer{
             String expextedStudentAdmissionModule, String expectedDisabledStudentModule,
             String expectedBulkDeleteModule, String expectedStudentCategoriesModule, String expectedStudentHouseModule,
             String expectedDisableReasonModule) {
-<<<<<<< HEAD
-        String actualStudentDetailsText = studentInformationPage.studentDetailsModule.getText();
-        CommonUtils.assertEquals(actualStudentDetailsText, expectedStudentDetailsModule);
-        String actualStudentAdmissionText = studentInformationPage.studentAdmissionModule.getText();
-        CommonUtils.assertEquals(actualStudentAdmissionText, expextedStudentAdmissionModule);
-        String actualDisabledStudentText = studentInformationPage.disabledStudentModule.getText();
-        CommonUtils.assertEquals(actualDisabledStudentText, expectedDisabledStudentModule);
-        String actualBulkDeleteText = studentInformationPage.bulkDeleteModule.getText();
-        CommonUtils.assertEquals(actualBulkDeleteText, expectedBulkDeleteModule);
-        String actualStudentCategoriesText = studentInformationPage.studentCategoriesModule.getText();
-        CommonUtils.assertEquals(actualStudentCategoriesText, expectedStudentCategoriesModule);
-        String actualStudentHouseText = studentInformationPage.studentHouseModule.getText();
-        CommonUtils.assertEquals(actualStudentHouseText, expectedStudentHouseModule);
-        String actualDisableReasonText = studentInformationPage.disableReasonModule.getText();
-        CommonUtils.assertEquals(actualDisableReasonText, expectedDisableReasonModule);
-        CommonUtils.nonMobileScreenshots();
-=======
        StudentInformationStepImpl.studentInfoAssertion(expectedStudentDetailsModule, expextedStudentAdmissionModule, expectedDisabledStudentModule, expectedBulkDeleteModule, expectedStudentCategoriesModule, expectedStudentHouseModule, expectedDisableReasonModule);
->>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
     }
 }

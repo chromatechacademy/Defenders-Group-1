@@ -2,12 +2,7 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentCategoriesPage;
-<<<<<<< HEAD
-import com.chroma.web.CommonUtils;
-import com.chroma.web.WebDriverUtils;
-=======
 import com.chroma.stepsImplementation.CategorySubmoduleStepImpl;
->>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -69,8 +64,4 @@ public class CategorySubmoduleStepDef extends PageInitializer {
     public void category_is_deleted() {
         CategorySubmoduleStepImpl.acceptDeletingCategory();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 6d701a9ba3a43b9912bbab5dcc59daf302bbc1fa

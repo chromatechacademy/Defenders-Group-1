@@ -24,4 +24,4 @@ Feature: Create new agent
 
     Examples: 
       | FIRSTNAME | LASTNAME | EMAIL               | CONTACTNUMBER | PASSWORD |
-      | George    | NewAgent | george@test9903.com | 000-000-00000 |   123456 |
+      | George    | NewAgent | george@test9904.com | 000-000-00000 |   123456 |

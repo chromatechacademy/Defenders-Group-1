@@ -1,6 +1,6 @@
 Feature: Deleting a Project
 
-  @RealEstateRegression @Gary @DF50
+  @NotCompleted @Gary @DF50
   Scenario: Creating a new project and then deleting it
     Given an admin is on the Admin login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
     When the admin logins with valid credentials email "admin@mexil.it" and password "123456"

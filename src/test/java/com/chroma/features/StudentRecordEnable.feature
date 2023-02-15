@@ -34,4 +34,4 @@ Feature: Enable and disable student recods
 
     Examples: 
       | ADMISSION NUMBER | CLASS          | SECTION                 | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | GUARDIAN PHONE NUMBER |
-      |            78883 | Cyber Security | Networking Fundamentals | George     | Disable   | Female | 02/22/1991 | Jannet One   |            7026875816 |
+      |            78185 | Cyber Security | Networking Fundamentals | George     | Disable   | Female | 02/22/1991 | Jannet One   |            7026875816 |

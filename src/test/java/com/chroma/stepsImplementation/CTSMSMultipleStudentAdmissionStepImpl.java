@@ -18,7 +18,7 @@ public class CTSMSMultipleStudentAdmissionStepImpl extends PageInitializer {
         BulkDeletePage.studentRecordLocator(firstName + " " + lastName).click();
         CommonUtils.sleep(500);
         bulkDeletePage.deleteButton.click();
-        CommonUtils.acceptAlert();
+        CommonUtils.nonMobileAutoAcceptAlert();
         CommonUtils.sleep(2000);
     }
 
@@ -27,7 +27,7 @@ public class CTSMSMultipleStudentAdmissionStepImpl extends PageInitializer {
         BulkDeletePage.studentDeleteRecordLocator(admissionNumberDeleted).click();
         CommonUtils.sleep(500);
         bulkDeletePage.deleteButton.click();
-        CommonUtils.acceptAlert();
+        CommonUtils.nonMobileAutoAcceptAlert();
         CommonUtils.sleep(2000);
     }
 }
