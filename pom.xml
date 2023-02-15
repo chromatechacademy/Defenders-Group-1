@@ -119,7 +119,7 @@
 				<configuration>
 					<includes>
 						<include>
-							RealEstateRegressionRunners.java
+							RealEstateSmoke.java
 						</include>
 					</includes>
 					<testFailureIgnore>true</testFailureIgnore> <!-- to get report even when fails -->
