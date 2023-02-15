@@ -1,6 +1,6 @@
 Feature: Admitt Student
 
-  @CTSMSRegression @Alex @DF-12 @CTSMSSmoke
+  @CTSMSRegression @Alex @DF-12 
   Scenario Outline: Verify if a student is successfully admitted
     Given an admin user is on the login page "https://mexil.it/chroma_tech_academy/dev/site/login"
     When an admin user logins with valid credentials username "general@teacher.com" and password "123456"
