@@ -8,6 +8,6 @@ Feature: edit student records by searching student detail
     And selects section "Cyber Security" and Section "Networking Fundamentals"
     And clicks Search button
     And clicks the edit button of a student
-    Then the user is on the page "https://mexil.it/chroma_tech_academy/dev/student/edit/719"
+    Then the user is on the page "https://mexil.it/chroma_tech_academy/dev/student/edit/828"
     When an admin edits information "Testing" of the user and clicks save
     Then the message Record Update "Record Update Successfully"

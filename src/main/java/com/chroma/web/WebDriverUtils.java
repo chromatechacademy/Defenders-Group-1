@@ -100,10 +100,11 @@ public class WebDriverUtils {
                 caps.setCapability("appium:deviceName", "iPhone 13 Simulator");
                 caps.setCapability("appium:platformVersion", "16.1");
                 caps.setCapability("appium:automationName", "XCUITest");
+                caps.setCapability("autoAcceptAlerts", true);
                 MutableCapabilities sauceOptions = new MutableCapabilities();
                 sauceOptions.setCapability("appiumVersion", "2.0.0");
-                sauceOptions.setCapability("build", "1.0");
-                sauceOptions.setCapability("name", "DF-1");
+                sauceOptions.setCapability("build", "5.0");
+                sauceOptions.setCapability("name", "DF-12");
                 caps.setCapability("sauce:options", sauceOptions);
                 try {
                     driver = new IOSDriver(new URL(ConfigReader.getPropertyValue("sauceUrl")), caps);

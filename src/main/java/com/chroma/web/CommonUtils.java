@@ -19,7 +19,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import com.chroma.utils.ConfigReader;
 import com.chroma.utils.CucumberLogUtils;
 
@@ -526,6 +525,16 @@ public class CommonUtils extends WebDriverUtils {
 		if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
 			CucumberLogUtils.logScreenShot();
 			CucumberLogUtils.logExtentScreenshot();
+		}
+	}
+
+
+	/**
+	 * USE THIS METHOD TO ACCEPT ALLERTS
+	 */
+	public static void nonMobileAutoAcceptAlert() {
+		if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
+			CommonUtils.acceptAlert();
 		}
 	}
 }

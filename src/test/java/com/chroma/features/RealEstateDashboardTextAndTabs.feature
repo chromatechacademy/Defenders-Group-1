@@ -1,5 +1,4 @@
 Feature: Real Estate Validate Dashboard Texts and Tabs Test Scenario
-Description: As an admin user, I want to be able to validate the following elements and their text display on the dashboard
 
   @RealEstateRegression @Sarwar @DF-42 @RealEstateSmoke
   Scenario: Real Estate Dashboard Texts and Tabs

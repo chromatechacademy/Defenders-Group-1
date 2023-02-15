@@ -7,7 +7,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CategorySubmoduleStepDef extends PageInitializer {
-
+   
     /*
      * CLICKING ON THE STUDENT CATEGORIES FROM STUDENT INFORMATION MODULE
      */
