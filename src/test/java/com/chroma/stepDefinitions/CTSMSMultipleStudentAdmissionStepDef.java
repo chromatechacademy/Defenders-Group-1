@@ -1,13 +1,18 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.pages.StudentDashboardPage;
 import com.chroma.stepsImplementation.CTSMSMultipleStudentAdmissionStepImpl;
+import com.chroma.utils.ConfigReader;
 import cucumber.api.java.en.Then;
 
 public class CTSMSMultipleStudentAdmissionStepDef extends PageInitializer {
 
     @Then("an admin navigates to Bulk Delete Submodule")
     public void an_admin_navigates_to_Bulk_Delete_Submodule() {
+        if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase(("mobile"))) {
+			StudentDashboardPage.dashboardHamburger().click();
+		}
         bulkDeletePage.bulkDelete.click();
     }
 
