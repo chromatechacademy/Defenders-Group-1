@@ -52,8 +52,6 @@ public class ScreenShots extends WebDriverUtils{
 				File currentFile = new File(file.getPath(), s);
 				currentFile.delete();
 			}
-
 		}
 	}
-
 }
