@@ -10,6 +10,7 @@ public class CTSMSMultipleStudentAdmissionStepImpl extends PageInitializer {
     public static void classAndSectionSelection(String className, String sectionName) {
         CommonUtils.selectDropDownValue(className, bulkDeletePage.classNameDropdown);
         CommonUtils.selectDropDownValue(sectionName, bulkDeletePage.sectionNameDropdown);
+        CommonUtils.sleep(3000);
         CommonUtils.nonMobileScreenshots();
     }
 
@@ -19,7 +20,7 @@ public class CTSMSMultipleStudentAdmissionStepImpl extends PageInitializer {
         CommonUtils.sleep(500);
         bulkDeletePage.deleteButton.click();
         CommonUtils.nonMobileAutoAcceptAlert();
-        CommonUtils.sleep(2000);
+        CommonUtils.sleep(3000);
     }
 
     /* Verifying that Admitted student was deleted */
@@ -28,6 +29,6 @@ public class CTSMSMultipleStudentAdmissionStepImpl extends PageInitializer {
         CommonUtils.sleep(500);
         bulkDeletePage.deleteButton.click();
         CommonUtils.nonMobileAutoAcceptAlert();
-        CommonUtils.sleep(2000);
+        CommonUtils.sleep(3000);
     }
 }
