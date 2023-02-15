@@ -118,7 +118,7 @@
 				<configuration>
 					<includes>
 						<include>
-							CTSMSProgressionRunners.java
+							CTSMSSmokeRunners.java
 						</include>
 					</includes>
 					<testFailureIgnore>true</testFailureIgnore> <!-- to get report even when fails -->
