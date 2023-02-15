@@ -1,11 +1,11 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
 
 public class StudentAdmissionStepDef extends PageInitializer {
 
@@ -91,8 +91,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
     @Then("enters Guardian Phone Number {string}")
     public void enters_Guardian_Phone_Number(String phoneNumber) {
         studentAdmissionPage.guardianPhoneNumberTextBox.sendKeys(phoneNumber);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -109,8 +108,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("student is succesfuly saved and confirmation message is displayed {string}")
     public void student_is_succesfuly_saved_and_confirmation_message_is_displayed(String expectedSuccessMessage) {
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
         String actualSuccessMessage = studentAdmissionPage.succesfulySavedMessage.getText();
         CommonUtils.assertEquals(expectedSuccessMessage, actualSuccessMessage);
         CommonUtils.sleep(1000);
@@ -121,8 +119,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
      */
     @Then("the Student is not admitted and {string} is displayed")
     public void the_Student_is_not_admitted_and_is_displayed(String expectedAdmissionNumberMustBeUniqueMessage) {
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+       CommonUtils.nonMobileScreenshots();
         String actualAdmissionNumberMustBeUniqueMessage = studentAdmissionPage.admissionNumberMustBeUniqueMessage
                 .getText();
         CommonUtils.assertEquals(expectedAdmissionNumberMustBeUniqueMessage, actualAdmissionNumberMustBeUniqueMessage);

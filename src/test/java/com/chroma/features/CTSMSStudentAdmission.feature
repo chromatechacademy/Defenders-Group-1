@@ -1,12 +1,12 @@
 Feature: Admitt Student
 
-  @CTSMSRegression @Alex @DF-12 @CTSMSSmoke
-  Scenario Outline: Verify if a student is successfully admitted
+  @CTSMSRegression @Alex @DF-12 @CTSMSProgression
+   Scenario Outline: Verify if a student is successfully admitted
     Given an admin user is on the login page "https://mexil.it/chroma_tech_academy/dev/site/login"
     When an admin user logins with valid credentials username "general@teacher.com" and password "123456"
     Then an admin is landed on a home page with URL "https://mexil.it/chroma_tech_academy/dev/admin/admin/dashboard"
+    Then an admin user clicks on hamburger menu
     And admin clicks on "Student Information" module
-    And navigates to Student Admission Submodule
     Then user is directed to Student Admission Page with the text "Student Admission"
     And enters Student unique Admission Number "<ADMISSION NUMBER>"
     And selects Class "<CLASS>" and Section "<SECTION>"

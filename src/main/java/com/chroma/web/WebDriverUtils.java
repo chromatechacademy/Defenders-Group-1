@@ -100,10 +100,11 @@ public class WebDriverUtils {
                 caps.setCapability("appium:deviceName", "iPhone 13 Simulator");
                 caps.setCapability("appium:platformVersion", "16.1");
                 caps.setCapability("appium:automationName", "XCUITest");
+                caps.setCapability("autoAcceptAlerts", true);
                 MutableCapabilities sauceOptions = new MutableCapabilities();
                 sauceOptions.setCapability("appiumVersion", "2.0.0");
-                sauceOptions.setCapability("build", "<your build id>");
-                sauceOptions.setCapability("name", "<your test name>");
+                sauceOptions.setCapability("build", "1.0.0");
+                sauceOptions.setCapability("name", "ALEX TEST DF-3");
                 caps.setCapability("sauce:options", sauceOptions);
                 try {
                     driver = new IOSDriver(new URL(ConfigReader.getPropertyValue("sauceUrl")), caps);
@@ -120,8 +121,8 @@ public class WebDriverUtils {
                 caps.setCapability("appium:automationName", "UiAutomator2");
                 MutableCapabilities sauceOptions = new MutableCapabilities();
                 sauceOptions.setCapability("appiumVersion", "1.22.1");
-                sauceOptions.setCapability("build", "<your build id>");
-                sauceOptions.setCapability("name", "<your test name>");
+                sauceOptions.setCapability("build", "1.0.0");
+                sauceOptions.setCapability("name", "ALEX TEST");
                 caps.setCapability("sauce:options", sauceOptions);
                 try {
                      driver = new AndroidDriver(new URL(ConfigReader.getPropertyValue("sauceUrl")), caps);

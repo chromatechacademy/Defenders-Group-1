@@ -57,6 +57,10 @@ public class StudentDashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement subLinkHomework;
 
+    /* INSPECTING HAMBURGER MENU */
+    @FindBy(xpath = "//a[@role='button']")
+    public WebElement hamburgerMenu;
+
     // -Gary
     // STUDENT INFORMATION Module
     @FindBy(xpath = "//span[contains(text(),'Student Information')]")

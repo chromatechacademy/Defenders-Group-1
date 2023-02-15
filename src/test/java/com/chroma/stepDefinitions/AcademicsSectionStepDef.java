@@ -3,7 +3,6 @@ package com.chroma.stepDefinitions;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentDashboardPage;
 import com.chroma.pages.StudentSelectionsPage;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Then;
@@ -16,8 +15,7 @@ public class AcademicsSectionStepDef extends PageInitializer {
      */
     @Then("admin clicks on {string} module")
     public void admin_clicks_on_module(String moduleText) {
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
         StudentDashboardPage.dynamicModuleLocator(moduleText).click();
         CommonUtils.sleep(500);
     }
@@ -37,8 +35,7 @@ public class AcademicsSectionStepDef extends PageInitializer {
     public void admin_is_directed_to_Sections_page_with_the_text(String expetedSelectionsPageText) {
         String actualSelectionsPageText = studentSelectionsPage.addSelectionText.getText();
         CommonUtils.assertEquals(expetedSelectionsPageText, actualSelectionsPageText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -65,8 +62,7 @@ public class AcademicsSectionStepDef extends PageInitializer {
             String expectedSessionSavesSuccessfulyText) {
         String actualSessionSavesSuccessfulyText = studentSelectionsPage.sectionSavedSuccesfullyText.getText();
         CommonUtils.assertEquals(expectedSessionSavesSuccessfulyText, actualSessionSavesSuccessfulyText);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
     }
 
     /*
@@ -83,8 +79,7 @@ public class AcademicsSectionStepDef extends PageInitializer {
     @Then("Section is deleted")
     public void section_is_deleted() {
         WebDriverUtils.driver.switchTo().alert().accept();
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.nonMobileScreenshots();
         CommonUtils.sleep(1000);
     }
 }

@@ -1,7 +1,7 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.utils.CucumberLogUtils;
+import com.chroma.utils.ConfigReader;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
@@ -22,6 +22,13 @@ public class DashboardStepDef extends PageInitializer {
         studentLoginPage.userNameTextBox.sendKeys(username);
         studentLoginPage.passwordTextBox.sendKeys(password);
         studentLoginPage.signInButton.click();
+    }
+    /* CLICKING ON HAMBURGER MENU */
+    @When("click on a hamburger menu")
+    public void click_on_a_hamburger_menu() {
+        studentDashboardPage.hamburgerMenu.click();
+        if(ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+    }
     }
 
     // Asserting if module text is shown properly
@@ -44,7 +51,6 @@ public class DashboardStepDef extends PageInitializer {
         CommonUtils.assertEquals(homeworkAText, homework);
         String reportsAText = studentDashboardPage.reportsModule.getText();
         CommonUtils.assertEquals(reportsAText, reports);
-        CucumberLogUtils.logExtentScreenshot();
-        CucumberLogUtils.logScreenShot();
+        CommonUtils.nonMobileScreenshots();
     }
 }
