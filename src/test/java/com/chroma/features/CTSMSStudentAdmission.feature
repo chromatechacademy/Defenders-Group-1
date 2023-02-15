@@ -18,10 +18,10 @@ Feature: Admitt Student
     And enters Guardian Phone Number "<GUARDIAN PHONE NUMBER>"
     And clicks on the Save button
     Then student is succesfuly saved and confirmation message is displayed "Record Saved Successfully"
-    # Then an admin navigates to Bulk Delete Submodule
-    # Then an admin selects Class "<CLASS>" and Section "<SECTION>"
-    # And clicks on Search button
-    # Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
+    Then an admin navigates to Bulk Delete Submodule
+    Then an admin selects Class "<CLASS>" and Section "<SECTION>"
+    And clicks on Search button
+    Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
 
     Examples: 
       | ADMISSION NUMBER   | CLASS          | SECTION                 | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | GUARDIAN PHONE NUMBER |
