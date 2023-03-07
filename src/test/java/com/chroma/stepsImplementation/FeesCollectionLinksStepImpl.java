@@ -5,7 +5,7 @@ import com.chroma.web.CommonUtils;
 
 public class FeesCollectionLinksStepImpl extends PageInitializer {
 
-    // All sub links should be displayed
+    // Displaying sub links in Fees Collection
     public static void subLinksAssertion(String collectFees, String searchFeesPayment,
             String searchDueFees, String feesMaster, String feesGroup, String feesType, String feesDiscount,
             String feesCarryForward, String feesReminder) {

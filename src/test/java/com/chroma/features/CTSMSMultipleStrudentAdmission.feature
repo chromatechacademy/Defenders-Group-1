@@ -24,7 +24,7 @@ Feature: Student Admission
     Then admitted student with student admission number "<ADMISSION NUMBER>" is deleted
 
     Examples: 
-      | URL                                                 | USERNAME            | PASSWORD | ADMISSION NUMBER | CLASS          | SECTION   | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | PHONE NUMBER |
-      | https://mexil.it/chroma_tech_academy/dev/site/login | general@teacher.com |   123456 |         11211993 | Cyber Security | CIA Triad | Liliya     | Thurman   | Female | 11/21/1993 | Sue          |   3019191183 |
-      | https://mexil.it/chroma_tech_academy/dev/site/login | general@teacher.com |   123456 |         11211994 | Cyber Security | CIA Triad | Mike       | Thurman   | Male   | 11/21/1994 | Sue          |   3019191183 |
-      | https://mexil.it/chroma_tech_academy/dev/site/login | general@teacher.com |   123456 |         11211995 | Cyber Security | CIA Triad | Kate       | Thurman   | Male   | 11/21/1996 | Sue          |   3019191183 |
+      | URL                                                 | USERNAME            | PASSWORD | ADMISSION NUMBER | CLASS          | SECTION                 | FIRST NAME | LAST NAME | GENDER | DOB        | MOTHERS NAME | PHONE NUMBER |
+      | https://mexil.it/chroma_tech_academy/dev/site/login | general@teacher.com |   123456 |         11211993 | Cyber Security | Networking Fundamentals | Liliya     | Thurman   | Female | 11/21/1993 | Sue          |   3019191183 |
+      | https://mexil.it/chroma_tech_academy/dev/site/login | general@teacher.com |   123456 |         11211994 | Cyber Security | Networking Fundamentals | Mike       | Thurman   | Male   | 11/21/1994 | Sue          |   3019191183 |
+      | https://mexil.it/chroma_tech_academy/dev/site/login | general@teacher.com |   123456 |         11211995 | Cyber Security | Networking Fundamentals | Kate       | Thurman   | Male   | 11/21/1996 | Sue          |   3019191183 |
